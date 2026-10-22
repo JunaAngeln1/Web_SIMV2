@@ -12,9 +12,9 @@
 
 @theme {
   /* --- Colores (sim-diseno §1) --- */
-  --color-azul-profundo: #07345b;
-  --color-azul-institucional: #03497d;
-  --color-azul-cielo: #48afe8;
+  --color-hero-verde-oscuro: #6a9a10;
+  --color-hero-verde-medio: #77c100;
+  --color-hero-verde-claro: #a8d45a;
   --color-verde-sim: #77c100;
   --color-blanco: #ffffff;
   --color-azul-muy-claro: #f1f7fc;
@@ -32,9 +32,9 @@
     'Helvetica Neue', Arial, sans-serif;
 
   /* --- Radios (sim-diseno §3) --- */
-  --radius-tarjeta: 22px;
-  --radius-contenedor: 28px;
-  --radius-pildora: 9999px;
+  --radius-tarjeta: 25px;
+  --radius-contenedor: 100px;
+  --radius-pildora: 100px;
 
   /* --- Sombras jerárquicas (sim-diseno §7.2) --- */
   --shadow-suave: 0 1px 3px 0 rgb(0 0 0 / 0.08), 0 1px 2px -1px rgb(0 0 0 / 0.04);

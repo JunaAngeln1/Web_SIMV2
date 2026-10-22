@@ -49,7 +49,7 @@ export default function Hero() {
       data-section="hero"
       role="region"
       aria-label="Hero principal"
-      className="relative w-full max-w-[1440px] min-h-[760px] mx-auto rounded-[24px] overflow-hidden bg-gradient-to-tr from-azul-institucional via-azul-cielo to-azul-muy-claro shadow-suave mb-12"
+      className="relative w-full max-w-[1440px] min-h-[760px] mx-auto rounded-[24px] overflow-hidden bg-gradient-to-tr from-hero-verde-oscuro via-hero-verde-medio to-hero-verde-claro shadow-suave mb-12"
     >
       {/* Halo claro alrededor de la cabeza del gato (x≈75 %, y≈40 %) */}
       <div
