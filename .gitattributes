@@ -1,0 +1,15 @@
+# Forzar LF en el repositorio y en el working tree.
+# Motivo: Prettier exige endOfLine: lf y .editorconfig tambien.
+# Sin esto, core.autocrlf=true en Windows introduce CRLF y rompe `npm run format:check`.
+* text=auto eol=lf
+
+# Binarios: nunca se tocan
+*.png binary
+*.jpg binary
+*.jpeg binary
+*.webp binary
+*.gif binary
+*.ico binary
+*.woff binary
+*.woff2 binary
+*.pdf binary

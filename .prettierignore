@@ -1,0 +1,12 @@
+dist
+node_modules
+coverage
+package-lock.json
+
+# Skills del sistema S.I.M.: son la fuente de verdad del proyecto, no se reformatean
+Agentes/
+*.svg
+*.webp
+*.png
+*.jpg
+*.jpeg
