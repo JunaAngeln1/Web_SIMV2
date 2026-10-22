@@ -1,20 +1,26 @@
+import Card from '@/components/ui/Card'
+import Container from '@/components/layout/Container'
+import SectionHeading from '@/components/ui/SectionHeading'
+
 export default function Noticias() {
   return (
-    <main data-page="noticias">
-      <section data-section="noticias-listado" aria-label="Noticias">
-        <div data-purpose="section-inner">
-          <h1 data-purpose="page-title">Noticias y consejos</h1>
-          <p data-purpose="page-intro">
-            Prevención, cuidado responsable, bienestar animal y novedades de S.I.M.
-          </p>
+    <main data-page="noticias" className="py-16 sm:py-20">
+      <Container>
+        <SectionHeading
+          title="Noticias y consejos"
+          subtitle="Prevención, cuidado responsable, bienestar animal y novedades de S.I.M."
+        />
 
-          <div data-purpose="noticias-grid">
-            <p data-pending="true">
-              Listado de noticias pendiente de artículos revisados y aprobados por SIM.
-            </p>
+        <section data-section="noticias-listado" aria-label="Noticias" className="mt-10">
+          <div data-purpose="noticias-grid" className="grid md:grid-cols-3 gap-6">
+            <Card padded>
+              <p data-pending="true" className="text-gris-azulado">
+                Listado de noticias pendiente de artículos revisados y aprobados por SIM.
+              </p>
+            </Card>
           </div>
-        </div>
-      </section>
+        </section>
+      </Container>
     </main>
   )
 }

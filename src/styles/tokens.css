@@ -1,0 +1,60 @@
+@import 'tailwindcss';
+
+/**
+ * src/styles/tokens.css
+ *
+ * Fuente de verdad del sistema visual de S.I.M.
+ * Define las custom properties CSS y las reexpone en @theme de Tailwind v4.
+ *
+ * Nota de marca: el verde real del logo oficial es #77c100 (no #7AB929 como
+ * sugiere la skill de diseño). Se adopta el valor del activo oficial.
+ */
+
+@theme {
+  /* --- Colores (sim-diseno §1) --- */
+  --color-azul-profundo: #07345b;
+  --color-azul-institucional: #03497d;
+  --color-azul-cielo: #48afe8;
+  --color-verde-sim: #77c100;
+  --color-blanco: #ffffff;
+  --color-azul-muy-claro: #f1f7fc;
+  --color-azul-niebla: #e8f3fc;
+  --color-gris-azulado: #64748b;
+  --color-texto-principal: #172b3a;
+  --color-borde-suave: #d9e5ef;
+
+  /* --- Tipografía (sim-diseno §2) --- */
+  --font-sans:
+    Poppins, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto,
+    'Helvetica Neue', Arial, sans-serif;
+  --font-titulos:
+    Manrope, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto,
+    'Helvetica Neue', Arial, sans-serif;
+
+  /* --- Radios (sim-diseno §3) --- */
+  --radius-tarjeta: 22px;
+  --radius-contenedor: 28px;
+  --radius-pildora: 9999px;
+
+  /* --- Sombras jerárquicas (sim-diseno §7.2) --- */
+  --shadow-suave: 0 1px 3px 0 rgb(0 0 0 / 0.08), 0 1px 2px -1px rgb(0 0 0 / 0.04);
+  --shadow-medio: 0 4px 6px -1px rgb(0 0 0 / 0.06), 0 2px 4px -2px rgb(0 0 0 / 0.04);
+  --shadow-hover: 0 10px 15px -3px rgb(0 0 0 / 0.08), 0 4px 6px -4px rgb(0 0 0 / 0.06);
+
+  /* --- Espaciado basado en escala 4/8 px (sim-diseno §3) --- */
+  --spacing-8: 8px;
+  --spacing-12: 12px;
+  --spacing-16: 16px;
+  --spacing-24: 24px;
+  --spacing-32: 32px;
+  --spacing-48: 48px;
+  --spacing-64: 64px;
+  --spacing-80: 80px;
+
+  /* --- Breakpoints objetivo del proyecto (sim-especificacion §3) --- */
+  --breakpoint-360: 360px;
+  --breakpoint-390: 390px;
+  --breakpoint-768: 768px;
+  --breakpoint-1024: 1024px;
+  --breakpoint-1440: 1440px;
+}

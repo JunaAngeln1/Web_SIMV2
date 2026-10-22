@@ -1,7 +1,13 @@
 /**
- * Indicadores "Conoce a la manada" — Estructura de contenido (sin estilos de diseño).
- * Cifras sugeridas por la skill; vigencia por confirmar con SIM antes de publicar.
+ * src/components/sections/Indicators.tsx
+ *
+ * Indicadores "Conoce a la manada" con diseño aplicado.
+ * Tres bloques con cifra grande en azul institucional y etiqueta corta.
+ * Cifras sujetas a verificación con SIM antes de publicar.
  */
+import Container from '@/components/layout/Container'
+import IconBadge from '@/components/ui/IconBadge'
+import SectionHeading from '@/components/ui/SectionHeading'
 
 const indicators = [
   { label: 'mascotas afiliadas', value: '+4.000' },
@@ -11,27 +17,28 @@ const indicators = [
 
 export default function Indicators() {
   return (
-    <section data-section="indicadores" aria-label="Conoce a la manada">
-      <div data-purpose="section-inner">
-        <header data-purpose="section-header">
-          <h2 data-purpose="section-title">Conoce a la manada</h2>
-        </header>
-
-        <div data-purpose="indicators-grid">
+    <section
+      data-section="indicadores"
+      aria-label="Conoce a la manada"
+      className="py-16 sm:py-20 bg-blanco"
+    >
+      <Container>
+        <SectionHeading title="Conoce a la manada" subtitle="" />
+        <div data-purpose="indicators-grid" className="grid md:grid-cols-3 gap-6">
           {indicators.map((ind) => (
-            <article key={ind.label} data-purpose="indicator">
-              <span data-purpose="indicator-value" data-pending="true">
-                {ind.value}
-              </span>
-              <span data-purpose="indicator-label">{ind.label}</span>
-            </article>
+            <IconBadge
+              key={ind.label}
+              icon="/assets/icons/support.svg"
+              label={ind.label}
+              value={ind.value}
+              className="bg-azul-niebla border border-borde-suave rounded-[var(--radius-tarjeta)] p-6"
+            />
           ))}
         </div>
-
-        <p data-purpose="indicators-note">
+        <p data-purpose="indicators-note" className="mt-8 text-sm text-gris-azulado">
           Cifras sujetas a verificación con SIM antes de publicar.
         </p>
-      </div>
+      </Container>
     </section>
   )
 }

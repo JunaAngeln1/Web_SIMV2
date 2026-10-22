@@ -1,30 +1,50 @@
 /**
- * Nuestros aliados — Estructura de contenido (sin estilos de diseño).
- * Logotipos autorizados pendientes de envío por SIM.
+ * src/components/sections/Allies.tsx
+ *
+ * Nuestros aliados con diseño aplicado.
+ * Franja de logotipos autorizados (pendiente de envío por SIM).
+ * Movimiento pausado estático (sin carousel animado todavía).
  */
+import Button from '@/components/ui/Button'
+import Container from '@/components/layout/Container'
+import SectionHeading from '@/components/ui/SectionHeading'
 
 export default function Allies() {
   return (
-    <section data-section="aliados" aria-label="Nuestros aliados">
-      <div data-purpose="section-inner">
-        <header data-purpose="section-header">
-          <h2 data-purpose="section-title">Una red que trabaja por su bienestar</h2>
-          <p data-purpose="section-subtitle">
-            Accede a una red veterinaria comprometida con la salud de tu mascota.
-          </p>
-        </header>
+    <section
+      data-section="aliados"
+      aria-label="Nuestros aliados"
+      className="py-16 sm:py-20 bg-azul-muy-claro"
+    >
+      <Container>
+        <SectionHeading
+          title="Una red que trabaja por su bienestar"
+          subtitle="Accede a una red veterinaria comprometida con la salud de tu mascota."
+        />
 
-        <div data-purpose="allies-franja" role="region" aria-label="Logotipos de aliados">
-          <span data-purpose="ally-placeholder">Logo aliado 1</span>
-          <span data-purpose="ally-placeholder">Logo aliado 2</span>
-          <span data-purpose="ally-placeholder">Logo aliado 3</span>
-          <span data-purpose="ally-placeholder">Logo aliado 4</span>
+        <div
+          data-purpose="allies-franja"
+          role="region"
+          aria-label="Logotipos de aliados"
+          className="my-10 flex flex-col sm:flex-row items-center justify-center gap-8 sm:gap-12 lg:gap-16"
+        >
+          {[1, 2, 3, 4].map((i) => (
+            <span
+              key={i}
+              data-purpose="ally-placeholder"
+              className="flex items-center justify-center w-24 h-16 bg-blanco border border-borde-suave rounded-[var(--radius-tarjeta)] shadow-suave text-gris-azulado text-sm font-medium"
+            >
+              Logo aliado {i}
+            </span>
+          ))}
         </div>
 
-        <button data-purpose="cta-conoce-alidos" type="button">
-          Conoce nuestra red de aliados
-        </button>
-      </div>
+        <div className="text-center">
+          <Button variant="secondary" data-purpose="cta-conoce-alidos">
+            Conoce nuestra red de aliados
+          </Button>
+        </div>
+      </Container>
     </section>
   )
 }

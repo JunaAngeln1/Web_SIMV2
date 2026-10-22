@@ -1,8 +1,7 @@
-/**
- * Planes resumidos — Estructura de contenido (sin estilos de diseño).
- * Se coloca inmediatamente después del hero.
- * No inventar precios, coberturas, topes, descuentos, tiempos de carencia ni precios.
- */
+import Card from '@/components/ui/Card'
+import Container from '@/components/layout/Container'
+import SectionHeading from '@/components/ui/SectionHeading'
+import Button from '@/components/ui/Button'
 
 const plans = [
   {
@@ -30,37 +29,49 @@ const plans = [
 
 export default function PlansSummary() {
   return (
-    <section data-section="planes-resumidos" aria-label="Planes resumidos">
-      <div data-purpose="section-inner">
-        <header data-purpose="section-header">
-          <h2 data-purpose="section-title">Planes de atención para tu mascota</h2>
-          <p data-purpose="section-subtitle">
-            Elige el plan que mejor se adapte a las necesidades de tu perro o gato.
-          </p>
-        </header>
+    <section
+      data-section="planes-resumidos"
+      aria-label="Planes resumidos"
+      className="py-16 sm:py-20 bg-blanco"
+    >
+      <Container narrow>
+        <SectionHeading
+          title="Planes de atención para tu mascota"
+          subtitle="Elige el plan que mejor se adapte a las necesidades de tu perro o gato."
+        />
 
-        <div data-purpose="plans-grid">
+        <div data-purpose="plans-grid" className="grid md:grid-cols-3 gap-6">
           {plans.map((plan) => (
-            <article key={plan.id} data-purpose="plan-card" data-plan={plan.id}>
-              <h3 data-purpose="plan-name">{plan.name}</h3>
-              <ul data-purpose="plan-benefits">
+            <Card key={plan.id} hover className="flex flex-col h-full">
+              <h3
+                data-purpose="plan-name"
+                className="font-titulos font-semibold text-lg text-azul-institucional mb-3"
+              >
+                {plan.name}
+              </h3>
+              <ul
+                data-purpose="plan-benefits"
+                className="flex-1 space-y-2 text-sm text-gris-azulado mb-6"
+              >
                 {plan.benefits.map((b) => (
-                  <li key={b} data-purpose="plan-benefit">
-                    {b}
+                  <li key={b} data-purpose="plan-benefit" className="flex items-center gap-2">
+                    <span className="text-verde-sim">●</span> {b}
                   </li>
                 ))}
               </ul>
-              <button data-purpose="cta-ver-plan" type="button">
+              <Button variant="secondary" data-purpose="cta-ver-plan" className="w-full">
                 Ver plan
-              </button>
-            </article>
+              </Button>
+            </Card>
           ))}
         </div>
 
-        <button data-purpose="cta-explorar-planes" type="button">
-          Explorar todos los planes
-        </button>
-      </div>
+        <div className="mt-10 text-center">
+          <Button variant="ghost" data-purpose="cta-explorar-planes">
+            Explorar todos los planes
+          </Button>
+        </div>
+      </Container>
     </section>
   )
 }

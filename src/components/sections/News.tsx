@@ -1,8 +1,14 @@
 /**
- * Noticias y consejos — Estructura de contenido (sin estilos de diseño).
+ * src/components/sections/News.tsx
+ *
+ * Noticias y consejos con diseño aplicado.
  * Tres noticias destacadas en el inicio.
- * Imágenes: placeholders SVG en /assets/images/news/ (pendiente de fotos de SIM).
+ * Tarjeta editorial: imagen 16:9, categoría, título, fecha y enlace "Leer más".
+ * Imágenes: placeholders SVG (pendiente de fotos de SIM).
  */
+import Card from '@/components/ui/Card'
+import Container from '@/components/layout/Container'
+import SectionHeading from '@/components/ui/SectionHeading'
 
 const news = [
   {
@@ -30,31 +36,56 @@ const news = [
 
 export default function News() {
   return (
-    <section data-section="noticias" aria-label="Noticias y consejos">
-      <div data-purpose="section-inner">
-        <header data-purpose="section-header">
-          <h2 data-purpose="section-title">Noticias y consejos</h2>
-          <p data-purpose="section-subtitle">
-            Prevención, cuidado responsable y novedades de S.I.M.
-          </p>
-        </header>
+    <section
+      data-section="noticias"
+      aria-label="Noticias y consejos"
+      className="py-16 sm:py-20 bg-blanco"
+    >
+      <Container>
+        <SectionHeading
+          title="Noticias y consejos"
+          subtitle="Prevención, cuidado responsable y novedades de S.I.M."
+        />
 
-        <div data-purpose="news-grid">
+        <div data-purpose="news-grid" className="grid md:grid-cols-3 gap-6">
           {news.map((n) => (
-            <article key={n.id} data-purpose="news-card">
-              <img src={n.image} alt={`Imagen referencial: ${n.title}`} data-purpose="news-image" />
-              <div data-purpose="news-content">
-                <span data-purpose="news-category">{n.category}</span>
-                <h3 data-purpose="news-title">{n.title}</h3>
-                <time data-purpose="news-date">{n.date}</time>
-                <a href="#" data-purpose="cta-leer-mas">
+            <Card key={n.id} hover className="flex flex-col h-full">
+              <div className="relative h-40 md:h-48 overflow-hidden rounded-t-[var(--radius-tarjeta)]">
+                <img
+                  src={n.image}
+                  alt={`Imagen referencial: ${n.title}`}
+                  data-purpose="news-image"
+                  className="w-full h-full object-cover"
+                />
+              </div>
+              <div data-purpose="news-content" className="p-4 flex flex-col">
+                <span
+                  data-purpose="news-category"
+                  className="text-xs font-semibold text-verde-sim uppercase tracking-wider mb-2"
+                >
+                  {n.category}
+                </span>
+                <h3
+                  data-purpose="news-title"
+                  className="font-titulos font-semibold text-base text-texto-principal mb-2 line-clamp-2"
+                >
+                  {n.title}
+                </h3>
+                <time data-purpose="news-date" className="text-xs text-gris-azulado mb-3">
+                  {n.date}
+                </time>
+                <a
+                  href="#"
+                  data-purpose="cta-leer-mas"
+                  className="mt-auto text-sm font-medium text-azul-institucional hover:underline"
+                >
                   Leer más
                 </a>
               </div>
-            </article>
+            </Card>
           ))}
         </div>
-      </div>
+      </Container>
     </section>
   )
 }
