@@ -22,6 +22,9 @@ Componente de mayor peso visual del sitio. Se construye y se valida **primero**.
 
 - Beneficios: **Red de aliados, Atencion veterinaria, Planes para tu mascota y
   Acompanamiento** (configurables en `src/data/benefits.ts`).
+- Los iconos de la ruleta son los **badges oficiales** de
+  `public/assets/icons/` (allies, veterinary-care, pet-plans, support), no
+  iconos lineales.
 - El movimiento es **bidireccional** segun la posicion vertical del puntero.
 - Se suaviza con interpolacion: sin saltos ni sensibilidad excesiva.
 - El beneficio mas cercano a la posicion activa sube a opacidad 1.0 y escala
@@ -30,6 +33,11 @@ Componente de mayor peso visual del sitio. Se construye y se valida **primero**.
 - El rostro del gato nunca queda tapado por textos, orbitas gruesas ni botones.
 - En movil se permite swipe o controles accesibles; no depende del hover.
 - Con `prefers-reduced-motion` la orbita ligada al mouse se desactiva.
+
+## Gato protagonista
+
+Archivo: `/assets/sim-hero-cat.webp` (WebP con canal alpha, 190.2 KB).
+El rostro del gato no debe quedar tapado por textos, orbitas ni botones.
 
 ## Copy (propuesta, requiere aprobacion de SIM)
 

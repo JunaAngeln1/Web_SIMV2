@@ -1,25 +1,28 @@
 # `public/assets/icons/` — Iconografia oficial
 
-## Que va aqui
+Los cuatro iconos/badge de la ruleta de beneficios, entregados por SIM.
 
-Los cuatro iconos de la ruleta de beneficios:
+## Archivos finales (desplegados)
 
-| Archivo               | Icono            | Uso                                |
-| --------------------- | ---------------- | ---------------------------------- |
-| `allies.svg`          | Apreton de manos | Beneficio "Red de aliados"         |
-| `veterinary-care.svg` | Estetoscopio     | Beneficio "Atencion veterinaria"   |
-| `pet-plans.svg`       | Huella           | Beneficio "Planes para tu mascota" |
-| `support.svg`         | Corazon          | Beneficio "Acompanamiento"         |
+| Archivo               | Icono             | Tamano | Estado                           |
+| --------------------- | ----------------- | ------ | -------------------------------- |
+| `allies.svg`          | Aprieto de manos  | 5.4 KB | Limpio (metadata C2PA eliminada) |
+| `veterinary-care.svg` | Estetoscopio      | 0.9 KB | Limpio                           |
+| `pet-plans.svg`       | Huella            | 0.7 KB | Limpio                           |
+| `support.svg`         | Corazon con pulso | 1.4 KB | Limpio                           |
 
-## Estado
+## Caracteristicas tecnicas
 
-**Todos pendientes de SIM.** Si no llegan, la alternativa inmediata es el set
-lineal de `lucide-react` (`Handshake`, `Stethoscope`, `PawPrint`, `Heart`), que
-cumple la regla de iconografia coherente y no requiere instalacion adicional.
+- SVG con `viewBox="0 0 96 96"`, sin dimensiones `width`/`height` declaradas
+  (se controlan desde CSS).
+- Fondo azul institucional (`#0960A1`) + glifo blanco (`#fff`) dentro de un
+  circulo mas claro (`#F2F6FA`).
+- Ninguno usa `url(#...)` ni degradados: son colores planos, faciles de pintar
+  con `currentColor` si se desea.
+- Tamano renderizado recomendado: **28–36 px** en tarjetas de beneficios.
 
-## Convenciones
+## Qué NO va aqui
 
-- SVG con `stroke` linear, grosor visual similar, sin relleno solido.
-- `currentColor` en los trazos para que hereden el color del contexto.
-- Tamano renderizado: 28–36 px en tarjetas de beneficios, 18–24 px en botones.
-- No mezclar emojis, iconos 3D y lineales en la misma interfaz.
+- No se añaden iconos lineales de `lucide-react` para reemplazar estos.
+- La regla de "no mezclar estilos de iconos" de `sim-diseno` se cumple: estos
+  badges se usan en la ruleta; Lucide se reserva para navegacion y acciones.

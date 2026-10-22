@@ -27,12 +27,14 @@ con el detalle de su contenido; esta es la vista general.
 
 ## `public/assets/`
 
-| Ruta                         | Que va ahi                                   |
-| ---------------------------- | -------------------------------------------- |
-| `public/assets/`             | Logo oficial, gato protagonista, favicon     |
-| `public/assets/icons/`       | 4 iconos SVG de los beneficios de la ruleta  |
-| `public/assets/images/`      | Fotografias autorizadas de Nosotros y Planes |
-| `public/assets/images/news/` | Imagenes 16:9 de las noticias                |
+| Ruta                         | Que va ahi                                 |
+| ---------------------------- | ------------------------------------------ |
+| `public/assets/`             | Logo oficial, gato protagonista, favicons  |
+| `public/assets/icons/`       | 4 badges SVG oficiales de los beneficios   |
+| `public/assets/images/`      | Fotografias autorizadas de Nosotros        |
+| `public/assets/images/news/` | Placeholders 16:9 SVG de las noticias      |
+| `assets-original/`           | Material entregado por SIM (no desplegado) |
+| `scripts/`                   | Pipeline de optimizacion de assets         |
 
 ## Orden de implementacion (Fase 1 en adelante)
 
@@ -43,8 +45,9 @@ con el detalle de su contenido; esta es la vista general.
    Indicadores → Aliados → Noticias → CTA final.
 5. **Paginas internas** — `src/pages/Planes`, `Nosotros`, `Noticias`, `Contacto`.
 6. **Formulario** — validacion con `zod` y envio a `VITE_FORM_ENDPOINT`.
-7. **SEO basico** — metadatos por ruta, `sitemap.xml`, `robots.txt`, Open Graph.
-8. **QA** — 360 / 390 / 768 / 1024 / 1440 px, teclado, reduced-motion, consola.
+7. **Assets** — ejecutar `npm run assets:optimize` y `npm run assets:placeholders` para generar derivados y placeholders.
+8. **SEO basico** — metadatos por ruta, `sitemap.xml`, `robots.txt`, Open Graph.
+9. **QA** — 360 / 390 / 768 / 1024 / 1440 px, teclado, reduced-motion, consola.
 
 ## Reglas permanentes
 

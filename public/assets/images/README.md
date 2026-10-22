@@ -1,22 +1,24 @@
 # `public/assets/images/` — Fotografias autorizadas
 
-## Que va aqui
+## Archivos finales (desplegados)
 
-| Ruta objetivo                | Seccion        | Nota                                         |
-| ---------------------------- | -------------- | -------------------------------------------- |
-| `about-veterinary-team.webp` | Nosotros (3.3) | Fotografia real de mascota o profesional.    |
-| `plans/...`                  | Planes         | Imagenes de apoyo de planes, si hacen falta. |
+| Ruta              | Contenido                      | Tamano  | Notas                                                  |
+| ----------------- | ------------------------------ | ------- | ------------------------------------------------------ |
+| `about-team.webp` | Bulldog frances, vista frontal | 16.3 KB | Frame 0 del WebP animado original. Seccion "Nosotros". |
+| `about-pet.webp`  | Gato atigrado mirando al cielo | 31.9 KB | Frame 0 del WebP animado original. Seccion "Nosotros". |
 
 ## Que NO va aqui
 
-- Fotos de noticias: van en `images/news/`.
-- El gato protagonista: va en `public/assets/` (raiz), porque se usa superpuesto
-  al panel azul del hero.
-- Imagenes generadas, de stock sin licencia o sin autorizacion de SIM.
+- El gato protagonista del hero: vive en `public/assets/` (raiz), como
+  `sim-hero-cat.webp`.
+- Imagenes de noticias: van en `images/news/`.
+- Fotografia de equipo veterinario real: esta carpeta guarda un marcador de
+  posicion; cuando SIM entregue la foto autorizada, se sustituye con el mismo
+  nombre.
 
-## Convenciones
+## Estado
 
-- Formato `.webp`; `.png` solo si se necesita transparencia real.
-- Proporcion 16:9 en las tarjetas de noticias; 3:2 o 4:3 en bloques de texto.
-- **No repetir la misma fotografia** en distintas secciones.
-- Optimizar antes de integrar para evitar saltos de layout.
+Las dos imagenes actuales son **marcadores de posicion** derivados de los
+WebP animados entregados por SIM (frame 0 extraído, compresión estática).
+Representan a una mascota y un perro, pero **no son el equipo veterinario
+autorizado**. Solicitar a SIM la fotografia real antes de publicar.

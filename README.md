@@ -64,10 +64,25 @@ Copia `.env.example` a `.env.local` (no se versiona).
 | `public/assets/README.md` | Inventario de assets pendientes de SIM                                        |
 | `Agentes/`                | Skills del sistema S.I.M. (especificacion, arquitectura, diseno)              |
 
+## Estado de los assets
+
+Todos los assets obligatorios para la v1 estan cubiertos:
+
+| Categoria            | Estado      | Detalle                                                                    |
+| -------------------- | ----------- | -------------------------------------------------------------------------- |
+| Logo                 | Recibido    | Simbolo oficial (cruz + mascotas) en `public/assets/sim-logo.svg`          |
+| Gato protagonista    | Recibido    | Con transparencia real en `public/assets/sim-hero-cat.webp`                |
+| Iconos de la ruleta  | Recibidos   | 4 badges oficiales en `public/assets/icons/`                               |
+| Fotografias Nosotros | Recibidas   | 2 fotos (frame 0 estatico) en `public/assets/images/`                      |
+| Imagenes noticias    | Placeholder | 3 SVG 16:9 en `public/assets/images/news/` (a reemplazar con fotos de SIM) |
+| Favicons             | Generados   | `favicon.svg`, `favicon-32.png`, `apple-touch-icon.png`                    |
+
+Material derivado de los originales, que se conservan en `assets-original/` y no
+se desplegan en produccion.
+
 ## Material pendiente de SIM
 
-Antes de publicar hacen falta: logo oficial, gato protagonista con transparencia
-real, 4 iconos SVG, fotografias autorizadas, **tarifas aprobadas** (para la
-calculadora de ahorro), confirmacion de las cifras (+4.000 / +250 / +3.500),
-canales oficiales de contacto, textos legales y enlace oficial de afiliacion.
-El detalle esta en `public/assets/README.md` y `src/data/README.md`.
+Antes de publicar hacen falta: **tarifas aprobadas** (para la calculadora de
+ahorro), confirmacion de las cifras (+4.000 / +250 / +3.500), canales oficiales
+de contacto, textos legales y enlace oficial de afiliacion. El detalle esta en
+`public/assets/README.md` y `src/data/README.md`.

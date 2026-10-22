@@ -30,3 +30,6 @@ Mientras no exista dato aprobado:
 - Exportar `const` tipados con `as const` o interfaces explicitas.
 - Las cifras de `indicators.ts` son las de la skill (+4.000 / +250 / +3.500);
   **confirmar vigencia antes de publicar**.
+- Los beneficios de `benefits.ts` llevan los nombres de archivo de icono de
+  `public/assets/icons/`: `allies.svg`, `veterinary-care.svg`, `pet-plans.svg`,
+  `support.svg`.
