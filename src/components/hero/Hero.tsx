@@ -1,10 +1,8 @@
 /**
  * src/components/hero/Hero.tsx
  *
- * Hero con diseño aplicado (sin animaciones de mouse todavía).
- * Composición: fondo exterior azul pálido, contenedor blanco redondeado,
- * panel azul degradado con gato a la derecha, texto a la izquierda,
- * beneficios en órbita estática alrededor del gato.
+ * Hero con fondo azul al 100% de la pantalla.
+ * Izquierda: texto y CTAs. Derecha: gato protagonista con órbita de beneficios.
  *
  * Copy sugerido (requiere aprobación de SIM).
  */
@@ -27,34 +25,28 @@ export default function Hero() {
       data-section="hero"
       role="region"
       aria-label="Hero principal"
-      className="relative min-h-[700px] sm:min-h-[760px] bg-azul-muy-claro overflow-hidden"
+      className="relative min-h-[700px] sm:min-h-[760px] bg-gradient-to-tr from-azul-institucional to-azul-cielo overflow-hidden"
     >
-      {/* Fondo exterior con formas orgánicas suaves */}
-      <div className="absolute inset-0 opacity-40 pointer-events-none" aria-hidden="true">
-        <svg className="w-full h-full" preserveAspectRatio="none" viewBox="0 0 1440 760">
-          <path
-            d="M0 0 C 600 100 1440 200 1440 400 C 1440 600 800 760 0 760 Z"
-            fill="currentColor"
-          />
-        </svg>
-      </div>
-
+      {/* Contenido centrado, ocupa todo el ancho disponible */}
       <div
         data-purpose="hero-inner"
-        className="relative z-10 mx-auto max-w-[1360px] px-4 sm:px-6 lg:px-8 h-full"
+        className="relative z-10 mx-auto max-w-[1360px] px-4 sm:px-6 lg:px-8 h-full min-h-[700px] sm:min-h-[760px]"
       >
-        <div className="grid lg:grid-cols-2 gap-8 lg:gap-16 items-center h-full min-h-[700px] sm:min-h-[760px]">
+        <div className="grid lg:grid-cols-2 gap-8 lg:gap-16 items-center h-full">
           {/* Columna de texto (42-48%) */}
-          <div data-purpose="hero-text" className="lg:col-span-1 flex flex-col justify-center">
+          <div
+            data-purpose="hero-text"
+            className="lg:col-span-1 flex flex-col justify-center text-blanco"
+          >
             <h1
               data-purpose="hero-title"
-              className="font-titulos font-semibold text-azul-institucional text-4xl sm:text-5xl lg:text-6xl tracking-tight leading-[1.05] mb-6"
+              className="font-titulos font-semibold text-4xl sm:text-5xl lg:text-6xl tracking-tight leading-[1.05] mb-6"
             >
               El bienestar de tu mascota, nuestra prioridad.
             </h1>
             <p
               data-purpose="hero-description"
-              className="text-lg sm:text-xl text-gris-azulado leading-relaxed mb-8 max-w-lg"
+              className="text-lg sm:text-xl text-azul-niebla leading-relaxed mb-8 max-w-lg"
             >
               Planes de atención veterinaria para perros y gatos, con el respaldo que tu familia
               necesita.
@@ -84,9 +76,7 @@ export default function Hero() {
             data-purpose="hero-mascot"
             className="lg:col-span-1 relative flex items-center justify-center"
           >
-            {/* Panel azul degradado */}
-            <div className="absolute inset-0 bg-gradient-to-tr from-azul-institucional to-azul-cielo rounded-[var(--radius-contenedor)] shadow-medio opacity-90" />
-            {/* Gato */}
+            {/* Gato sobre fondo azul */}
             <img
               src="/assets/sim-hero-cat.webp"
               alt="Gato protagonista del hero"
