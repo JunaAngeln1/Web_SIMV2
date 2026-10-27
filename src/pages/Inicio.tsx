@@ -13,8 +13,8 @@ export default function Inicio() {
     <main>
       <Header />
       <Hero />
-      <PlansSummary />
       <About />
+      <PlansSummary />
       <Indicators />
       <Allies />
       <News />

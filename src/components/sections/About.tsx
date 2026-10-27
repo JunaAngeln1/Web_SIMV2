@@ -1,11 +1,10 @@
 /**
  * src/components/sections/About.tsx
  *
- * Nosotros / ¿EPS para mascotas? con diseño aplicado.
+ * Nosotros / nombre completo de la marca con diseño aplicado.
  * Dos columnas: texto izquierda, fotografía derecha. En móvil, apilar.
  */
 import Container from '@/components/layout/Container'
-import SectionHeading from '@/components/ui/SectionHeading'
 
 export default function About() {
   return (
@@ -17,10 +16,25 @@ export default function About() {
       <Container>
         <div className="grid md:grid-cols-2 gap-8 lg:gap-12 items-center">
           <div data-purpose="about-text">
-            <SectionHeading title="¿EPS para mascotas?" subtitle="" />
+            {/* Titular: nombre completo de la marca a dos niveles (sim-diseno §2,
+                h2 en azul institucional sobre fondo azul muy claro) */}
+            <div data-purpose="about-heading" className="mb-8">
+              <p className="text-verde-sim uppercase tracking-wider text-xs font-semibold mb-2">
+                Nosotros
+              </p>
+              <h2 className="font-titulos tracking-tight leading-[1.15]">
+                <span className="block text-4xl sm:text-5xl font-bold text-azul-institucional">
+                  S.I.M.
+                </span>
+                <span className="block text-2xl sm:text-3xl font-semibold text-texto-principal">
+                  Servicios Integrales para Mascotas
+                </span>
+              </h2>
+              <p className="mt-3 text-lg text-gris-azulado">¿EPS para mascotas?</p>
+            </div>
             <p
               data-purpose="about-description"
-              className="mt-6 text-lg text-gris-azulado leading-relaxed"
+              className="text-lg text-gris-azulado leading-relaxed"
             >
               Sí. Somos una Empresa Promotora de Servicios de Salud para perros y gatos. Nuestra
               misión es garantizar la prestación de servicios veterinarios a través de nuestros

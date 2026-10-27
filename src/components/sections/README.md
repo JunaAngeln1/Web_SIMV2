@@ -1,14 +1,14 @@
 # `src/components/sections/` — Secciones de Inicio
 
-Orden de construccion segun `sim-arquitectura` §3:
-**Hero → Planes resumidos → Nosotros → Indicadores → Aliados → Noticias → CTA final.**
+Orden de construccion segun `sim-arquitectura` §3, con el orden actual
+aprobado: **Hero → Nosotros → Planes resumidos → Indicadores → Aliados → Noticias → CTA final.**
 
 ## Archivos previstos
 
 | Archivo            | Seccion | Contenido                                                        |
 | ------------------ | ------- | ---------------------------------------------------------------- |
-| `PlansSummary.tsx` | 3.2     | Tarjetas de planes con 3–5 beneficios y CTA "Ver plan"           |
-| `About.tsx`        | 3.3     | Texto de presentacion (EPS para mascotas) + foto autorizada      |
+| `PlansSummary.tsx` | 3.2     | Tarjetas de planes (colapsadas, CTA "Ver mas informacion")       |
+| `About.tsx`        | 3.3     | Titular "S.I.M. Servicios Integrales para Mascotas" + foto       |
 | `Indicators.tsx`   | 3.4     | "Conoce a la manada": +4.000 / +250 / +3.500                     |
 | `Allies.tsx`       | 3.5     | Franja de logos con movimiento pausado y controlable             |
 | `News.tsx`         | 3.6     | Tres noticias destacadas (imagen 16:9, categoria, titulo, fecha) |

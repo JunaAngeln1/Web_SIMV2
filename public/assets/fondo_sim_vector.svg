@@ -1,0 +1,74 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1800 900" width="1800" height="900" role="img" aria-labelledby="title desc">
+  <title id="title">Fondo decorativo verde para SIM</title>
+  <desc id="desc">Fondo vectorial abstracto con degradados verdes, formas orgánicas translúcidas, ondas lineales y detalles circulares.</desc>
+  <defs>
+    <linearGradient id="base" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#8fc900"/>
+      <stop offset="0.48" stop-color="#75bf00"/>
+      <stop offset="1" stop-color="#26952c"/>
+    </linearGradient>
+    <radialGradient id="glow" cx="52%" cy="18%" r="78%">
+      <stop offset="0" stop-color="#c8ef35" stop-opacity=".72"/>
+      <stop offset=".56" stop-color="#a5d51a" stop-opacity=".24"/>
+      <stop offset="1" stop-color="#48a928" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="circleFill" x1="0" y1="0" x2="0.8" y2="1">
+      <stop offset="0" stop-color="#dfff69" stop-opacity=".92"/>
+      <stop offset="1" stop-color="#8de9a5" stop-opacity=".58"/>
+    </linearGradient>
+    <clipPath id="clip"><rect width="1800" height="900"/></clipPath>
+    <g id="leftWaves" fill="none" stroke="#e8ff70" stroke-width="2.2" stroke-opacity=".86">
+      <path d="M-70 150 C120 150 130 270 205 350 S340 455 505 490 S650 560 660 690 S680 835 735 940"/>
+      <path d="M-70 164 C110 164 124 278 198 358 S334 465 494 501 S638 571 648 699 S670 843 724 940"/>
+      <path d="M-70 178 C100 178 118 286 191 367 S328 475 483 512 S626 582 636 708 S660 851 713 940"/>
+      <path d="M-70 192 C90 192 112 295 184 376 S322 485 472 523 S614 593 624 717 S650 859 702 940"/>
+      <path d="M-70 206 C80 206 106 303 177 385 S316 495 461 534 S602 604 612 726 S640 867 691 940"/>
+      <path d="M-70 220 C70 220 100 312 170 394 S310 505 450 545 S590 615 600 735 S630 875 680 940"/>
+      <path d="M-70 234 C60 234 94 320 163 403 S304 515 439 556 S578 626 588 744 S620 883 669 940"/>
+      <path d="M-70 248 C50 248 88 329 156 412 S298 525 428 567 S566 637 576 753 S610 891 658 940"/>
+    </g>
+    <g id="topRings" fill="none" stroke="#e8ff70" stroke-width="2.4" stroke-opacity=".8">
+      <ellipse cx="390" cy="-20" rx="225" ry="210"/>
+      <ellipse cx="390" cy="-20" rx="248" ry="232"/>
+      <ellipse cx="390" cy="-20" rx="271" ry="254"/>
+      <ellipse cx="390" cy="-20" rx="294" ry="276"/>
+      <ellipse cx="390" cy="-20" rx="317" ry="298"/>
+    </g>
+    <g id="rightWaves" fill="none" stroke="#e8ff70" stroke-width="2.3" stroke-opacity=".82">
+      <path d="M1120 940 C1160 790 1300 760 1400 700 S1490 610 1505 510 S1600 430 1840 380"/>
+      <path d="M1140 940 C1180 800 1315 770 1415 710 S1505 620 1520 520 S1615 440 1840 394"/>
+      <path d="M1160 940 C1200 810 1330 780 1430 720 S1520 630 1535 530 S1630 450 1840 408"/>
+      <path d="M1180 940 C1220 820 1345 790 1445 730 S1535 640 1550 540 S1645 460 1840 422"/>
+      <path d="M1200 940 C1240 830 1360 800 1460 740 S1550 650 1565 550 S1660 470 1840 436"/>
+      <path d="M1220 940 C1260 840 1375 810 1475 750 S1565 660 1580 560 S1675 480 1840 450"/>
+      <path d="M1240 940 C1280 850 1390 820 1490 760 S1580 670 1595 570 S1690 490 1840 464"/>
+      <path d="M1260 940 C1300 860 1405 830 1505 770 S1595 680 1610 580 S1705 500 1840 478"/>
+    </g>
+  </defs>
+  <g clip-path="url(#clip)">
+    <rect width="1800" height="900" fill="url(#base)"/>
+    <rect width="1800" height="900" fill="url(#glow)"/>
+    <path d="M-120 -60 H1700 C1600 160 1640 330 1500 480 C1330 660 1130 700 900 780 C600 885 260 820 -120 560 Z" fill="#b6df16" opacity=".28"/>
+    <path d="M-80 50 C210 120 300 340 570 480 S1040 710 1390 600 S1710 470 1900 580 L1900 940 L-80 940 Z" fill="#5dbb18" opacity=".28"/>
+    <path d="M-80 600 C200 810 520 800 760 900 H-80 Z" fill="#078f32" opacity=".68"/>
+    <circle cx="1640" cy="-20" r="310" fill="#187d21" opacity=".38"/>
+    <circle cx="1640" cy="-20" r="205" fill="#0d771f" opacity=".28"/>
+    <circle cx="1000" cy="480" r="235" fill="none" stroke="#65a91c" stroke-width="3" opacity=".18"/>
+    <circle cx="1000" cy="480" r="218" fill="none" stroke="#65a91c" stroke-width="3" opacity=".16"/>
+    <circle cx="1000" cy="480" r="201" fill="none" stroke="#65a91c" stroke-width="3" opacity=".14"/>
+    <use href="#topRings"/>
+    <use href="#leftWaves"/>
+    <use href="#rightWaves"/>
+    <circle cx="1350" cy="90" r="41" fill="none" stroke="#eaff83" stroke-width="6" opacity=".8"/>
+    <circle cx="1555" cy="515" r="54" fill="url(#circleFill)"/>
+    <circle cx="150" cy="810" r="43" fill="url(#circleFill)"/>
+    <g fill="#fffde9" opacity=".94">
+      <circle cx="1670" cy="110" r="3"/><circle cx="1700" cy="110" r="3"/><circle cx="1730" cy="110" r="3"/>
+      <circle cx="1670" cy="145" r="3"/><circle cx="1700" cy="145" r="3"/><circle cx="1730" cy="145" r="3"/>
+      <circle cx="1670" cy="180" r="3"/><circle cx="1700" cy="180" r="3"/><circle cx="1730" cy="180" r="3"/>
+      <circle cx="1670" cy="215" r="3"/><circle cx="1700" cy="215" r="3"/><circle cx="1730" cy="215" r="3"/>
+      <circle cx="1670" cy="250" r="3"/><circle cx="1700" cy="250" r="3"/><circle cx="1730" cy="250" r="3"/>
+      <circle cx="1080" cy="705" r="4.5"/><circle cx="1110" cy="705" r="4.5"/><circle cx="1140" cy="705" r="4.5"/><circle cx="1170" cy="705" r="4.5"/>
+    </g>
+  </g>
+</svg>

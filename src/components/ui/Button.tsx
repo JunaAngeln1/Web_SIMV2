@@ -14,9 +14,9 @@ const buttonVariants = cva(
   {
     variants: {
       variant: {
-        // Primario: verde #77c100, texto blanco, radio píldora
+        // Primario: verde #80bcdf, texto blanco, radio píldora
         primary:
-          'bg-verde-sim text-white hover:bg-[#6aa112] focus-visible:ring-verde-sim px-6 py-2.5 rounded-full',
+          'bg-verde-sim text-white hover:bg-[#3a8bc8] focus-visible:ring-verde-sim px-6 py-2.5 rounded-full',
         // Secundario: transparente, borde azul institucional
         secondary:
           'bg-transparent border border-azul-institucional text-azul-institucional hover:bg-azul-institucional hover:text-white focus-visible:ring-azul-institucional px-6 py-2.5 rounded-md',

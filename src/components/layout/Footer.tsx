@@ -48,7 +48,7 @@ export default function Footer() {
                 <li key={item.href}>
                   <a
                     href={item.href}
-                    className="text-azul-niebla hover:text-blanco transition-colors"
+                    className="text-azul-niebla hover:text-blanco hover:underline underline-offset-2 transition-colors"
                   >
                     {item.label}
                   </a>
@@ -76,17 +76,26 @@ export default function Footer() {
             </h3>
             <ul data-purpose="footer-legales-list" className="space-y-2 text-sm text-azul-niebla">
               <li>
-                <a href="#" className="hover:text-blanco transition-colors">
+                <a
+                  href="#"
+                  className="hover:text-blanco hover:underline underline-offset-2 transition-colors"
+                >
                   Términos y condiciones
                 </a>
               </li>
               <li>
-                <a href="#" className="hover:text-blanco transition-colors">
+                <a
+                  href="#"
+                  className="hover:text-blanco hover:underline underline-offset-2 transition-colors"
+                >
                   Política de privacidad
                 </a>
               </li>
               <li>
-                <a href="#" className="hover:text-blanco transition-colors">
+                <a
+                  href="#"
+                  className="hover:text-blanco hover:underline underline-offset-2 transition-colors"
+                >
                   Tratamiento de datos personales
                 </a>
               </li>

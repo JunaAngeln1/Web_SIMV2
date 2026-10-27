@@ -4,8 +4,8 @@
 
 | Archivo        | Ruta        | Contenido                                                                                  |
 | -------------- | ----------- | ------------------------------------------------------------------------------------------ |
-| `Inicio.tsx`   | `/`         | Hero, planes resumidos, nosotros, indicadores, aliados, noticias, CTA final                |
-| `Planes.tsx`   | `/planes`   | Comparacion, beneficios, condiciones, terminos, exclusiones y calculadora de ahorro        |
+| `Inicio.tsx`   | `/`         | Hero, nosotros, planes resumidos, indicadores, aliados, noticias, CTA final                |
+| `Planes.tsx`   | `/planes`   | Comparativa de los planes Elite, Plus y Super Premium y calculadora de ahorro              |
 | `Nosotros.tsx` | `/nosotros` | Que es SIM, mision, propuesta de valor, cifras, equipo o historia si hay material aprobado |
 | `Noticias.tsx` | `/noticias` | Consejos de cuidado, prevencion, novedades y contenido educativo                           |
 | `Contacto.tsx` | `/contacto` | Canales oficiales, formulario de informacion y enlace al proceso de afiliacion             |

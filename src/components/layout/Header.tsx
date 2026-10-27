@@ -19,7 +19,7 @@ export default function Header() {
     <header
       data-section="header"
       role="banner"
-      className="sticky top-0 z-40 bg-blanco border-b border-borde-suave shadow-suave"
+      className="sticky top-0 z-40 bg-blanco shadow-[0_1px_2px_rgba(7,52,91,0.06)]"
     >
       <div className="mx-auto max-w-[1360px] px-4 sm:px-6 lg:px-8">
         <div className="flex h-[80px] items-center justify-between">
@@ -33,9 +33,9 @@ export default function Header() {
             <img
               src="/assets/sim-logo.svg"
               alt="S.I.M. — Servicios Integrales para Mascotas"
-              className="h-10 w-auto"
+              className="h-[40px] w-auto"
             />
-            <span className="font-titulos font-semibold text-azul-institucional text-lg tracking-tight">
+            <span className="font-titulos font-bold text-azul-institucional text-xl tracking-tight">
               S.I.M.
             </span>
           </a>
@@ -44,23 +44,23 @@ export default function Header() {
           <nav
             data-purpose="nav"
             aria-label="Navegación principal"
-            className="hidden md:flex items-center gap-6"
+            className="hidden md:flex items-center gap-8"
           >
-            <ul data-purpose="nav-list" className="flex items-center gap-6 text-sm font-medium">
+            <ul data-purpose="nav-list" className="flex items-center gap-8 text-sm font-medium">
               {[
                 { href: '/', label: 'Inicio' },
-                { href: '/planes', label: 'Planes' },
                 { href: '/nosotros', label: 'Nosotros' },
+                { href: '/planes', label: 'Planes' },
                 { href: '/noticias', label: 'Noticias' },
               ].map((item) => (
                 <li key={item.href}>
                   <a
                     href={item.href}
                     className={[
-                      'text-texto-principal transition-colors',
+                      'px-1 py-2 text-texto-principal underline-offset-2 decoration-2 decoration-azul-institucional transition-colors',
                       isActive(item.href)
-                        ? 'text-azul-institucional underline underline-offset-2 decoration-azul-institucional decoration-2'
-                        : 'hover:text-azul-institucional',
+                        ? 'text-azul-institucional underline'
+                        : 'hover:text-azul-institucional hover:underline',
                     ].join(' ')}
                   >
                     {item.label}
@@ -77,11 +77,16 @@ export default function Header() {
               data-purpose="whatsapp"
               target="_blank"
               rel="noopener noreferrer"
-              className="hidden sm:flex items-center gap-2 text-sm font-medium text-azul-institucional hover:text-verde-sim"
+              className="hidden sm:flex items-center gap-2 text-sm font-medium text-azul-institucional hover:text-verde-sim hover:underline underline-offset-2"
             >
               <span className="text-azul-institucional">WhatsApp oficial</span>
             </a>
-            <Button variant="primary" size="lg" data-purpose="cta-afiliar">
+            <Button
+              variant="primary"
+              size="default"
+              data-purpose="cta-afiliar"
+              className="rounded-[10px]!"
+            >
               Afiliar a mi mascota
             </Button>
           </div>
