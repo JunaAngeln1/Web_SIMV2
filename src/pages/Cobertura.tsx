@@ -1,10 +1,12 @@
 import Card from '@/components/ui/Card'
 import Container from '@/components/layout/Container'
+import Header from '@/components/layout/Header'
 import SectionHeading from '@/components/ui/SectionHeading'
 
 export default function Cobertura() {
   return (
-    <main data-page="cobertura" className="py-16 sm:py-20">
+    <main data-page="cobertura" className="pt-[80px] sm:pt-[96px] pb-16 sm:pb-20">
+      <Header />
       <Container>
         <SectionHeading title="Cobertura" subtitle="Zonas y alcance de los planes de S.I.M." />
 

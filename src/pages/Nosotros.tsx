@@ -1,10 +1,11 @@
-import Card from '@/components/ui/Card'
 import Container from '@/components/layout/Container'
+import Header from '@/components/layout/Header'
 import SectionHeading from '@/components/ui/SectionHeading'
 
 export default function Nosotros() {
   return (
-    <main data-page="nosotros" className="py-16 sm:py-20 bg-azul-muy-claro">
+    <main data-page="nosotros" className="pt-[80px] sm:pt-[96px] pb-16 sm:pb-20 bg-azul-muy-claro">
+      <Header />
       <Container>
         <SectionHeading
           title="Nosotros"
@@ -13,12 +14,18 @@ export default function Nosotros() {
 
         <section data-section="nosotros-institucional" aria-label="Nosotros" className="mt-10">
           <div data-purpose="nosotros-contenido">
-            <Card padded>
-              <p data-pending="true" className="text-gris-azulado">
-                Contenido institucional pendiente de material aprobado por SIM: historia, equipo,
-                cifras verificadas y fotografías autorizadas.
-              </p>
-            </Card>
+            <p className="text-gris-azulado">
+              S.I.M.
+            </p>
+            <p className="mt-2 text-lg font-titulos text-azul-institucional">
+              Servicios Integrales para Mascotas
+            </p>
+            <p className="mt-4 text-base text-gris-azulado">
+              ¿EPS para mascotas?
+            </p>
+            <p className="mt-6 leading-relaxed text-lg text-gris-azulado">
+              Sí. Somos una Empresa Promotora de Servicios de Salud para perros y gatos. Nuestra misión es garantizar la prestación de servicios veterinarios a través de nuestros planes de atención y promover los diferentes servicios que se prestan en el sector veterinario del país. Sin importar su edad, raza ni preexistencias.
+            </p>
           </div>
         </section>
       </Container>

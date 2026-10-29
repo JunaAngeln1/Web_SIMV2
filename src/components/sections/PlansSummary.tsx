@@ -117,7 +117,7 @@ export default function PlansSummary() {
       aria-label="Planes resumidos"
       className="py-16 sm:py-20 bg-blanco relative overflow-hidden"
     >
-      <Container narrow>
+      <Container>
         <SectionHeading
           title="Planes de atención para tu mascota"
           subtitle="Elige el plan que mejor se adapte a las necesidades de tu perro o gato."

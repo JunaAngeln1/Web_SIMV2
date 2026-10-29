@@ -31,7 +31,7 @@ export default function IconBadge({
 
   return (
     <div className={['flex flex-col items-center gap-3', className].filter(Boolean).join(' ')}>
-      <div className="relative flex items-center justify-center w-14 h-14">
+      <div className="relative flex items-center justify-center w-13 h-13">
         {/* Halo de color de acento detrás del círculo del icono */}
         {accent && (
           <div
@@ -39,13 +39,13 @@ export default function IconBadge({
             aria-hidden="true"
           />
         )}
-        <div className="relative z-10 flex items-center justify-center w-12 h-12 rounded-full bg-white border border-borde-suave shadow-suave">
-          <img src={icon} alt="" className="w-8 h-8" />
+        <div className="relative z-10 flex items-center justify-center w-11 h-11 rounded-full bg-white border border-borde-suave shadow-suave">
+          <img src={icon} alt="" className="w-10 h-10" />
         </div>
       </div>
-      <span className="text-sm font-medium text-texto-principal">{label}</span>
+      <span className="text-base font-medium text-texto-principal">{label}</span>
       {value && (
-        <span ref={valueRef} className={`text-[1.25rem] font-titulos font-semibold ${accentText}`}>
+        <span ref={valueRef} className={`text-lg font-bold text-azul-institucional ${accentText}`}>
           {value}
         </span>
       )}

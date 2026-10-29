@@ -48,14 +48,13 @@ function IndicatorCard({ ind, index, visible }: IndicatorProps) {
     <div
       data-purpose="indicator-card"
       className={[
-        'flex flex-col items-center rounded-[var(--radius-tarjeta)] border border-borde-suave bg-white p-6 shadow-suave',
-        'transition-all duration-500 ease-out',
+        'flex flex-col items-center rounded-[var(--radius-tarjeta)] border border-borde-suave bg-white p-6 shadow-suave transition-colors duration-300 ease-out',
         visible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-16',
       ].join(' ')}
       style={{ transitionDelay: `${delay}ms` }}
     >
-      <IconBadge icon={ind.icon} label={ind.label} value="0" accent={ind.accent} valueRef={ref} />
-      <div className="mt-2 w-full" />
+      <IconBadge icon={ind.icon} label={ind.label} value={String(ind.value)} accent={ind.accent} valueRef={ref} />
+      {/* Espacio semántico para distribución equilibrada del contenido */}
     </div>
   )
 }

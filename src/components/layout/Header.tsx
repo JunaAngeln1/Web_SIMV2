@@ -19,7 +19,7 @@ export default function Header() {
     <header
       data-section="header"
       role="banner"
-      className="sticky top-0 z-40 bg-blanco shadow-[0_1px_2px_rgba(7,52,91,0.06)]"
+      className="w-full fixed top-0 z-40 bg-blanco shadow-[0_1px_2px_rgba(7,52,91,0.06)]"
     >
       <div className="mx-auto max-w-[1360px] px-4 sm:px-6 lg:px-8">
         <div className="flex h-[80px] items-center justify-between">

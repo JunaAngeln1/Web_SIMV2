@@ -10,7 +10,7 @@ import Footer from '@/components/layout/Footer'
 
 export default function Inicio() {
   return (
-    <main>
+    <main className="pt-[80px]">
       <Header />
       <Hero />
       <About />
