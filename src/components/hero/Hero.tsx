@@ -11,73 +11,38 @@ import Button from '@/components/ui/Button'
 import { ArrowRight } from 'lucide-react'
 
 /**
- * Posiciones calculadas para que el CENTRO de cada icono caiga exactamente
- * sobre la órbita (elipse centrada en el gato: cx=1120, cy=280, rx=380, ry=250
- * en el sistema de referencia 1440×520).
- *
- * Centro del icono = (left del chip + 8px, top del chip + 26px), porque el
- * icono está en `-left-5` (-20px) con ancho `w-14` (56px) y centrado vertical.
- *
- * Ángulos usados sobre la elipse: 230°, 195°, 165°, 130° (arco izquierdo).
+ * Chips de beneficios del hero: disposición en arco suave alrededor del gato,
+ * sin elipses ni puntos decorativos. Posiciones en % sobre el panel del hero.
  */
 const benefits = [
   {
     id: 'aliados',
     label: 'Red de aliados',
     icon: '/assets/icons/allies.svg',
-    // θ=230° → icono (875.7, 88.5) → chip (867.7, 62.5) = (60.3%, 12%)
-    left: '60.3%',
-    top: '12%',
+    left: '62%',
+    top: '14%',
   },
   {
     id: 'veterinary-care',
     label: 'Atención veterinaria',
     icon: '/assets/icons/veterinary-care.svg',
-    // θ=195° → icono (753, 215.3) → chip (745, 189.3) = (51.7%, 36.4%)
-    left: '51.7%',
-    top: '36.4%',
+    left: '54%',
+    top: '36%',
   },
   {
     id: 'pet-plans',
     label: 'Planes para tu mascota',
     icon: '/assets/icons/pet-plans.svg',
-    // θ=165° → icono (753, 344.7) → chip (745, 318.7) = (51.7%, 61.3%)
-    left: '51.7%',
-    top: '61.3%',
+    left: '54%',
+    top: '62%',
   },
   {
     id: 'support',
     label: 'Acompañamiento',
     icon: '/assets/icons/support.svg',
-    // θ=130° → icono (875.7, 471.5) → chip (867.7, 445.5) = (60.3%, 85.7%)
-    left: '60.3%',
-    top: '85.7%',
+    left: '62%',
+    top: '84%',
   },
-]
-
-/**
- * Puntos decorativos sobre las dos elipses (centro 1120,280 en 1440×520).
- * Posición = centro del punto en px sobre el sistema de referencia, convertida
- * a % (x/1440, y/520). Ángulos elegidos fuera de las zonas ocupadas por chips:
- * elipse principal (rx=380, ry=250) e interior (rx=290, ry=190).
- */
-const orbitDots = [
-  // Elipse principal — arco superior (lejos de los chips)
-  { left: '70.9%', top: '7.4%', size: 'w-2 h-2', tone: 'bg-white/90' }, // θ=255°
-  { left: '77.8%', top: '5.8%', size: 'w-2.5 h-2.5', tone: 'bg-[#b7e36b]' }, // θ=270°
-  { left: '84.6%', top: '7.4%', size: 'w-2 h-2', tone: 'bg-[#8fd0ef]' }, // θ=285°
-  // Elipse principal — flanco izquierdo (entre chips 2/3 y bordes)
-  { left: '54.9%', top: '29.8%', size: 'w-1.5 h-1.5', tone: 'bg-white/70' }, // θ=210°
-  { left: '54.9%', top: '77.9%', size: 'w-1.5 h-1.5', tone: 'bg-white/70' }, // θ=150°
-  // Elipse principal — arco inferior
-  { left: '64.6%', top: '95.5%', size: 'w-2 h-2', tone: 'bg-[#8fd0ef]' }, // θ=120°
-  { left: '91%', top: '95.5%', size: 'w-2 h-2', tone: 'bg-white/90' }, // θ=60°
-  // Elipse interior
-  { left: '77.8%', top: '17.3%', size: 'w-1.5 h-1.5', tone: 'bg-white/80' }, // θ=270°
-  { left: '87.8%', top: '22.2%', size: 'w-2 h-2', tone: 'bg-[#b7e36b]' }, // θ=300°
-  { left: '77.8%', top: '90.4%', size: 'w-1.5 h-1.5', tone: 'bg-white/80' }, // θ=90°
-  { left: '62.4%', top: '30.3%', size: 'w-1.5 h-1.5', tone: 'bg-[#8fd0ef]/80' }, // θ=220°
-  { left: '62.4%', top: '77.3%', size: 'w-1.5 h-1.5', tone: 'bg-[#8fd0ef]/80' }, // θ=140°
 ]
 
 export default function Hero() {
@@ -154,61 +119,6 @@ export default function Hero() {
         className="absolute right-0 bottom-0 z-10 w-full max-w-[720px] h-[92%] object-contain object-right object-bottom"
       />
 
-      {/*
-        Órbitas alrededor del gato (centro ≈ 1120,280 sobre 1440×520).
-        La elipse principal (rx=380, ry=250) pasa por el centro de los iconos;
-        la interior (rx=290, ry=190) es decorativa. preserveAspectRatio="none"
-        para que escale con el panel igual que los chips (%).
-      */}
-      <svg
-        data-purpose="benefits-orbit"
-        className="absolute inset-0 w-full h-full z-20 pointer-events-none"
-        viewBox="0 0 1440 520"
-        preserveAspectRatio="none"
-        aria-hidden="true"
-      >
-        <ellipse
-          cx="1120"
-          cy="280"
-          rx="380"
-          ry="250"
-          fill="none"
-          stroke="white"
-          strokeOpacity="0.5"
-          strokeWidth="1"
-          vectorEffect="non-scaling-stroke"
-        />
-        <ellipse
-          cx="1120"
-          cy="280"
-          rx="290"
-          ry="190"
-          fill="none"
-          stroke="white"
-          strokeOpacity="0.3"
-          strokeWidth="1"
-          vectorEffect="non-scaling-stroke"
-        />
-      </svg>
-
-      {/*
-        Puntos decorativos sobre las órbitas.
-        Se dibujan como divs (no círculos SVG) porque preserveAspectRatio="none"
-        deformaría los círculos. Posiciones = puntos de cada elipse en el sistema
-        1440×520 convertidos a %, elegidos fuera de las zonas ocupadas por chips.
-      */}
-      {orbitDots.map((d, i) => (
-        <div
-          key={`orbit-dot-${i}`}
-          aria-hidden="true"
-          className={[
-            'absolute z-20 rounded-full -translate-x-1/2 -translate-y-1/2 pointer-events-none',
-            d.size,
-            d.tone,
-          ].join(' ')}
-          style={{ left: d.left, top: d.top }}
-        />
-      ))}
       {/* Chips de beneficios (z-index 3, sobre la órbita) */}
       {benefits.map((b) => (
         <button

@@ -44,6 +44,7 @@ export default function Footer() {
                 { href: '/nosotros', label: 'Nosotros' },
                 { href: '/noticias', label: 'Noticias' },
                 { href: '/contacto', label: 'Contacto' },
+                { href: '/cobertura', label: 'Cobertura' },
               ].map((item) => (
                 <li key={item.href}>
                   <a

@@ -52,6 +52,7 @@ export default function Header() {
                 { href: '/nosotros', label: 'Nosotros' },
                 { href: '/planes', label: 'Planes' },
                 { href: '/noticias', label: 'Noticias' },
+                { href: '/cobertura', label: 'Cobertura' },
               ].map((item) => (
                 <li key={item.href}>
                   <a
@@ -72,15 +73,6 @@ export default function Header() {
 
           {/* Acciones */}
           <div data-purpose="header-actions" className="flex items-center gap-3">
-            <a
-              href="https://wa.me/"
-              data-purpose="whatsapp"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="hidden sm:flex items-center gap-2 text-sm font-medium text-azul-institucional hover:text-verde-sim hover:underline underline-offset-2"
-            >
-              <span className="text-azul-institucional">WhatsApp oficial</span>
-            </a>
             <Button
               variant="primary"
               size="default"

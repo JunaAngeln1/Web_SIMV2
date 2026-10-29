@@ -6,14 +6,17 @@
  * La profundidad es jerárquica: no sombra intensa en todas las tarjetas.
  */
 
+import React from 'react'
+
 interface CardProps extends React.HTMLAttributes<HTMLDivElement> {
   padded?: boolean
   hover?: boolean
 }
 
-export default function Card({ className, children, padded = true, hover = true }: CardProps) {
-  return (
+const Card = React.forwardRef<HTMLDivElement, CardProps>(
+  ({ className, children, padded = true, hover = true }, ref) => (
     <div
+      ref={ref}
       className={[
         'bg-blanco border border-borde-suave rounded-[var(--radius-tarjeta)]',
         'shadow-suave transition-shadow duration-200 ease-out',
@@ -26,5 +29,9 @@ export default function Card({ className, children, padded = true, hover = true 
     >
       {children}
     </div>
-  )
-}
+  ),
+)
+
+Card.displayName = 'Card'
+
+export default Card

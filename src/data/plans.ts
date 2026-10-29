@@ -22,6 +22,8 @@ export interface Plan {
   tagline: string
   /** Diferenciadores del plan (lo que lo distingue de los otros). */
   highlights: string[]
+  /** Marca el plan destacado (Más vendido). */
+  featured?: boolean
 }
 
 /**
@@ -57,6 +59,7 @@ export const plans: Plan[] = [
     name: 'Plan Plus',
     price: '$102.000',
     period: '/mes',
+    featured: true,
     tagline:
       'La solución ideal para prevenir enfermedades en tu peludito antes de que ocurran y sin pagar de más.',
     highlights: [

@@ -1,11 +1,12 @@
 /**
  * src/components/sections/PlansSummary.tsx
  *
- * Sección de planes resumidos del inicio: 3 tarjetas compactas (nombre,
- * precio mensual y descripción) que se despliegan con «Ver más información»
- * para mostrar sus diferenciadores. Los beneficios comunes se declaran una
- * sola vez. Datos aprobados por SIM desde @/data/plans.
+ * Sección de planes resumidos del inicio: 3 tarjetas con color de acento
+ * distinto, entrada escalonada al entrar en pantalla y acordeón de
+ * diferenciadores. Los datos vienen de @/data/plans (aprobados por SIM);
+ * el plan Plus lleva la insignia "Más vendido".
  */
+
 import { useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 import { Check, ChevronDown, ChevronUp } from 'lucide-react'
@@ -14,41 +15,74 @@ import Container from '@/components/layout/Container'
 import SectionHeading from '@/components/ui/SectionHeading'
 import Button from '@/components/ui/Button'
 import { plans, commonBenefits, plansFootnote, type Plan } from '@/data/plans'
+import { useInView } from '@/hooks/useInView'
 
-/**
- * Tarjeta individual de plan: colapsada muestra nombre, precio y descripción;
- * el botón alterna la lista de diferenciadores (acordeón inline).
- */
-function PlanCard({ plan }: { plan: Plan }) {
+/** Color de acento por plan (tokens del sistema, sin literales sueltos). */
+const ACCENT: Record<Plan['id'], string> = {
+  elite: 'azul-cielo',
+  plus: 'verde-sim',
+  'super-premium': 'azul-institucional',
+}
+
+type PlanCardProps = {
+  plan: Plan
+  delay: number
+}
+
+function PlanCard({ plan, delay }: PlanCardProps) {
+  const { ref, visible } = useInView()
   const [open, setOpen] = useState(false)
   const listId = `plan-benefits-${plan.id}`
+  const accent = ACCENT[plan.id]
+  const featured = plan.featured
 
-  // Sin h-full: cada tarjeta crece solo con su propio contenido
   return (
-    <Card hover className="flex flex-col">
+    <Card
+      ref={ref}
+      hover
+      className={[
+        'flex flex-col group relative z-0 border-borde-suave',
+        `border-${accent}`,
+        'transition-all duration-500 ease-out',
+        visible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-16',
+        featured ? 'ring-2 ring-verde-sim/20 sm:hover:scale-[1.02]' : '',
+      ].join(' ')}
+      style={{ transitionDelay: `${delay}ms` }}
+    >
+      {/* Insignia "Más vendido" solo en Plus */}
+      {featured && (
+        <span
+          data-purpose="plan-badge"
+          className="absolute -top-[6px] left-1/2 -translate-x-1/2 z-10 bg-verde-sim text-white text-[10px] font-bold px-2 py-0.5 rounded-full whitespace-nowrap"
+        >
+          Más vendido
+        </span>
+      )}
+
       <h3
         data-purpose="plan-name"
-        className="font-titulos font-semibold text-lg text-azul-institucional mb-1"
+        className="relative z-10 font-titulos font-semibold text-lg text-azul-institucional mb-1 pt-4"
       >
         {plan.name}
       </h3>
       <p data-purpose="plan-price" className="mb-3">
-        <span className="font-titulos text-2xl font-bold text-texto-principal">{plan.price}</span>
+        <span className={`font-titulos text-2xl font-bold text-${accent}`}>{plan.price}</span>
         <span className="text-sm text-gris-azulado"> {plan.period}</span>
       </p>
-      <p data-purpose="plan-tagline" className="text-sm text-gris-azulado mb-4">
+      <p data-purpose="plan-tagline" className="text-sm text-gris-azulado mb-4 relative z-10">
         {plan.tagline}
       </p>
       <ul
         id={listId}
         data-purpose="plan-benefits"
-        className={['flex-1 space-y-2 text-sm text-gris-azulado mb-6', open ? '' : 'hidden'].join(
-          ' ',
-        )}
+        className={[
+          'flex-1 space-y-2 text-sm text-gris-azulado mb-6 relative z-10',
+          open ? '' : 'hidden',
+        ].join(' ')}
       >
         {plan.highlights.map((b) => (
           <li key={b} data-purpose="plan-benefit" className="flex items-start gap-2">
-            <Check className="mt-0.5 w-4 h-4 shrink-0 text-verde-sim" aria-hidden="true" />
+            <Check className={`mt-0.5 w-4 h-4 shrink-0 text-${accent}`} aria-hidden="true" />
             <span>{b}</span>
           </li>
         ))}
@@ -62,11 +96,13 @@ function PlanCard({ plan }: { plan: Plan }) {
         onClick={() => setOpen((v) => !v)}
       >
         {open ? 'Ver menos' : 'Ver más información'}
-        {open ? (
-          <ChevronUp className="ml-2 w-4 h-4" aria-hidden="true" />
-        ) : (
-          <ChevronDown className="ml-2 w-4 h-4" aria-hidden="true" />
-        )}
+        <span className="ml-2 w-4 h-4 shrink-0 transition-transform duration-300 ease-out">
+          {open ? (
+            <ChevronUp className="rotate-180" aria-hidden="true" />
+          ) : (
+            <ChevronDown aria-hidden="true" />
+          )}
+        </span>
       </Button>
     </Card>
   )
@@ -79,7 +115,7 @@ export default function PlansSummary() {
     <section
       data-section="planes-resumidos"
       aria-label="Planes resumidos"
-      className="py-16 sm:py-20 bg-blanco"
+      className="py-16 sm:py-20 bg-blanco relative overflow-hidden"
     >
       <Container narrow>
         <SectionHeading
@@ -91,8 +127,8 @@ export default function PlansSummary() {
             una la grilla estira las demás a su altura y parece que se abren
             todas a la vez. */}
         <div data-purpose="plans-grid" className="grid md:grid-cols-3 gap-6 items-start">
-          {plans.map((plan) => (
-            <PlanCard key={plan.id} plan={plan} />
+          {plans.map((plan, i) => (
+            <PlanCard key={plan.id} plan={plan} delay={i * 120} />
           ))}
         </div>
 
