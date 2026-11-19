@@ -24,6 +24,8 @@ export interface Plan {
   period: string
   /** Descripción corta del plan. */
   tagline: string
+  /** Ruta de la imagen del plan (perro/gato recortado). */
+  image: string
   /** Diferenciadores del plan (lo que lo distingue de los otros). */
   highlights: string[]
   /** Listado completo de beneficios oficiales (página /planes). */
@@ -51,6 +53,7 @@ export const plans: Plan[] = [
     name: 'Élite',
     price: '$63.000',
     period: '/mes',
+    image: '/assets/images/news/plan-elite-perro.webp',
     tagline:
       'Asistencia veterinaria esencial para su bienestar.',
     highlights: [
@@ -84,6 +87,7 @@ export const plans: Plan[] = [
     name: 'Plus',
     price: '$102.000',
     period: '/mes',
+    image: '/assets/images/news/plan-plus-gato.webp',
     featured: true,
     tagline:
       'Bienestar y prevención para una vida saludable.',
@@ -120,6 +124,7 @@ export const plans: Plan[] = [
     name: 'Premium',
     price: '$220.000',
     period: '/mes',
+    image: '/assets/images/news/plan-premium-golden.webp',
     tagline:
       'Protección integral con el mayor nivel de beneficios.',
     highlights: [
