@@ -5,8 +5,7 @@ import PlansSummary from '@/components/sections/PlansSummary'
 import PetManager from '@/components/sections/PetManager'
 import Allies from '@/components/sections/Allies'
 import WhyChooseUs from '@/components/sections/WhyChooseUs'
-import News from '@/components/sections/News'
-import FinalCta from '@/components/sections/FinalCta'
+import FAQBanner from '@/components/sections/FAQBanner'
 import Footer from '@/components/layout/Footer'
 import SectionWave from '@/components/ui/SectionWave'
 
@@ -52,16 +51,13 @@ export default function Inicio() {
       {/* Separador */}
       <SectionWave from="#E9F2DC" to="#ffffff" />
 
-      {/* 8. Preguntas frecuentes */}
-      <News />
+      {/* 8. Preguntas frecuentes + Banner promocional */}
+      <FAQBanner />
 
       {/* Separador */}
       <SectionWave from="#ffffff" to="#003047" />
 
-      {/* 9. Banner de afiliación */}
-      <FinalCta />
-
-      {/* 10. Footer */}
+      {/* 9. Footer */}
       <Footer />
     </main>
   )
