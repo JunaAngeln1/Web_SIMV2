@@ -29,12 +29,15 @@ export default function PlanCard({ plan }: PlanCardProps) {
     <article
       data-purpose="plan-card"
       className={[
-        'relative flex flex-col lg:flex-row gap-0 rounded-[24px] overflow-hidden bg-gris-claro transition-all duration-300',
-        // Plus: borde grueso verde
+        'relative flex flex-col lg:flex-row gap-0 rounded-[24px] overflow-hidden transition-all duration-300',
+        // Todas las tarjetas mismo tamaño: altura completa
+        'h-full flex flex-col',
+        // Fondo según plan
         isPlus
-          ? 'border-4 border-verde-corporativo shadow-[0_4px_18px_rgba(101,157,13,0.15)] hover:shadow-[0_6px_24px_rgba(101,157,13,0.25)]'
-          : // Élite y Premium: sombra suave, sin borde marcado
-            'shadow-suave hover:shadow-medio border border-transparent',
+          ? // Plus: fondo degradado verde a blanco suave, borde grueso verde
+            'bg-gradient-to-b from-verde-corporativo/10 to-blanco border-4 border-verde-corporativo shadow-[0_4px_18px_rgba(101,157,13,0.15)] hover:shadow-[0_6px_24px_rgba(101,157,13,0.25)]'
+          : // Élite y Premium: fondo gris azulado claro, sombra suave
+            'bg-gris-claro shadow-suave hover:shadow-medio border border-transparent hover:border-azul-petroleo/30',
       ].join(' ')}
     >
       {/* Columna izquierda: fotografía (50% - mitad de la tarjeta) */}
@@ -51,7 +54,10 @@ export default function PlanCard({ plan }: PlanCardProps) {
       </div>
 
       {/* Columna derecha: información (50%) */}
-      <div data-purpose="plan-info" className="w-full lg:w-[50%] p-8 sm:p-10 lg:p-12 flex flex-col justify-between">
+      <div
+        data-purpose="plan-info"
+        className="w-full lg:w-[50%] lg:h-full p-8 sm:p-10 lg:p-12 flex flex-col justify-between"
+      >
         <div data-purpose="plan-content" className="flex flex-col gap-4">
           {/* Texto pequeño: "Plan" */}
           <span
