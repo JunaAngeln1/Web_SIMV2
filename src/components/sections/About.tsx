@@ -5,15 +5,17 @@
  * Dos columnas: texto izquierda, fotografía derecha. En móvil, apilar.
  */
 import Container from '@/components/layout/Container'
+import PawPattern from '@/components/ui/PawPattern'
 
 export default function About() {
   return (
     <section
       data-section="nosotros"
       aria-label="Nosotros"
-      className="py-16 sm:py-20 bg-azul-muy-claro"
+      className="py-16 sm:py-20 bg-azul-muy-claro relative overflow-hidden"
     >
-      <Container>
+      <PawPattern color="#03497D" opacity={0.04} />
+      <Container className="relative">
         <div className="grid md:grid-cols-2 gap-8 lg:gap-12 items-center">
           <div data-purpose="about-text">
             {/* Titular: nombre completo de la marca a dos niveles (sim-diseno §2,

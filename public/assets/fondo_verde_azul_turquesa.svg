@@ -1,0 +1,83 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1850" height="812" viewBox="0 0 1850 812">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#0878d8"/>
+      <stop offset=".34" stop-color="#08a5bd"/>
+      <stop offset=".57" stop-color="#75d936"/>
+      <stop offset=".78" stop-color="#079dc4"/>
+      <stop offset="1" stop-color="#0756c7"/>
+    </linearGradient>
+    <radialGradient id="glow" cx="50%" cy="35%" r="68%">
+      <stop offset="0" stop-color="#c6f34a" stop-opacity=".95"/>
+      <stop offset=".48" stop-color="#71d83b" stop-opacity=".62"/>
+      <stop offset="1" stop-color="#24b99b" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="leftBlue" x1="0" y1="0" x2="1" y2="1">
+      <stop stop-color="#0870df" stop-opacity=".92"/>
+      <stop offset="1" stop-color="#00c6d0" stop-opacity=".25"/>
+    </linearGradient>
+    <linearGradient id="rightBlue" x1="0" y1="0" x2="1" y2="1">
+      <stop stop-color="#12c6bc" stop-opacity=".22"/>
+      <stop offset="1" stop-color="#0068d8" stop-opacity=".92"/>
+    </linearGradient>
+    <linearGradient id="orb" x1="0" y1="0" x2="1" y2="1">
+      <stop stop-color="#e0ff73"/>
+      <stop offset=".48" stop-color="#55e4c5"/>
+      <stop offset="1" stop-color="#00a8f4"/>
+    </linearGradient>
+    <clipPath id="clip"><rect width="1850" height="812"/></clipPath>
+  </defs>
+  <g clip-path="url(#clip)">
+    <rect width="1850" height="812" fill="url(#bg)"/>
+    <rect width="1850" height="812" fill="url(#glow)"/>
+    <path d="M0 0H610C520 150 340 260 210 390S65 625 0 812Z" fill="url(#leftBlue)" opacity=".82"/>
+    <path d="M0 555C190 700 440 720 680 790H0Z" fill="#075bc8" opacity=".38"/>
+    <path d="M1850 0H1500C1540 150 1660 255 1850 290Z" fill="#0067d1" opacity=".34"/>
+    <path d="M1850 400C1640 500 1550 640 1390 812H1850Z" fill="url(#rightBlue)" opacity=".7"/>
+    <path d="M0 0H1850" stroke="#fff" stroke-opacity=".04"/>
+    <!-- concentric arcs -->
+    <g fill="none" stroke="#b8fff0" stroke-width="2" opacity=".72">
+      <path d="M105 -180A260 260 0 0 1 625 80"/>
+      <path d="M145 -180A220 220 0 0 1 585 40"/>
+      <path d="M185 -180A180 180 0 0 1 545 0"/>
+      <path d="M225 -180A140 140 0 0 1 505 -40"/>
+    </g>
+    <!-- left flowing line family -->
+    <g fill="none" stroke="#b9fff0" stroke-width="1.65" opacity=".78">
+      <path d="M-35 126C120 120 157 158 205 252S340 397 465 445 625 508 685 628 765 780 850 850"/>
+      <path d="M-35 143C120 137 157 175 205 269S340 414 465 462 625 525 685 645 765 797 850 867"/>
+      <path d="M-35 160C120 154 157 192 205 286S340 431 465 479 625 542 685 662 765 814 850 884"/>
+      <path d="M-35 177C120 171 157 209 205 303S340 448 465 496 625 559 685 679 765 831 850 901"/>
+      <path d="M-35 194C120 188 157 226 205 320S340 465 465 513 625 576 685 696 765 848 850 918"/>
+      <path d="M-35 211C120 205 157 243 205 337S340 482 465 530 625 593 685 713 765 865 850 935"/>
+      <path d="M-35 228C120 222 157 260 205 354S340 499 465 547 625 610 685 730 765 882 850 952"/>
+    </g>
+    <!-- right flowing line family -->
+    <g fill="none" stroke="#b9fff0" stroke-width="1.65" opacity=".8">
+      <path d="M1885 382C1740 438 1695 515 1600 590S1435 670 1360 730 1285 825 1230 870"/>
+      <path d="M1885 399C1740 455 1695 532 1600 607S1435 687 1360 747 1285 842 1230 887"/>
+      <path d="M1885 416C1740 472 1695 549 1600 624S1435 704 1360 764 1285 859 1230 904"/>
+      <path d="M1885 433C1740 489 1695 566 1600 641S1435 721 1360 781 1285 876 1230 921"/>
+      <path d="M1885 450C1740 506 1695 583 1600 658S1435 738 1360 798 1285 893 1230 938"/>
+      <path d="M1885 467C1740 523 1695 600 1600 675S1435 755 1360 815 1285 910 1230 955"/>
+      <path d="M1885 484C1740 540 1695 617 1600 692S1435 772 1360 832 1285 927 1230 972"/>
+    </g>
+    <!-- upper right translucent circles -->
+    <circle cx="1675" cy="-4" r="190" fill="#0065ce" opacity=".26"/>
+    <circle cx="1390" cy="101" r="48" fill="none" stroke="#c7fff0" stroke-width="6" opacity=".72"/>
+    <g fill="#fff" opacity=".95">
+      <circle cx="1718" cy="107" r="3"/><circle cx="1750" cy="107" r="3"/><circle cx="1782" cy="107" r="3"/>
+      <circle cx="1718" cy="141" r="3"/><circle cx="1750" cy="141" r="3"/><circle cx="1782" cy="141" r="3"/>
+      <circle cx="1718" cy="175" r="3"/><circle cx="1750" cy="175" r="3"/><circle cx="1782" cy="175" r="3"/>
+      <circle cx="1718" cy="211" r="3"/><circle cx="1750" cy="211" r="3"/><circle cx="1782" cy="211" r="3"/>
+      <circle cx="1718" cy="247" r="3"/><circle cx="1750" cy="247" r="3"/><circle cx="1782" cy="247" r="3"/>
+      <circle cx="1718" cy="283" r="3"/><circle cx="1750" cy="283" r="3"/><circle cx="1782" cy="283" r="3"/>
+    </g>
+    <circle cx="1598" cy="510" r="53" fill="url(#orb)" opacity=".94"/>
+    <circle cx="154" cy="654" r="44" fill="url(#orb)" opacity=".94"/>
+    <g fill="#fff" opacity=".92">
+      <circle cx="1107" cy="701" r="5"/><circle cx="1135" cy="701" r="5"/>
+      <circle cx="1164" cy="701" r="5"/><circle cx="1192" cy="701" r="5"/>
+    </g>
+  </g>
+</svg>

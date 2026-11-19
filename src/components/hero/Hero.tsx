@@ -51,15 +51,15 @@ export default function Hero() {
       data-section="hero"
       role="region"
       aria-label="Hero principal"
-      className="relative w-full max-w-[1440px] min-h-[520px] mx-auto rounded-[24px] overflow-hidden bg-hero-verde-medio shadow-suave mb-12"
+      className="relative w-full max-w-[1440px] min-h-[520px] mx-auto rounded-[24px] overflow-hidden bg-hero-turquesa shadow-suave mb-12"
     >
       {/*
-        Fondo vectorial (fondo_sim_vector.svg, 1800×900) cubriendo el panel.
+        Fondo vectorial (fondo_verde_azul_turquesa.svg, 1850×812) cubriendo el panel.
         object-cover recorta arriba/abajo para llenar 1440×520 sin deformarse;
-        bg-hero-verde-medio queda debajo como respaldo mientras carga.
+        bg-hero-turquesa queda debajo como respaldo mientras carga.
       */}
       <img
-        src="/assets/fondo_sim_vector.svg"
+        src="/assets/fondo_verde_azul_turquesa.svg"
         alt=""
         data-purpose="hero-bg"
         aria-hidden="true"
@@ -81,11 +81,11 @@ export default function Hero() {
           className="max-w-[45%] font-titulos font-semibold text-5xl sm:text-6xl lg:text-8xl tracking-tight leading-[1.05] mb-4"
         >
           <span className="block text-blanco">El bienestar de tu mascota,</span>
-          <span className="block text-[#07345B]">nuestra prioridad.</span>
+          <span className="block text-blanco">nuestra prioridad.</span>
         </h1>
         <p
           data-purpose="hero-description"
-          className="text-[#07345B] text-lg sm:text-xl font-normal leading-relaxed mb-16 max-w-[35%]"
+          className="text-blanco/90 text-lg sm:text-xl font-normal leading-relaxed mb-16 max-w-[35%]"
         >
           Planes de atención veterinaria para perros y gatos, con el respaldo que tu familia
           necesita.

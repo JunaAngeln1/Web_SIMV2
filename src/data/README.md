@@ -12,6 +12,7 @@ vive aqui como datos tipados.
 | `plans.ts`      | Planes y caracteristicas de cada plan                        | `sim-arquitectura` §3.2 |
 | `allies.ts`     | Aliados y red veterinaria                                    | `sim-arquitectura` §3.5 |
 | `news.ts`       | Noticias y consejos                                          | `sim-arquitectura` §3.6 |
+| `promos.ts`     | Promoción del popup de entrada                               | Nuevo (PENDIENTE_SIM)   |
 | `indicators.ts` | Cifras institucionales                                       | `sim-arquitectura` §3.4 |
 
 ## Regla critica: no inventar

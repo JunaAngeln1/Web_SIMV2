@@ -11,13 +11,16 @@
 import { Check, ShieldCheck, Heart, Shield } from 'lucide-react'
 import Container from '@/components/layout/Container'
 import Header from '@/components/layout/Header'
-import SectionHeading from '@/components/ui/SectionHeading'
+import PageHero from '@/components/ui/PageHero'
+import PawPattern from '@/components/ui/PawPattern'
 import { plans, commonBenefits, plansFootnote } from '@/data/plans'
 import { useInView } from '@/hooks/useInView'
-import { LandingCalculator } from '@/components/calculator/LandingCalculator'
 
 /** Colores por plan según identidad visual SIM. */
-const PLAN_COLORS: Record<(typeof plans)[number]['id'], { nombre: string; precio: string; icono: string; borde: string; boton: string }> = {
+const PLAN_COLORS: Record<
+  (typeof plans)[number]['id'],
+  { nombre: string; precio: string; icono: string; borde: string; boton: string }
+> = {
   elite: {
     nombre: 'text-[#03497D]',
     precio: 'text-[#03497D]',
@@ -63,7 +66,10 @@ function PlanCard({ plan, delay }: { plan: (typeof plans)[number]; delay: number
         colors.borde,
         'transition-all duration-200 ease-out',
         visible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-16',
-        'group-hover:shadow-medio',
+        'group-hover:shadow-verde group-hover:-translate-y-1',
+        isPlus
+          ? 'lg:scale-[1.04] lg:z-10 shadow-[0_18px_40px_-12px_rgba(139,165,51,0.45)] ring-2 ring-[#8BA533]/30 bg-gradient-to-b from-[#F8FBF0] via-white to-white'
+          : '',
       ].join(' ')}
       style={{ transitionDelay: `${delay}ms` }}
     >
@@ -71,15 +77,20 @@ function PlanCard({ plan, delay }: { plan: (typeof plans)[number]; delay: number
       {isPlus && (
         <span
           data-purpose="plan-badge"
-          className="absolute -top-[6px] left-1/2 -translate-x-1/2 z-10 bg-[#8BA533] text-white text-[11px] font-semibold px-3 py-0.5 rounded-full whitespace-nowrap"
+          className="absolute -top-[10px] left-1/2 -translate-x-1/2 z-20 bg-[#8BA533] text-white text-[11px] font-bold px-4 py-1 rounded-full whitespace-nowrap shadow-medio tracking-wide uppercase"
         >
           Recomendado
         </span>
       )}
 
       {/* Icono minimalista de protección o salud */}
-      <div className="flex items-center justify-center w-[34px] h-[34px] rounded-full bg-[#E8EEF3] mb-[18px]">
-        <Icon className="w-[20px] h-[20px]" aria-hidden="true" />
+      <div
+        className={[
+          'flex items-center justify-center w-[34px] h-[34px] rounded-full mb-[18px]',
+          isPlus ? 'bg-[#8BA533]/15' : 'bg-[#E8EEF3]',
+        ].join(' ')}
+      >
+        <Icon className={['w-[20px] h-[20px]', colors.icono].join(' ')} aria-hidden="true" />
       </div>
 
       {/* Nombre del plan */}
@@ -95,23 +106,15 @@ function PlanCard({ plan, delay }: { plan: (typeof plans)[number]; delay: number
 
       {/* Precio mensual */}
       <div className="mb-[24px]">
-        <span
-          className={[
-            'font-titulos text-[28px] font-bold',
-            colors.precio,
-          ].join(' ')}
-        >
+        <span className={['font-titulos text-[28px] font-bold', colors.precio].join(' ')}>
           {plan.price}
         </span>
         <span className="text-[13px] text-[#7F9DB8] ml-[2px]">COP / mes</span>
       </div>
 
       {/* Lista de beneficios con iconos de verificación */}
-      <ul
-        data-purpose="plan-benefits"
-        className="flex-1 space-y-[11px] mb-[24px]"
-      >
-        {plan.highlights.map((b) => (
+      <ul data-purpose="plan-benefits" className="flex-1 space-y-[11px] mb-[24px]">
+        {plan.fullBenefits.map((b) => (
           <li key={b} data-purpose="plan-benefit" className="flex items-start gap-[8px]">
             <Check
               className="mt-[1px] w-[14px] h-[14px] shrink-0 text-[#8BA533]"
@@ -141,42 +144,41 @@ export default function Planes() {
   return (
     <main data-page="planes" className="pt-[80px] sm:pt-[96px] pb-16 sm:pb-20">
       <Header />
-      <Container>
-        <SectionHeading
-          title="Planes de atención"
-          subtitle="Compara los planes Elite, Plus y Super Premium: qué incluye cada uno y sus descuentos en servicios veterinarios."
-        />
-
-        <section
-          data-section="planes-comparativa"
-          aria-label="Comparativa de planes"
-          className="mt-10"
-        >
-          {/* Tres tarjetas en fila en desktop, dos en tablet, una en móvil */}
-          <div
-            data-purpose="plans-grid"
-            className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-[22px] items-start"
+      <PageHero
+        title="Planes de atención"
+        subtitle="Compara los planes Elite, Plus y Super Premium: qué incluye cada uno y sus descuentos en servicios veterinarios."
+      />
+      <div className="relative overflow-hidden">
+        <PawPattern color="#03497D" opacity={0.025} />
+        <Container>
+          <section
+            data-section="planes-comparativa"
+            aria-label="Comparativa de planes"
+            className="relative mt-10"
           >
-            {plans.map((plan, i) => (
-              <PlanCard key={plan.id} plan={plan} delay={i * 120} />
-            ))}
-          </div>
+            {/* Tres tarjetas en fila en desktop, dos en tablet, una en móvil */}
+            <div
+              data-purpose="plans-grid"
+              className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-[22px] items-start"
+            >
+              {plans.map((plan, i) => (
+                <PlanCard key={plan.id} plan={plan} delay={i * 120} />
+              ))}
+            </div>
 
-          {/* Beneficios comunes a los tres planes (declarados una sola vez) */}
-          <div data-purpose="plans-common" className="mt-[26px] border-t border-borde-suave pt-4">
-            <p className="text-sm font-semibold text-azul-institucional mb-1">
-              Todos los planes incluyen:
-            </p>
-            <p className="text-sm text-gris-azulado leading-[1.5]">
-              {commonBenefits.join(' · ')}
-            </p>
-            <p className="mt-[24px] text-xs text-gris-azulado">{plansFootnote}</p>
-          </div>
-        </section>
-
-        {/* Calculadora de ahorro estimado: Landing Calculator */}
-        <LandingCalculator className="mt-12" />
-      </Container>
+            {/* Beneficios comunes a los tres planes (declarados una sola vez) */}
+            <div data-purpose="plans-common" className="mt-[26px] border-t border-borde-suave pt-4">
+              <p className="text-sm font-semibold text-azul-institucional mb-1">
+                Todos los planes incluyen:
+              </p>
+              <p className="text-sm text-gris-azulado leading-[1.5]">
+                {commonBenefits.join(' · ')}
+              </p>
+              <p className="mt-[24px] text-xs text-gris-azulado">{plansFootnote}</p>
+            </div>
+          </section>
+        </Container>
+      </div>
     </main>
   )
 }

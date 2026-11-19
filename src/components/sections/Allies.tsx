@@ -8,15 +8,17 @@
 import Button from '@/components/ui/Button'
 import Container from '@/components/layout/Container'
 import SectionHeading from '@/components/ui/SectionHeading'
+import PawPattern from '@/components/ui/PawPattern'
 
 export default function Allies() {
   return (
     <section
       data-section="aliados"
       aria-label="Nuestros aliados"
-      className="py-16 sm:py-20 bg-azul-muy-claro"
+      className="py-16 sm:py-20 bg-azul-muy-claro relative overflow-hidden"
     >
-      <Container>
+      <PawPattern color="#03497D" opacity={0.035} />
+      <Container className="relative">
         <SectionHeading
           title="Una red que trabaja por su bienestar"
           subtitle="Accede a una red veterinaria comprometida con la salud de tu mascota."

@@ -8,15 +8,17 @@
  */
 import Button from '@/components/ui/Button'
 import Container from '@/components/layout/Container'
+import PawPattern from '@/components/ui/PawPattern'
 
 export default function FinalCta() {
   return (
     <section
       data-section="cta-final"
       aria-label="Llamada a la acción final"
-      className="py-16 sm:py-20 bg-azul-profundo text-blanco"
+      className="py-16 sm:py-20 bg-azul-profundo text-blanco relative overflow-hidden"
     >
-      <Container narrow>
+      <PawPattern color="#ffffff" opacity={0.06} />
+      <Container narrow className="relative">
         <div data-purpose="cta-content" className="text-center pt-6 sm:pt-10 pb-8 sm:pb-12">
           <h2
             data-purpose="cta-title"

@@ -15,7 +15,9 @@
   --color-hero-verde-oscuro: #6a9a10;
   --color-hero-verde-medio: #77c100;
   --color-hero-verde-claro: #a8d45a;
+  --color-hero-turquesa: #08a5bd;
   --color-verde-sim: #77c100;
+  --color-verde-acento: #8ba533;
   --color-blanco: #ffffff;
   --color-azul-muy-claro: #f1f7fc;
   --color-azul-niebla: #e8f3fc;
@@ -44,6 +46,7 @@
   --shadow-suave: 0 1px 3px 0 rgb(0 0 0 / 0.08), 0 1px 2px -1px rgb(0 0 0 / 0.04);
   --shadow-medio: 0 4px 6px -1px rgb(0 0 0 / 0.06), 0 2px 4px -2px rgb(0 0 0 / 0.04);
   --shadow-hover: 0 10px 15px -3px rgb(0 0 0 / 0.08), 0 4px 6px -4px rgb(0 0 0 / 0.06);
+  --shadow-verde: 0 10px 25px -5px rgb(139 165 51 / 0.25), 0 8px 10px -6px rgb(139 165 51 / 0.12);
 
   /* --- Espaciado basado en escala 4/8 px (sim-diseno §3) --- */
   --spacing-8: 8px;

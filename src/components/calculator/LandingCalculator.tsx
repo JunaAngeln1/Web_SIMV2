@@ -21,7 +21,6 @@ interface InvoiceRow {
 }
 
 export function LandingCalculator({ className }: LandingCalculatorProps) {
-
   // Filas de factura
   const filasFactura: InvoiceRow[] = [
     { concepto: 'CIRUGÍA', precio: '$600.000' },
@@ -35,9 +34,11 @@ export function LandingCalculator({ className }: LandingCalculatorProps) {
   return (
     <div
       className={[
-        'w-full min-h-auto bg-[#EAF4FF] flex flex-col items-center justify-center p-8 py-[40px]',
+        'w-full min-h-auto flex flex-col items-center justify-center p-8 py-[40px]',
         className,
-      ].filter(Boolean).join(' ')}
+      ]
+        .filter(Boolean)
+        .join(' ')}
     >
       {/* Encabezado principal */}
       <header className="text-center mb-6">
@@ -45,7 +46,8 @@ export function LandingCalculator({ className }: LandingCalculatorProps) {
           Evita facturas<span className="text-[#11BFBF]"> inesperadas</span>
         </h1>
         <p className="text-[20px] text-[#7F9DB8] leading-[1.5] max-w-[850px] mx-auto">
-          Ejemplo de ahorro con SIM. Los montos son referenciales y la cobertura real depende del plan contratado.
+          Ejemplo de ahorro con SIM. Los montos son referenciales y la cobertura real depende del
+          plan contratado.
         </p>
       </header>
 
@@ -69,9 +71,11 @@ export function LandingCalculator({ className }: LandingCalculatorProps) {
                   esEspecial
                     ? 'bg-[#8BA533] text-white font-bold'
                     : esPagar
-                    ? 'bg-[#E8EEF3] text-[#03497D] font-semibold'
-                    : 'bg-[#F0F4FF] border-[#03497D]/20 text-[#03497D] font-semibold',
-                ].filter(Boolean).join(' ')}
+                      ? 'bg-[#E8EEF3] text-[#03497D] font-semibold'
+                      : 'bg-[#F0F4FF] border-[#03497D]/20 text-[#03497D] font-semibold',
+                ]
+                  .filter(Boolean)
+                  .join(' ')}
               >
                 <span className="text-[19px]">{fila.concepto}</span>
                 <span className="text-[19px] font-semibold">{fila.precio}</span>
@@ -88,7 +92,13 @@ export function LandingCalculator({ className }: LandingCalculatorProps) {
 
         {/* Perforated bottom edge */}
         <div className="flex justify-center mt-[6px] mb-[8px]">
-          <svg width="360" height="14" viewBox="0 0 360 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <svg
+            width="360"
+            height="14"
+            viewBox="0 0 360 14"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
             {Array.from({ length: 18 }).map((_, i) => (
               <polygon
                 key={i}

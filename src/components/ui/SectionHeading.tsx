@@ -13,6 +13,7 @@ interface SectionHeadingProps {
 
 export default function SectionHeading({ title, subtitle, align = 'left' }: SectionHeadingProps) {
   const alignClass = align === 'center' ? 'text-center mx-auto' : 'text-left'
+  const barClass = align === 'center' ? 'mx-auto' : ''
 
   return (
     <div
@@ -28,8 +29,14 @@ export default function SectionHeading({ title, subtitle, align = 'left' }: Sect
       >
         {title}
       </h2>
+      <span
+        className={['mt-4 block h-1 w-16 rounded-full bg-verde-acento', barClass]
+          .filter(Boolean)
+          .join(' ')}
+        aria-hidden="true"
+      />
       {subtitle && (
-        <p className={['mt-3 text-lg text-gris-azulado', alignClass].filter(Boolean).join(' ')}>
+        <p className={['mt-4 text-lg text-gris-azulado', alignClass].filter(Boolean).join(' ')}>
           {subtitle}
         </p>
       )}

@@ -19,8 +19,8 @@ const Card = React.forwardRef<HTMLDivElement, CardProps>(
       ref={ref}
       className={[
         'bg-blanco border border-borde-suave rounded-[var(--radius-tarjeta)]',
-        'shadow-suave transition-shadow duration-200 ease-out',
-        hover ? 'hover:shadow-medio' : '',
+        'shadow-suave transition-all duration-200 ease-out',
+        hover ? 'hover:shadow-verde hover:-translate-y-1 hover:border-verde-acento/40' : '',
         padded ? 'p-6' : 'p-4',
         className,
       ]

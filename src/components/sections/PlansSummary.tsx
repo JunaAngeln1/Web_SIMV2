@@ -12,6 +12,7 @@ import { useNavigate } from 'react-router-dom'
 import { Check, ChevronDown, ChevronUp } from 'lucide-react'
 import Card from '@/components/ui/Card'
 import Container from '@/components/layout/Container'
+import PawPattern from '@/components/ui/PawPattern'
 import SectionHeading from '@/components/ui/SectionHeading'
 import Button from '@/components/ui/Button'
 import { plans, commonBenefits, plansFootnote, type Plan } from '@/data/plans'
@@ -117,7 +118,8 @@ export default function PlansSummary() {
       aria-label="Planes resumidos"
       className="py-16 sm:py-20 bg-blanco relative overflow-hidden"
     >
-      <Container>
+      <PawPattern color="#03497D" opacity={0.03} />
+      <Container className="relative">
         <SectionHeading
           title="Planes de atención para tu mascota"
           subtitle="Elige el plan que mejor se adapte a las necesidades de tu perro o gato."
