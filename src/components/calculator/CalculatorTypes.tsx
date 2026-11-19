@@ -6,7 +6,7 @@
 
 export interface PlanOption {
   /** Identificador único del plan */
-  id: 'elite' | 'plus' | 'super-premium'
+  id: 'elite' | 'plus' | 'premium'
   /** Nombre comercial del plan */
   name: string
   /** Precio mensual aprobado por SIM (ej. '$63.000') */

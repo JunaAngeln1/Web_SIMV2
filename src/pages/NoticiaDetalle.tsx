@@ -24,7 +24,7 @@ export default function NoticiaDetalle() {
         <nav className="mb-6 sm:mb-8" aria-label="Navegación de noticia">
           <a
             href="/noticias"
-            className="text-sm font-medium text-azul-institucional hover:underline flex items-center gap-1.5"
+            className="text-sm font-medium text-azul-petroleo hover:underline flex items-center gap-1.5"
           >
             <span className="block w-1 h-1 rounded-full bg-gris-azulado" />
             Volver a noticias
@@ -32,17 +32,17 @@ export default function NoticiaDetalle() {
         </nav>
 
         {/* Categoría */}
-        <span className="inline-block mb-4 sm:mb-6 px-3 py-1 rounded-full text-[11px] font-semibold uppercase tracking-wider bg-azul-niebla text-azul-institucional">
+        <span className="inline-block mb-4 sm:mb-6 px-3 py-1 rounded-full text-[11px] font-semibold uppercase tracking-wider bg-azul-niebla text-azul-petroleo">
           {noticia.category}
         </span>
 
         {/* Título */}
-        <h1 className="font-titulos text-3xl sm:text-4xl lg:text-[44px] font-bold text-azul-institucional tracking-tight leading-tight mb-4">
+        <h1 className="font-titulos text-3xl sm:text-4xl lg:text-[44px] font-bold text-azul-petroleo tracking-tight leading-tight mb-4">
           {noticia.title}
         </h1>
 
         {/* Acento verde bajo el título */}
-        <span className="block h-1 w-16 rounded-full bg-verde-acento" aria-hidden="true" />
+        <span className="block h-1 w-16 rounded-full bg-verde-corporativo" aria-hidden="true" />
 
         {/* Meta: fecha y tiempo de lectura */}
         <div className="mt-6 flex items-center gap-3 text-sm text-gris-azulado">
@@ -53,7 +53,7 @@ export default function NoticiaDetalle() {
       </PageHero>
 
       <div className="relative overflow-hidden">
-        <PawPattern color="#03497D" opacity={0.02} />
+        <PawPattern color="#054564" opacity={0.02} />
         <article className="relative mx-auto max-w-[768px] px-4 sm:px-6 lg:px-8 pt-8 sm:pt-10">
           {/* Imagen destacada */}
           <div className="relative h-64 sm:h-80 lg:h-96 overflow-hidden rounded-[16px] shadow-medio mb-6 sm:mb-8">
@@ -78,7 +78,7 @@ export default function NoticiaDetalle() {
           <div className="mt-12 sm:mt-16 pt-8 border-t border-borde-suave">
             <a
               href="/noticias"
-              className="inline-flex items-center justify-center gap-2 px-6 py-3 rounded-[12px] bg-verde-acento text-blanco font-semibold text-sm sm:text-base transition-colors duration-200 hover:bg-[#7a8d2a]"
+              className="inline-flex items-center justify-center gap-2 px-6 py-3 rounded-[12px] bg-verde-corporativo text-blanco font-semibold text-sm sm:text-base transition-colors duration-200 hover:bg-[#528d0a]"
             >
               Volver a noticias
             </a>

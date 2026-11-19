@@ -14,7 +14,7 @@ export default function About() {
       aria-label="Nosotros"
       className="py-16 sm:py-20 bg-azul-muy-claro relative overflow-hidden"
     >
-      <PawPattern color="#03497D" opacity={0.04} />
+      <PawPattern color="#054564" opacity={0.04} />
       <Container className="relative">
         <div className="grid md:grid-cols-2 gap-8 lg:gap-12 items-center">
           <div data-purpose="about-text">

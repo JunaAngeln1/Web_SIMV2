@@ -14,7 +14,7 @@ export default function Contacto() {
         subtitle="Canales oficiales, formulario de solicitud de información y enlace al proceso de afiliación."
       />
       <div className="relative overflow-hidden">
-        <PawPattern color="#03497D" opacity={0.025} />
+        <PawPattern color="#054564" opacity={0.025} />
         <Container narrow>
           <section
             data-section="contacto-formulario"
@@ -23,7 +23,7 @@ export default function Contacto() {
           >
             <Card padded>
               <div data-purpose="contacto-canales" className="mb-6">
-                <h3 className="font-titulos font-semibold text-lg text-azul-institucional mb-3">
+                <h3 className="font-titulos font-semibold text-lg text-azul-petroleo mb-3">
                   Canales oficiales
                 </h3>
                 <ul data-purpose="canales-list" className="space-y-2 text-sm text-gris-azulado">

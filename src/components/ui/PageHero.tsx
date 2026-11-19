@@ -32,7 +32,7 @@ export default function PageHero({
   return (
     <>
       <div className="relative overflow-hidden bg-azul-muy-claro">
-        <PawPattern color="#03497D" opacity={0.04} />
+        <PawPattern color="#054564" opacity={0.04} />
         <div className="relative pt-8 sm:pt-10">
           <Container narrow={narrow} className={narrow ? 'px-4' : undefined}>
             {children ??

@@ -16,31 +16,31 @@ import PawPattern from '@/components/ui/PawPattern'
 import { plans, commonBenefits, plansFootnote } from '@/data/plans'
 import { useInView } from '@/hooks/useInView'
 
-/** Colores por plan según identidad visual SIM. */
+/** Colores por plan según identidad visual SIM (tokens del sistema). */
 const PLAN_COLORS: Record<
   (typeof plans)[number]['id'],
   { nombre: string; precio: string; icono: string; borde: string; boton: string }
 > = {
   elite: {
-    nombre: 'text-[#03497D]',
-    precio: 'text-[#03497D]',
-    icono: 'text-[#03497D]',
-    borde: 'border-[#7F9DB8]/50 border',
-    boton: 'bg-white border border-[#03497D] text-[#03497D] hover:bg-[#03497D] hover:text-white',
+    nombre: 'text-azul-petroleo',
+    precio: 'text-azul-petroleo',
+    icono: 'text-azul-petroleo',
+    borde: 'border-azul-petroleo/50 border',
+    boton: 'bg-white border border-azul-petroleo text-azul-petroleo hover:bg-azul-petroleo hover:text-white',
   },
   plus: {
-    nombre: 'text-[#03497D]',
-    precio: 'text-[#8BA533]',
-    icono: 'text-[#8BA533]',
-    borde: 'border-[#8BA533] border-2',
-    boton: 'bg-[#8BA533] text-white hover:bg-[#7a8a2a]',
+    nombre: 'text-azul-petroleo',
+    precio: 'text-verde-corporativo',
+    icono: 'text-verde-corporativo',
+    borde: 'border-verde-corporativo border-2',
+    boton: 'bg-verde-corporativo text-white hover:bg-[#528d0a]',
   },
-  'super-premium': {
-    nombre: 'text-[#03497D]',
-    precio: 'text-[#03497D]',
-    icono: 'text-[#03497D]',
-    borde: 'border-[#7F9DB8]/50 border',
-    boton: 'bg-white border border-[#03497D] text-[#03497D] hover:bg-[#03497D] hover:text-white',
+  premium: {
+    nombre: 'text-azul-petroleo',
+    precio: 'text-azul-petroleo',
+    icono: 'text-azul-petroleo',
+    borde: 'border-azul-petroleo/50 border',
+    boton: 'bg-white border border-azul-petroleo text-azul-petroleo hover:bg-azul-petroleo hover:text-white',
   },
 }
 
@@ -48,7 +48,7 @@ const PLAN_COLORS: Record<
 const PLAN_ICONS: Record<(typeof plans)[number]['id'], React.ElementType> = {
   elite: ShieldCheck,
   plus: Heart,
-  'super-premium': Shield,
+  premium: Shield,
 }
 
 function PlanCard({ plan, delay }: { plan: (typeof plans)[number]; delay: number }) {
@@ -62,13 +62,13 @@ function PlanCard({ plan, delay }: { plan: (typeof plans)[number]; delay: number
       ref={ref}
       className={[
         'flex flex-col group relative h-full',
-        'bg-blanco rounded-[16px] shadow-suave p-[26px]',
+        'bg-blanco rounded-[var(--radius-tarjeta)] shadow-suave p-[26px]',
         colors.borde,
         'transition-all duration-200 ease-out',
         visible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-16',
-        'group-hover:shadow-verde group-hover:-translate-y-1',
+        'group-hover:shadow-suave group-hover:-translate-y-1',
         isPlus
-          ? 'lg:scale-[1.04] lg:z-10 shadow-[0_18px_40px_-12px_rgba(139,165,51,0.45)] ring-2 ring-[#8BA533]/30 bg-gradient-to-b from-[#F8FBF0] via-white to-white'
+          ? 'lg:scale-[1.04] lg:z-10 shadow-suave ring-2 ring-verde-corporativo/30 bg-verde-pastel/30'
           : '',
       ].join(' ')}
       style={{ transitionDelay: `${delay}ms` }}
@@ -77,9 +77,9 @@ function PlanCard({ plan, delay }: { plan: (typeof plans)[number]; delay: number
       {isPlus && (
         <span
           data-purpose="plan-badge"
-          className="absolute -top-[10px] left-1/2 -translate-x-1/2 z-20 bg-[#8BA533] text-white text-[11px] font-bold px-4 py-1 rounded-full whitespace-nowrap shadow-medio tracking-wide uppercase"
+          className="absolute -top-[10px] left-1/2 -translate-x-1/2 z-20 bg-verde-corporativo text-white text-[11px] font-bold px-4 py-1 rounded-full whitespace-nowrap shadow-suave tracking-wide uppercase"
         >
-          Recomendado
+          Más completo
         </span>
       )}
 
@@ -87,7 +87,7 @@ function PlanCard({ plan, delay }: { plan: (typeof plans)[number]; delay: number
       <div
         className={[
           'flex items-center justify-center w-[34px] h-[34px] rounded-full mb-[18px]',
-          isPlus ? 'bg-[#8BA533]/15' : 'bg-[#E8EEF3]',
+          isPlus ? 'bg-verde-corporativo/15' : 'bg-azul-niebla',
         ].join(' ')}
       >
         <Icon className={['w-[20px] h-[20px]', colors.icono].join(' ')} aria-hidden="true" />
@@ -109,7 +109,7 @@ function PlanCard({ plan, delay }: { plan: (typeof plans)[number]; delay: number
         <span className={['font-titulos text-[28px] font-bold', colors.precio].join(' ')}>
           {plan.price}
         </span>
-        <span className="text-[13px] text-[#7F9DB8] ml-[2px]">COP / mes</span>
+        <span className="text-[13px] text-azul-grisaceo ml-[2px]">COP / mes</span>
       </div>
 
       {/* Lista de beneficios con iconos de verificación */}
@@ -117,10 +117,10 @@ function PlanCard({ plan, delay }: { plan: (typeof plans)[number]; delay: number
         {plan.fullBenefits.map((b) => (
           <li key={b} data-purpose="plan-benefit" className="flex items-start gap-[8px]">
             <Check
-              className="mt-[1px] w-[14px] h-[14px] shrink-0 text-[#8BA533]"
+              className="mt-[1px] w-[14px] h-[14px] shrink-0 text-verde-corporativo"
               aria-hidden="true"
             />
-            <span className="text-[14px] leading-[1.5] text-[#64748b]">{b}</span>
+            <span className="text-sm leading-[1.5] text-gris-azulado">{b}</span>
           </li>
         ))}
       </ul>
@@ -129,7 +129,7 @@ function PlanCard({ plan, delay }: { plan: (typeof plans)[number]; delay: number
       <button
         data-purpose="cta-conocer-plan"
         className={[
-          'w-full h-[44px] rounded-[10px] font-semibold text-[14px] flex items-center justify-center transition-all duration-200 ease-out',
+          'w-full h-[48px] rounded-[var(--radius-pildora)] font-semibold text-sm flex items-center justify-center transition-all duration-200 ease-out',
           colors.boton,
         ].join(' ')}
         onClick={() => window.open(`/pdfs/${plan.id}.pdf`, '_blank')}
@@ -146,10 +146,10 @@ export default function Planes() {
       <Header />
       <PageHero
         title="Planes de atención"
-        subtitle="Compara los planes Elite, Plus y Super Premium: qué incluye cada uno y sus descuentos en servicios veterinarios."
+        subtitle="Compara los planes Élite, Plus y Premium: qué incluye cada uno y sus descuentos en servicios veterinarios."
       />
       <div className="relative overflow-hidden">
-        <PawPattern color="#03497D" opacity={0.025} />
+        <PawPattern color="#054564" opacity={0.025} />
         <Container>
           <section
             data-section="planes-comparativa"
@@ -168,7 +168,7 @@ export default function Planes() {
 
             {/* Beneficios comunes a los tres planes (declarados una sola vez) */}
             <div data-purpose="plans-common" className="mt-[26px] border-t border-borde-suave pt-4">
-              <p className="text-sm font-semibold text-azul-institucional mb-1">
+              <p className="text-sm font-semibold text-azul-petroleo mb-1">
                 Todos los planes incluyen:
               </p>
               <p className="text-sm text-gris-azulado leading-[1.5]">

@@ -10,7 +10,7 @@ export default function Cobertura() {
       <Header />
       <PageHero title="Cobertura" subtitle="Zonas y alcance de los planes de S.I.M." />
       <div className="relative overflow-hidden">
-        <PawPattern color="#03497D" opacity={0.025} />
+        <PawPattern color="#054564" opacity={0.025} />
         <Container>
           <section
             data-section="cobertura-detalle"
@@ -18,7 +18,7 @@ export default function Cobertura() {
             className="relative mt-10"
           >
             <Card padded>
-              <h3 className="font-titulos font-semibold text-lg text-azul-institucional mb-3">
+              <h3 className="font-titulos font-semibold text-lg text-azul-petroleo mb-3">
                 Zonas cubiertas
               </h3>
               <p data-pending="true" className="text-gris-azulado text-sm">
@@ -27,7 +27,7 @@ export default function Cobertura() {
             </Card>
 
             <Card padded className="mt-6">
-              <h3 className="font-titulos font-semibold text-lg text-azul-institucional mb-3">
+              <h3 className="font-titulos font-semibold text-lg text-azul-petroleo mb-3">
                 Tipo de establecimientos
               </h3>
               <p data-pending="true" className="text-gris-azulado text-sm">
@@ -37,7 +37,7 @@ export default function Cobertura() {
             </Card>
 
             <Card padded className="mt-6">
-              <h3 className="font-titulos font-semibold text-lg text-azul-institucional mb-3">
+              <h3 className="font-titulos font-semibold text-lg text-azul-petroleo mb-3">
                 Condiciones y exclusiones
               </h3>
               <p data-pending="true" className="text-gris-azulado text-sm">

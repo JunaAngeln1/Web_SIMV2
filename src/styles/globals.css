@@ -23,13 +23,13 @@ html {
 body {
   margin: 0;
   font-family: var(--font-sans);
-  font-size: 16px;
+  font-size: 1rem; /* 16px - texto normal según guía */
   line-height: 1.6;
   color: var(--color-texto-principal);
   background-color: var(--color-blanco);
 }
 
-/* --- Tipografía base (sim-diseno §2) --- */
+/* --- Tipografía base según Guía de Diseño --- */
 h1,
 h2,
 h3,
@@ -39,18 +39,25 @@ h6 {
   font-family: var(--font-titulos);
   font-weight: 600;
   line-height: 1.15;
-  color: var(--color-azul-institucional);
+  color: var(--color-azul-petroleo);
   margin-top: 0;
 }
 
+/* Tamaños según guía de diseño:
+   - Título principal Hero: 40-44px
+   - Título de sección: 28-32px
+   - Subtítulo: 20-24px
+   - Título de tarjeta: 20-24px
+   - Texto normal: 14-16px
+   - Texto auxiliar: 12-13px */
 h1 {
-  font-size: 2.25rem; /* 36px base, se ajusta por sección */
+  font-size: 2.75rem; /* 44px - título principal Hero */
 }
 h2 {
-  font-size: 1.5rem; /* 24px base */
+  font-size: 1.75rem; /* 28px - título de sección */
 }
 h3 {
-  font-size: 1.25rem; /* 20px base */
+  font-size: 1.25rem; /* 20px - subtítulo / título de tarjeta */
 }
 
 p {
@@ -70,13 +77,18 @@ ol {
  * diseño lo define (nav activo, hover de enlaces) vía clases de Tailwind.
  */
 a {
-  color: var(--color-azul-institucional);
+  color: var(--color-azul-petroleo);
 }
 
-/* --- Focus visible obligatorio (sim-especificacion §3) --- */
+/* --- Focus visible obligatorio --- */
 :focus-visible {
-  outline: 2px solid var(--color-azul-cielo);
+  outline: 2px solid var(--color-azul-petroleo);
   outline-offset: 2px;
+}
+
+/* Texto secundario con tono cercano (Nunito Sans) */
+.text-secundario {
+  font-family: var(--font-secundario);
 }
 
 /* --- Movimiento reducido (sim-diseno §6) --- */

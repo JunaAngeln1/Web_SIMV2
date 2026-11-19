@@ -2,7 +2,8 @@
  * src/components/ui/SectionHeading.tsx
  *
  * Título y subtítulo de sección con alineación consistente.
- * (sim-diseno §3, §8)
+ * Según Guía de Diseño §4: título de sección 28-32px, azul petróleo.
+ * Línea decorativa verde corporativo debajo del título.
  */
 
 interface SectionHeadingProps {
@@ -21,7 +22,7 @@ export default function SectionHeading({ title, subtitle, align = 'left' }: Sect
     >
       <h2
         className={[
-          'text-3xl font-titulos font-semibold text-azul-institucional tracking-tight',
+          'text-2xl sm:text-3xl lg:text-[32px] font-titulos font-semibold text-azul-petroleo tracking-tight',
           alignClass,
         ]
           .filter(Boolean)
@@ -30,13 +31,13 @@ export default function SectionHeading({ title, subtitle, align = 'left' }: Sect
         {title}
       </h2>
       <span
-        className={['mt-4 block h-1 w-16 rounded-full bg-verde-acento', barClass]
+        className={['mt-4 block h-1 w-16 rounded-full bg-verde-corporativo', barClass]
           .filter(Boolean)
           .join(' ')}
         aria-hidden="true"
       />
       {subtitle && (
-        <p className={['mt-4 text-lg text-gris-azulado', alignClass].filter(Boolean).join(' ')}>
+        <p className={['mt-4 text-lg sm:text-xl text-gris-azulado', alignClass].filter(Boolean).join(' ')}>
           {subtitle}
         </p>
       )}

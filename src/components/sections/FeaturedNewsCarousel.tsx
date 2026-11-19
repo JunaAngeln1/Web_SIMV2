@@ -62,7 +62,7 @@ export default function FeaturedNewsCarousel({ items = news }: Props) {
 
             {/* Contenido */}
             <div className="p-6 sm:p-8 lg:p-12 flex flex-col justify-center">
-              <span className="inline-block mb-3 px-3 py-1 rounded-full text-[11px] font-semibold uppercase tracking-wider bg-verde-acento text-blanco">
+              <span className="inline-block mb-3 px-3 py-1 rounded-full text-[11px] font-semibold uppercase tracking-wider bg-verde-corporativo text-blanco">
                 {current.category}
               </span>
               <h2 className="font-titulos text-3xl sm:text-4xl lg:text-[44px] font-semibold text-azul-institucional tracking-tight leading-tight mb-4 line-clamp-2">
@@ -74,13 +74,13 @@ export default function FeaturedNewsCarousel({ items = news }: Props) {
               <div className="mt-auto flex flex-wrap items-center gap-4 text-sm text-gris-azulado">
                 <time className="font-medium">{current.date}</time>
                 <span className="flex items-center gap-1">
-                  <span className="block w-1 h-1 bg-verde-acento rounded-full" />
+                  <span className="block w-1 h-1 bg-verde-corporativo rounded-full" />
                   {current.readTime}
                 </span>
               </div>
               <a
                 href={`/noticias/${current.slug}`}
-                className="mt-4 inline-flex items-center justify-center px-6 py-3 rounded-[12px] bg-azul-institucional text-blanco font-semibold text-sm transition-colors duration-200 hover:bg-azul-profundo"
+                className="mt-4 inline-flex items-center justify-center px-6 py-3 rounded-[12px] bg-azul-petroleo text-blanco font-semibold text-sm transition-colors duration-200 hover:bg-azul-oscuro"
               >
                 Leer noticia
               </a>
@@ -97,7 +97,7 @@ export default function FeaturedNewsCarousel({ items = news }: Props) {
                 aria-current={activeIndex === index ? 'true' : undefined}
                 className={`w-2 h-2 rounded-full transition-all duration-200 ${
                   activeIndex === index
-                    ? 'bg-azul-institucional w-8'
+                    ? 'bg-azul-petroleo w-8'
                     : 'bg-gris-azulado/30 hover:bg-gris-azulado/60'
                 }`}
               />
@@ -108,7 +108,7 @@ export default function FeaturedNewsCarousel({ items = news }: Props) {
           <button
             onClick={prev}
             aria-label="Diapositiva anterior"
-            className="absolute left-4 top-1/2 -translate-y-1/2 p-2 rounded-full bg-blanco/90 backdrop-blur-sm shadow-suave text-azul-institucional hover:bg-azul-institucional hover:text-blanco transition-colors z-10"
+            className="absolute left-4 top-1/2 -translate-y-1/2 p-2 rounded-full bg-blanco/90 backdrop-blur-sm shadow-suave text-azul-petroleo hover:bg-azul-petroleo hover:text-blanco transition-colors z-10"
           >
             <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
               <path
@@ -122,7 +122,7 @@ export default function FeaturedNewsCarousel({ items = news }: Props) {
           <button
             onClick={next}
             aria-label="Siguiente diapositiva"
-            className="absolute right-4 top-1/2 -translate-y-1/2 p-2 rounded-full bg-blanco/90 backdrop-blur-sm shadow-suave text-azul-institucional hover:bg-azul-institucional hover:text-blanco transition-colors z-10"
+            className="absolute right-4 top-1/2 -translate-y-1/2 p-2 rounded-full bg-blanco/90 backdrop-blur-sm shadow-suave text-azul-petroleo hover:bg-azul-petroleo hover:text-blanco transition-colors z-10"
           >
             <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />

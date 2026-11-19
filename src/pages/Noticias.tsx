@@ -34,7 +34,7 @@ export default function Noticias() {
         subtitle="Cuidar también es estar informado. Conoce nuestras novedades, consejos de bienestar animal y recomendaciones para proteger la salud de tu mascota."
       />
       <div className="relative overflow-hidden">
-        <PawPattern color="#03497D" opacity={0.025} />
+        <PawPattern color="#054564" opacity={0.025} />
         <Container>
           {/* Carrusel destacado */}
           <section
@@ -67,8 +67,8 @@ export default function Noticias() {
                       aria-selected={isActive}
                       className={`px-4 py-1.5 rounded-full text-sm font-medium transition-all duration-200 ${
                         isActive
-                          ? 'bg-azul-institucional text-blanco shadow-suave'
-                          : 'bg-azul-muy-claro text-azul-institucional border border-borde-suave hover:bg-azul-niebla'
+                          ? 'bg-azul-petroleo text-blanco shadow-suave'
+                          : 'bg-gris-claro text-azul-petroleo border border-borde-suave hover:bg-azul-niebla'
                       }`}
                     >
                       {cat}
@@ -109,7 +109,7 @@ export default function Noticias() {
             <a
               href="/noticias"
               data-purpose="cta-ver-todas-noticias"
-              className="mx-auto inline-flex items-center justify-center px-8 py-3.5 rounded-[12px] bg-verde-acento text-blanco font-semibold text-sm sm:text-base transition-colors duration-200 hover:bg-[#7a8d2a]"
+              className="mx-auto inline-flex items-center justify-center px-8 py-3.5 rounded-[12px] bg-verde-corporativo text-blanco font-semibold text-sm sm:text-base transition-colors duration-200 hover:bg-[#528d0a]"
             >
               Ver todas las noticias
             </a>

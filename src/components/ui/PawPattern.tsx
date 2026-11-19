@@ -16,7 +16,7 @@ interface PawPatternProps {
 
 export default function PawPattern({
   className,
-  color = '#03497D',
+  color = '#054564',
   opacity = 0.04,
 }: PawPatternProps) {
   const svg = `<svg xmlns="http://www.w3.org/2000/svg" width="160" height="160" viewBox="0 0 160 160"><g fill="${color}" opacity="${opacity}"><g transform="translate(18,18) rotate(-15 24 24)"><ellipse cx="24" cy="34" rx="12" ry="9"/><ellipse cx="10" cy="20" rx="5" ry="7"/><ellipse cx="22" cy="12" rx="5" ry="7"/><ellipse cx="35" cy="14" rx="5" ry="7"/><ellipse cx="44" cy="26" rx="5" ry="7"/></g><g transform="translate(92,82) rotate(20 24 24)"><ellipse cx="24" cy="34" rx="12" ry="9"/><ellipse cx="10" cy="20" rx="5" ry="7"/><ellipse cx="22" cy="12" rx="5" ry="7"/><ellipse cx="35" cy="14" rx="5" ry="7"/><ellipse cx="44" cy="26" rx="5" ry="7"/></g></g></svg>`

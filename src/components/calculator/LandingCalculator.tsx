@@ -42,19 +42,19 @@ export function LandingCalculator({ className }: LandingCalculatorProps) {
     >
       {/* Encabezado principal */}
       <header className="text-center mb-6">
-        <h1 className="text-[48px] font-bold tracking-tight leading-tight text-[#03497D] mb-2">
-          Evita facturas<span className="text-[#11BFBF]"> inesperadas</span>
+        <h1 className="text-[48px] font-bold tracking-tight leading-tight text-azul-petroleo mb-2">
+          Evita facturas<span className="text-azul-petroleo"> inesperadas</span>
         </h1>
-        <p className="text-[20px] text-[#7F9DB8] leading-[1.5] max-w-[850px] mx-auto">
+        <p className="text-[20px] text-azul-grisaceo leading-[1.5] max-w-[850px] mx-auto">
           Ejemplo de ahorro con SIM. Los montos son referenciales y la cobertura real depende del
           plan contratado.
         </p>
       </header>
 
       {/* Tarjeta central de factura */}
-      <div className="relative w-full max-w-[750px] bg-white rounded-[28px] shadow-suave border border-[#E8EEF3] p-[40px] flex flex-col items-center">
+      <div className="relative w-full max-w-[750px] bg-blanco rounded-[24px] shadow-suave border border-borde-suave p-[40px] flex flex-col items-center">
         {/* Título de la tarjeta */}
-        <h2 className="text-[34px] font-bold text-[#03497D] mb-[28px] text-center">
+        <h2 className="text-[34px] font-bold text-azul-petroleo mb-[28px] text-center">
           Factura veterinaria
         </h2>
 
@@ -69,10 +69,10 @@ export function LandingCalculator({ className }: LandingCalculatorProps) {
                 className={[
                   'flex items-center justify-between px-[30px] py-[32px] rounded-[24px] border border-transparent',
                   esEspecial
-                    ? 'bg-[#8BA533] text-white font-bold'
+                    ? 'bg-verde-corporativo text-white font-bold'
                     : esPagar
-                      ? 'bg-[#E8EEF3] text-[#03497D] font-semibold'
-                      : 'bg-[#F0F4FF] border-[#03497D]/20 text-[#03497D] font-semibold',
+                      ? 'bg-azul-niebla text-azul-petroleo font-semibold'
+                      : 'bg-blanco border-azul-petroleo/20 text-azul-petroleo font-semibold',
                 ]
                   .filter(Boolean)
                   .join(' ')}
@@ -85,7 +85,7 @@ export function LandingCalculator({ className }: LandingCalculatorProps) {
         </div>
 
         {/* Nota aclaratoria */}
-        <p className="mt-[24px] text-[14px] text-[#7F9DB8] text-center max-w-[600px] leading-[1.5]">
+        <p className="mt-[24px] text-[14px] text-azul-grisaceo text-center max-w-[600px] leading-[1.5]">
           Los montos mostrados son un ejemplo ilustrativo. La cobertura y el porcentaje de reembolso
           varían según el plan contratado con S.I.M. Consulta los términos de tu póliza.
         </p>
@@ -104,7 +104,7 @@ export function LandingCalculator({ className }: LandingCalculatorProps) {
                 key={i}
                 points={`${i * 20},0 ${i * 20 + 9},7 ${i * 20 + 18},0`}
                 fill="white"
-                stroke="#B8C8D8"
+                stroke="#D3E4E9"
                 strokeWidth="1"
               />
             ))}

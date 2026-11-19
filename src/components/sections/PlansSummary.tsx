@@ -20,9 +20,9 @@ import { useInView } from '@/hooks/useInView'
 
 /** Color de acento por plan (tokens del sistema, sin literales sueltos). */
 const ACCENT: Record<Plan['id'], string> = {
-  elite: 'azul-cielo',
-  plus: 'verde-sim',
-  'super-premium': 'azul-institucional',
+  elite: 'azul-petroleo',
+  plus: 'verde-corporativo',
+  premium: 'azul-petroleo',
 }
 
 type PlanCardProps = {
@@ -46,7 +46,9 @@ function PlanCard({ plan, delay }: PlanCardProps) {
         `border-${accent}`,
         'transition-all duration-500 ease-out',
         visible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-16',
-        featured ? 'ring-2 ring-verde-sim/20 sm:hover:scale-[1.02]' : '',
+        featured
+          ? 'border-2 border-verde-corporativo bg-verde-pastel/30 sm:hover:scale-[1.02]'
+          : '',
       ].join(' ')}
       style={{ transitionDelay: `${delay}ms` }}
     >
@@ -54,9 +56,9 @@ function PlanCard({ plan, delay }: PlanCardProps) {
       {featured && (
         <span
           data-purpose="plan-badge"
-          className="absolute -top-[6px] left-1/2 -translate-x-1/2 z-10 bg-verde-sim text-white text-[10px] font-bold px-2 py-0.5 rounded-full whitespace-nowrap"
+          className="absolute -top-[6px] left-1/2 -translate-x-1/2 z-10 bg-verde-corporativo text-white text-[10px] font-bold px-2 py-0.5 rounded-full whitespace-nowrap"
         >
-          Más vendido
+          Más completo
         </span>
       )}
 
@@ -118,7 +120,7 @@ export default function PlansSummary() {
       aria-label="Planes resumidos"
       className="py-16 sm:py-20 bg-blanco relative overflow-hidden"
     >
-      <PawPattern color="#03497D" opacity={0.03} />
+      <PawPattern color="#054564" opacity={0.03} />
       <Container className="relative">
         <SectionHeading
           title="Planes de atención para tu mascota"

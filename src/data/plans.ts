@@ -16,7 +16,7 @@
  */
 
 export interface Plan {
-  id: 'elite' | 'plus' | 'super-premium'
+  id: 'elite' | 'plus' | 'premium'
   name: string
   /** Precio mensual aprobado por SIM. */
   price: string
@@ -48,11 +48,11 @@ export const commonBenefits = [
 export const plans: Plan[] = [
   {
     id: 'elite',
-    name: 'Plan Elite',
+    name: 'Élite',
     price: '$63.000',
     period: '/mes',
     tagline:
-      'Protege a tu peludito ante eventos inesperados y accede a descuentos en servicios veterinarios.',
+      'Asistencia veterinaria esencial para su bienestar.',
     highlights: [
       'Inyectología de estabilización hasta $20.000',
       'Consulta especialista 10% dcto.',
@@ -81,12 +81,12 @@ export const plans: Plan[] = [
   },
   {
     id: 'plus',
-    name: 'Plan Plus',
+    name: 'Plus',
     price: '$102.000',
     period: '/mes',
     featured: true,
     tagline:
-      'La solución ideal para prevenir enfermedades en tu peludito antes de que ocurran y sin pagar de más.',
+      'Bienestar y prevención para una vida saludable.',
     highlights: [
       'Inyectología de estabilización hasta $30.000 · consulta especialista 20% dcto.',
       'Exámenes de laboratorio 20%–70% · rayos X y ecografías 10%–20% dcto.',
@@ -116,12 +116,12 @@ export const plans: Plan[] = [
     ],
   },
   {
-    id: 'super-premium',
-    name: 'Plan Super Premium',
+    id: 'premium',
+    name: 'Premium',
     price: '$220.000',
     period: '/mes',
     tagline:
-      'El primer sistema de salud para perros y gatos, con medicamentos del POS de SIM incluidos.',
+      'Protección integral con el mayor nivel de beneficios.',
     highlights: [
       'Inyectología de estabilización hasta $40.000 · consulta especialista 60% cobertura',
       'Medicamentos, primovacunación y refuerzo anual de vacunación*',

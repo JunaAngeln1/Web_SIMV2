@@ -12,7 +12,7 @@ export default function Nosotros() {
         subtitle="Qué es S.I.M., nuestra misión, propuesta de valor y cifras institucionales."
       />
       <div className="relative overflow-hidden">
-        <PawPattern color="#03497D" opacity={0.025} />
+        <PawPattern color="#054564" opacity={0.025} />
         <Container>
           <section
             data-section="nosotros-institucional"
@@ -21,7 +21,7 @@ export default function Nosotros() {
           >
             <div data-purpose="nosotros-contenido">
               <p className="text-gris-azulado">S.I.M.</p>
-              <p className="mt-2 text-lg font-titulos text-azul-institucional">
+              <p className="mt-2 text-lg font-titulos text-azul-petroleo">
                 Servicios Integrales para Mascotas
               </p>
               <p className="mt-4 text-base text-gris-azulado">¿EPS para mascotas?</p>

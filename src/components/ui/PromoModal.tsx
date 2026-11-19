@@ -123,7 +123,7 @@ export default function PromoModal() {
       >
         {/* Franja decorativa superior */}
         <div
-          className="absolute inset-x-0 top-0 h-1.5 bg-gradient-to-r from-azul-institucional via-azul-cielo to-verde-acento"
+          className="absolute inset-x-0 top-0 h-1.5 bg-gradient-to-r from-azul-petroleo via-azul-petroleo to-verde-corporativo"
           aria-hidden="true"
         />
 
@@ -132,17 +132,17 @@ export default function PromoModal() {
           type="button"
           onClick={close}
           aria-label="Cerrar promoción"
-          className="absolute right-4 top-4 inline-flex h-9 w-9 items-center justify-center rounded-full text-gris-azulado transition-colors duration-200 hover:bg-azul-niebla hover:text-azul-institucional focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-azul-cielo"
+          className="absolute right-4 top-4 inline-flex h-9 w-9 items-center justify-center rounded-full text-gris-azulado transition-colors duration-200 hover:bg-azul-niebla hover:text-azul-petroleo focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-azul-petroleo"
         >
           <X className="h-5 w-5" aria-hidden="true" />
         </button>
 
         {/* Icono */}
-        <div className="mb-4 inline-flex h-12 w-12 items-center justify-center rounded-full bg-verde-acento/15 text-verde-acento">
+        <div className="mb-4 inline-flex h-12 w-12 items-center justify-center rounded-full bg-verde-corporativo/15 text-verde-corporativo">
           <Gift className="h-6 w-6" aria-hidden="true" />
         </div>
 
-        <span className="inline-block rounded-full bg-verde-acento px-3 py-1 text-[11px] font-bold uppercase tracking-wider text-blanco">
+        <span className="inline-block rounded-full bg-verde-corporativo px-3 py-1 text-[11px] font-bold uppercase tracking-wider text-blanco">
           {promoActiva.badge}
         </span>
 
@@ -165,7 +165,7 @@ export default function PromoModal() {
           ref={ctaRef}
           href={promoActiva.ctaHref}
           onClick={close}
-          className="mt-6 inline-flex w-full items-center justify-center rounded-full bg-verde-acento px-6 py-3 text-sm font-semibold text-blanco transition-colors duration-200 hover:bg-[#7a8d2a] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-verde-acento focus-visible:ring-offset-2"
+          className="mt-6 inline-flex w-full items-center justify-center rounded-full bg-verde-corporativo px-6 py-3 text-sm font-semibold text-blanco transition-colors duration-200 hover:bg-[#528d0a] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-verde-corporativo focus-visible:ring-offset-2"
         >
           {promoActiva.ctaLabel}
         </a>
