@@ -49,7 +49,7 @@ export default function PetManager() {
             className="md:col-span-4 lg:col-span-4 relative"
           >
             <img
-              src="/assets/images/about-team.webp"
+              src="/assets/images/about/about-team.webp"
               alt="Asesora Personal Pet Manager"
               data-purpose="pm-foto-asesora"
               className="w-full h-auto rounded-[24px] shadow-medio object-cover"

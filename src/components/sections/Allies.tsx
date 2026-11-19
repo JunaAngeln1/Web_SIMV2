@@ -84,7 +84,7 @@ export default function Allies() {
           {/* Fotografía veterinaria a la derecha */}
           <div data-purpose="red-foto" className="md:col-span-1 lg:col-span-1">
             <img
-              src="/assets/images/about-pet.webp"
+              src="/assets/images/about/about-pet.webp"
               alt="Atención veterinaria en IPS aliada"
               data-purpose="red-foto-veterinaria"
               className="w-full h-auto rounded-[24px] shadow-suave object-cover"

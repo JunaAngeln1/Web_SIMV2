@@ -47,7 +47,7 @@ export default function About() {
 
           <div data-purpose="about-image" className="relative">
             <img
-              src="/assets/images/about-team.webp"
+              src="/assets/images/about/about-team.webp"
               alt="Mascota y equipo veterinario"
               data-purpose="about-photo"
               className="w-full h-auto rounded-[var(--radius-contenedor)] shadow-medio object-cover"

@@ -53,7 +53,7 @@ export const plans: Plan[] = [
     name: 'Élite',
     price: '$63.000',
     period: '/mes',
-    image: '/assets/images/news/plan-elite-perro.webp',
+    image: '/assets/images/plans/plan-elite-perro.webp',
     tagline:
       'Asistencia veterinaria esencial para su bienestar.',
     highlights: [
@@ -87,7 +87,7 @@ export const plans: Plan[] = [
     name: 'Plus',
     price: '$102.000',
     period: '/mes',
-    image: '/assets/images/news/plan-plus-gato.webp',
+    image: '/assets/images/plans/plan-plus-gato.webp',
     featured: true,
     tagline:
       'Bienestar y prevención para una vida saludable.',
@@ -124,7 +124,7 @@ export const plans: Plan[] = [
     name: 'Premium',
     price: '$220.000',
     period: '/mes',
-    image: '/assets/images/news/plan-premium-golden.webp',
+    image: '/assets/images/plans/plan-premium-golden.webp',
     tagline:
       'Protección integral con el mayor nivel de beneficios.',
     highlights: [

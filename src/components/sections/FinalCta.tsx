@@ -22,7 +22,7 @@ export default function FinalCta() {
       {/* Fondo de ambiente natural con superposición verde oscuro */}
       <div className="absolute inset-0 bg-azul-oscuro/90">
         <img
-          src="/assets/images/about-pet.webp"
+          src="/assets/images/about/about-pet.webp"
           alt=""
           data-purpose="banner-bg"
           aria-hidden="true"

@@ -21,13 +21,13 @@ interface HeroSlide {
 
 const HERO_SLIDES: HeroSlide[] = [
   {
-    image: '/assets/images/news/Banner Animales.webp',
+    image: '/assets/images/hero-banners/Banner Animales.webp',
     title: 'Ellos son parte de tu familia.',
     description:
       'Su bienestar también es nuestra prioridad. Planes de asistencia veterinaria para cuidar, proteger y acompañar a tus mascotas.',
   },
   {
-    image: '/assets/images/news/Banner Familia.webp',
+    image: '/assets/images/hero-banners/Banner Familia.webp',
     title: 'Su bienestar es nuestra prioridad.',
     description:
       'Ellos son parte de tu familia. Accede a los planes de atención veterinaria de SIM y protégelos en cada etapa de su vida.',

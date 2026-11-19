@@ -140,7 +140,7 @@ export default function FAQBanner() {
                 className="absolute inset-0 w-full h-full bg-gradient-to-r from-[#003047]/70 via-[#003047]/30 to-transparent pointer-events-none"
               />
               <img
-                src="/assets/images/news/Banner Familia.webp"
+                src="/assets/images/hero-banners/Banner Familia.webp"
                 alt="Mujer sonriendo abrazando a su perro en entorno natural"
                 data-purpose="banner-photo"
                 className="w-full h-full object-cover object-center"
@@ -253,7 +253,7 @@ export default function FAQBanner() {
                 className="absolute inset-0 w-full h-full bg-gradient-to-r from-[#003047]/70 via-[#003047]/30 to-transparent pointer-events-none"
               />
               <img
-                src="/assets/images/news/Banner Familia.webp"
+                src="/assets/images/hero-banners/Banner Familia.webp"
                 alt="Mujer sonriendo abrazando a su perro en entorno natural"
                 data-purpose="banner-photo-mobile"
                 className="w-full h-full object-cover object-center"
