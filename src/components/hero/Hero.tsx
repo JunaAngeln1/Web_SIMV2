@@ -69,12 +69,12 @@ export default function Hero() {
       data-section="hero"
       role="region"
       aria-label="Carrusel de banners principales"
-      className="relative w-full max-w-[1440px] min-h-[600px] mx-auto overflow-hidden bg-blanco mb-12"
+      className="relative w-full min-h-[600px] overflow-hidden bg-blanco"
     >
-      {/* Contenedor del carrusel de banners */}
+      {/* Contenedor del carrusel de banners (ancho completo de pantalla) */}
       <div
         data-purpose="hero-carousel"
-        className="relative w-full h-[560px] lg:h-[640px] rounded-[24px] overflow-hidden shadow-suave border border-borde-suave"
+        className="relative w-full h-[560px] lg:h-[640px] overflow-hidden"
         onMouseEnter={() => (isPausedRef.current = true)}
         onMouseLeave={() => (isPausedRef.current = false)}
       >
@@ -111,8 +111,8 @@ export default function Hero() {
             />
 
             {/* Contenido: texto e botones (sobre el lado claro del overlay) */}
-            <div className="mx-auto max-w-[1360px] px-4 sm:px-6 lg:px-8 relative z-20">
-              <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center py-16 sm:py-20 h-full">
+            <div className="w-full px-4 sm:px-6 lg:px-8 relative z-20">
+              <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center py-16 sm:py-20 h-full max-w-[1360px] mx-auto">
                 <div data-purpose="hero-text" className="relative">
                   <h1
                     data-purpose="hero-title"
@@ -144,9 +144,6 @@ export default function Hero() {
                     </Button>
                   </div>
                 </div>
-
-                {/* Espacio derecho reservado para la imagen del banner (ya está de fondo) */}
-                <div data-purpose="hero-image-placeholder" className="hidden lg:block" />
               </div>
             </div>
           </div>
