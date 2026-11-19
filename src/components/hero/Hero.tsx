@@ -73,33 +73,12 @@ export default function Hero() {
                 size="lg"
                 data-purpose="cta-secundario"
               >
-                Contáctanos
+                Habla con un asesor
               </Button>
             </div>
           </div>
 
-          {/* Columna de imagen (derecha, deja ver la imagen de fondo) */}
-          <div
-            data-purpose="hero-image"
-            className="relative hidden lg:block h-[400px] w-full"
-          >
-            <img
-              src="/assets/sim-hero-cat.webp"
-              alt="Familia con sus mascotas"
-              data-purpose="hero-photo"
-              className="w-full h-full rounded-[24px] shadow-medio object-cover object-center border-4 border-blanco"
-            />
-          </div>
-
-          {/* Imagen en móvil: se muestra debajo del texto */}
-          <div data-purpose="hero-image-mobile" className="lg:hidden mt-8 h-[320px]">
-            <img
-              src="/assets/sim-hero-cat.webp"
-              alt="Familia con sus mascotas"
-              data-purpose="hero-photo-mobile"
-              className="w-full h-full rounded-[24px] shadow-medio object-cover object-center mx-auto border-4 border-blanco"
-            />
-          </div>
+          {/* No hay imagen de gato en el hero; la imagen de fondo cubre la sección */}
         </div>
       </div>
     </section>
