@@ -1,12 +1,16 @@
 # Web S.I.M. · Servicios Integrales para Mascotas
 
-Web institucional de S.I.M. (Empresa Promotora de Servicios de Salud para perros
-y gatos). Objetivo comercial: conseguir nuevas afiliaciones y facilitar las
-solicitudes de informacion.
+Landing page institucional de S.I.M. — Servicios Integrales para Mascotas. Presenta
+los servicios de asistencia veterinaria y busca convertir a los visitantes en
+afiliados siguiendo un recorrido visual de 10 secciones: navegación, hero,
+franja de beneficios, planes, Personal Pet Manager, red de atención, por qué
+elegir SIM, preguntas frecuentes, banner de afiliación y footer.
 
-> **Estado actual: Fase 0 (andamiaje).** La estructura de carpetas, el stack y
-> las dependencias estan listos. **Todavia no hay componentes implementados**: el
-> sitio se construye a partir de la Fase 1 segun el orden de `ESTRUCTURA.md`.
+> **Estado actual: v1 implementada.** La landing page está completa con los
+> componentes de la guía de diseño (Hero, Beneficios, Planes, Pet Manager,
+> Red de atención, ¿Por qué elegir SIM?, FAQ, Banner de afiliación y Footer).
+> Los componentes se reutilizan desde `src/components/` y el contenido editable
+> vive en `src/data/`.
 
 ## Requisitos
 
@@ -59,6 +63,7 @@ Copia `.env.example` a `.env.local` (no se versiona).
 
 | Documento                 | Contenido                                                                     |
 | ------------------------- | ----------------------------------------------------------------------------- |
+| `GUIA-DISENO.md`          | Guía de estructura, diseño y organización de la landing page (colores, tipografía, componentes, reglas visuales y responsive) |
 | `ESTRUCTURA.md`           | Mapa completo de carpetas, skills que las gobiernan y orden de implementacion |
 | `src/*/README.md`         | Que va en cada carpeta, que no, y con que convenciones                        |
 | `public/assets/README.md` | Inventario de assets pendientes de SIM                                        |
@@ -76,6 +81,11 @@ Todos los assets obligatorios para la v1 estan cubiertos:
 | Fotografias Nosotros | Recibidas   | 2 fotos (frame 0 estatico) en `public/assets/images/`                      |
 | Imagenes noticias    | Placeholder | 3 SVG 16:9 en `public/assets/images/news/` (a reemplazar con fotos de SIM) |
 | Favicons             | Generados   | `favicon.svg`, `favicon-32.png`, `apple-touch-icon.png`                    |
+| Fondos decorativos   | Recibido    | `fondo_verde_azul_azul_turquesa.svg` en `public/assets/`                   |
+| Componentes UI nuevos| Implementado| `NewsCard`, `PageHero`, `PawPattern`, `PromoModal`, `SectionWave` en `src/components/ui/` |
+| Secciones nuevas     | Implementado| `FeaturedNewsCarousel` en `src/components/sections/`                       |
+| Datos de noticias    | Implementado| `src/data/news.ts` y `src/data/promos.ts`                                  |
+| Página detalle noticia| Implementado| `src/pages/NoticiaDetalle.tsx` y `src/pages/noticiaDetalleLoader.ts`       |
 
 Material derivado de los originales, que se conservan en `assets-original/` y no
 se desplegan en produccion.
@@ -86,3 +96,9 @@ Antes de publicar hacen falta: **tarifas aprobadas** (para la calculadora de
 ahorro), confirmacion de las cifras (+4.000 / +250 / +3.500), canales oficiales
 de contacto, textos legales y enlace oficial de afiliacion. El detalle esta en
 `public/assets/README.md` y `src/data/README.md`.
+
+Sustituir los recursos de referencia por fotografías autorizadas y definitivas,
+confirmar el logo oficial y sus versiones, verificar teléfonos, correo, WhatsApp
+y enlaces sociales, incorporar respuestas reales a las preguntas frecuentes,
+confirmar la información de cobertura, planes, beneficios y condiciones, y
+comprobar accesibilidad, contraste, carga de imágenes y funcionamiento en móviles.

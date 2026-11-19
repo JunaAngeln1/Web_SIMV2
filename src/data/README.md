@@ -8,11 +8,11 @@ vive aqui como datos tipados.
 | Archivo         | Contenido                                                    | Origen                  |
 | --------------- | ------------------------------------------------------------ | ----------------------- |
 | `site.ts`       | Datos de la institucion, navegacion, pie de pagina, contacto | `sim-arquitectura` §1–2 |
-| `benefits.ts`   | Beneficios de la ruleta del hero                             | `sim-diseno` §5         |
-| `plans.ts`      | Planes y caracteristicas de cada plan                        | `sim-arquitectura` §3.2 |
-| `allies.ts`     | Aliados y red veterinaria                                    | `sim-arquitectura` §3.5 |
-| `news.ts`       | Noticias y consejos                                          | `sim-arquitectura` §3.6 |
-| `promos.ts`     | Promoción del popup de entrada                               | Nuevo (PENDIENTE_SIM)   |
+| `benefits.ts`   | Cuatro beneficios: atención veterinaria, asistencia y urgencias, prevención y bienestar, acompañamiento personalizado | `sim-diseno` §4.3       |
+| `plans.ts`      | Tres planes: Élite, Plus y Premium con nombre, descripción y beneficios | `sim-arquitectura` §3.2 |
+| `allies.ts`     | Aliados y red veterinaria: IPS en Bogotá, Soacha, Chía, Funza, Mosquera, Madrid y Facatativá | `sim-arquitectura` §3.5 |
+| `news.ts`       | Noticias y consejos (carusel de noticias destacadas)         | `sim-arquitectura` §3.6 |
+| `promos.ts`     | Promoción del popup de entrada                               | Implementado            |
 | `indicators.ts` | Cifras institucionales                                       | `sim-arquitectura` §3.4 |
 
 ## Regla critica: no inventar
@@ -34,3 +34,5 @@ Mientras no exista dato aprobado:
 - Los beneficios de `benefits.ts` llevan los nombres de archivo de icono de
   `public/assets/icons/`: `allies.svg`, `veterinary-care.svg`, `pet-plans.svg`,
   `support.svg`.
+- Los datos de `news.ts` y `promos.ts` se muestran en la sección de noticias
+  y en el popup de afiliación, respectivamente.

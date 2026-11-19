@@ -28,15 +28,17 @@ parecido y no se reemplaza una foto por un marcador de posicion sin avisar.
 | Imagen noticia: prevencion   | `images/news/noticia-prevencion.svg` | 5.5 KB       | Placeholder SVG             | Generado por script                           |
 | Imagen noticia: cuidado      | `images/news/noticia-cuidado.svg`    | 5.5 KB       | Placeholder SVG             | Generado por script                           |
 | Imagen noticia: bienestar    | `images/news/noticia-bienestar.svg`  | 5.5 KB       | Placeholder SVG             | Generado por script                           |
-| **Total assets desplegados** |                                      | **281.3 KB** |                             |                                               |
+| Fondo decorativo             | `fondo_verde_azul_turquesa.svg`      | —            | Derivado                    | Recurso de referencia de la guia de diseno    |
+| **Total assets desplegados** |                                      | **281.3 KB+**|                             |                                               |
 
 Los originales pesaban **5,091 KB**; el sitio desplegado usa **281.3 KB** (-94.5%).
 
 ## Datos de marca resueltos de los assets oficiales
 
-| Token               | Valor     | Fuente                       |
-| ------------------- | --------- | ---------------------------- |
-| `--color-verde-sim` | `#77c100` | El logo oficial (cruz verde) |
+| Token                     | Valor       | Fuente                       |
+| ------------------------- | ----------- | ---------------------------- |
+| `--color-azul-petroleo`   | `#054564`   | Guia de diseno de SIM        |
+| `--color-verde-corporativo` | `#659D0D` | Guia de diseno de SIM        |
 
 ## Pendiente de SIM
 

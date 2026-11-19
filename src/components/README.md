@@ -7,7 +7,7 @@
 | `layout/`   | Elementos globales: Header, Footer, Container |
 | `hero/`     | Hero principal y su interaccion               |
 | `ui/`       | Primitivas visuales reutilizables             |
-| `sections/` | Secciones de la pagina de Inicio              |
+| `sections/` | Secciones de la pagina de Inicio (10 secciones segun la guia de diseno) |
 
 ## Que NO va aqui
 

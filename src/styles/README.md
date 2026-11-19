@@ -7,32 +7,93 @@
 - `globals.css` — reset, tipografia base, `:focus-visible`, soporte de
   `prefers-reduced-motion`, utilidades de layout compartidas.
 
-## Valores del sistema de color (segun `sim-diseno` §1)
+## Valores del sistema de color (segun la Guía de Diseño de SIM)
 
-| Token                        | Valor         | Uso                           |
-| ---------------------------- | ------------- | ----------------------------- |
-| `--color-azul-profundo`      | `#07345B`     | Fondos oscuros, footer        |
-| `--color-azul-institucional` | `#03497D`     | Titulos, navegacion, iconos   |
-| `--color-azul-cielo`         | `#48AFE8`     | Detalles, acentos secundarios |
-| `--color-verde-sim`          | **`#77c100`** | CTA principal, indicadores    |
-| `--color-blanco`             | `#FFFFFF`     | Contenedores, tarjetas        |
-| `--color-azul-muy-claro`     | `#F1F7FC`     | Fondos alternos               |
-| `--color-azul-niebla`        | `#E8F3FC`     | Fondos de iconos, chips       |
-| `--color-gris-azulado`       | `#64748B`     | Texto secundario              |
-| `--color-texto-principal`    | `#172B3A`     | Texto de lectura              |
-| `--color-borde-suave`        | `#D9E5EF`     | Bordes y divisores            |
+La identidad combina azul petróleo y verde. El azul comunica confianza y respaldo
+profesional; el verde se utiliza para destacar acciones, protección y bienestar.
+Los fondos blancos y grises suaves mantienen la página luminosa y facilitan la
+lectura.
 
-### Nota sobre el verde
+| Token                     | Valor       | Uso recomendado                                |
+| ------------------------- | ----------- | ---------------------------------------------- |
+| `--color-azul-petroleo`   | `#054564`   | Títulos, navegación, iconos y textos destacados |
+| `--color-verde-corporativo` | `#659D0D` | Botones principales, indicadores y acentos     |
+| `--color-verde-claro`     | `#A5C46C`   | Detalles secundarios y elementos decorativos   |
+| `--color-verde-pastel`    | `#E9F2DC`   | Fondos suaves de beneficios y paneles          |
+| `--color-gris-claro`      | `#F4F5F6`   | Tarjetas y superficies alternas                |
+| `--color-blanco`          | `#FFFFFF`   | Fondo principal y botones secundarios          |
+| `--color-azul-grisaceo`   | `#D3E4E9`   | Fondos y detalles decorativos                  |
+| `--color-azul-oscuro`     | `#003047`   | Footer y zonas de alto contraste               |
 
-La skill de diseno indica `#7AB929`, pero el **logo oficial entregado usa
-`#77c100`**. Se adopta el valor del activo oficial y se deja documentado como
-discrepancia a confirmar contra el manual de marca antes de producción.
+Los valores son aproximados y pueden ajustarse al manual de marca oficial si existe uno.
+
+### Proporción visual sugerida
+
+- 65 %: blanco y fondos claros.
+- 20 %: azul petróleo y azul oscuro.
+- 10 %: verde corporativo.
+- 5 %: tonos complementarios y decoración.
+
+No es una medición exacta de la captura de referencia, sino una guía para mantener
+el equilibrio visual.
 
 ## Tipografia
 
-- Texto, navegacion y botones: **Poppins** (400/500/600/700).
-- Titulos: **Manrope** (o **Montaser Arabic** si SIM entrega la fuente autorizada
-  con licencia web). Nunca mas de dos familias.
+La captura utiliza una tipografía sans-serif moderna, de apariencia geométrica y
+legible. Alternativas recomendadas:
+
+- **Poppins**: títulos y encabezados.
+- **Inter**: párrafos, navegación y textos de interfaz.
+- **Nunito Sans**: textos secundarios con un tono cercano.
+
+### Jerarquía orientativa de tamaños
+
+| Elemento                 | Tamaño sugerido |
+| ------------------------ | --------------- |
+| Título principal del Hero| 40–44 px        |
+| Título de sección        | 28–32 px        |
+| Subtítulo                | 20–24 px        |
+| Título de tarjeta        | 20–24 px        |
+| Texto normal             | 14–16 px        |
+| Texto auxiliar           | 12–13 px        |
+
+Nunca usar más de dos familias tipográficas.
+
+## Tokens de componentes
+
+| Token                    | Valor                              | Uso                      |
+| ------------------------ | ---------------------------------- | ------------------------ |
+| `--sim-radius-card`      | `22px`                             | Bordes redondeados de tarjetas |
+| `--sim-radius-button`    | `999px`                            | Botones forma de píldora   |
+| `--sim-shadow`           | `0 4px 18px rgba(5, 69, 100, .06)` | Sombras suaves de tarjetas |
+
+## Reglas visuales de los componentes
+
+### Botones
+- Forma de píldora, bordes completamente redondeados (`999px`).
+- Botón principal verde con texto blanco.
+- Botón secundario blanco con borde azul y texto azul.
+- Usar verbos de acción claros: "Conoce", "Habla", "Ver" y "Afiliarme".
+
+### Tarjetas
+- Fondo blanco o gris azulado muy claro.
+- Bordes redondeados de aproximadamente 14–24 px.
+- Sombras suaves, sin exceso de profundidad.
+- Imágenes de mascotas como elemento visual principal.
+- Mantener títulos, descripciones y botones alineados.
+
+### Iconos y decoración
+- Iconos lineales, sencillos y fáciles de reconocer.
+- Verde para beneficios y acciones positivas.
+- Azul para información, contacto y confianza.
+- Huellas de mascotas como decoración secundaria, sin competir con el contenido.
+
+### Espaciado y composición
+- Separación generosa entre secciones.
+- Contenido centrado en un contenedor de ancho máximo aproximado de 1200 px en escritorio.
+- Evitar párrafos demasiado largos.
+- Alternar secciones blancas y fondos gris claro para separar visualmente los contenidos.
+- En pantallas pequeñas, apilar columnas y tarjetas verticalmente.
 
 ## Que NO va aqui
 
