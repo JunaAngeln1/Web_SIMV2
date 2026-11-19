@@ -2,9 +2,10 @@
  * src/components/ui/PlanCard.tsx
  *
  * Tarjeta de plan con diseño de dos columnas (Guía de diseño).
- * Columna izquierda (45%): fotografía de la mascota recortada.
- * Columna derecha (55%): información del plan organizada verticalmente.
- * Bordes redondeados 22–26 px, fondo gris azulado claro, sin sombras fuertes.
+ * Columna izquierda (50%): fotografía de la mascota recortada.
+ * Columna derecha (50%): información del plan organizada verticalmente.
+ * Bordes redondeados 22–26 px, fondo gris azulado claro, sombras suaves.
+ * Plus: borde grueso verde y botón verde. Élite/Premium: sombra suave y botón blanco con borde azul.
  */
 
 import { ArrowRight } from 'lucide-react'
@@ -23,34 +24,35 @@ interface PlanCardProps {
 
 export default function PlanCard({ plan }: PlanCardProps) {
   const isPlus = plan.featured
-  const accentColor = plan.accent // 'azul-petroleo' | 'verde-corporativo'
 
   return (
     <article
       data-purpose="plan-card"
       className={[
-        'relative flex flex-col lg:flex-row gap-0 rounded-[24px] border overflow-hidden bg-gris-claro transition-colors duration-300',
+        'relative flex flex-col lg:flex-row gap-0 rounded-[24px] overflow-hidden bg-gris-claro transition-all duration-300',
+        // Plus: borde grueso verde
         isPlus
-          ? 'border-2 border-verde-corporativo bg-gris-claro hover:bg-gris-claro/90'
-          : `border-${accentColor} hover:border-${accentColor}/60`,
+          ? 'border-4 border-verde-corporativo shadow-[0_4px_18px_rgba(101,157,13,0.15)] hover:shadow-[0_6px_24px_rgba(101,157,13,0.25)]'
+          : // Élite y Premium: sombra suave, sin borde marcado
+            'shadow-suave hover:shadow-medio border border-transparent',
       ].join(' ')}
     >
-      {/* Columna izquierda: fotografía (45%) */}
+      {/* Columna izquierda: fotografía (50% - mitad de la tarjeta) */}
       <div
         data-purpose="plan-image"
-        className="relative w-full h-[320px] lg:w-[45%] lg:h-full overflow-hidden flex-shrink-0"
+        className="relative w-full h-[320px] lg:w-[50%] lg:h-full overflow-hidden flex-shrink-0"
       >
         <img
           src={plan.image}
-          alt={`Perro del plan ${plan.name}`}
+          alt={`Mascota del plan ${plan.name}`}
           data-purpose="plan-photo"
           className="w-full h-full object-cover object-center"
         />
       </div>
 
-      {/* Columna derecha: información (55%) */}
-      <div data-purpose="plan-info" className="w-full lg:w-[55%] p-6 sm:p-8 lg:p-10 flex flex-col justify-between">
-        <div data-purpose="plan-content" className="flex flex-col gap-3">
+      {/* Columna derecha: información (50%) */}
+      <div data-purpose="plan-info" className="w-full lg:w-[50%] p-8 sm:p-10 lg:p-12 flex flex-col justify-between">
+        <div data-purpose="plan-content" className="flex flex-col gap-4">
           {/* Texto pequeño: "Plan" */}
           <span
             data-purpose="plan-label"
@@ -63,7 +65,7 @@ export default function PlanCard({ plan }: PlanCardProps) {
           {isPlus && (
             <span
               data-purpose="plan-badge"
-              className="inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full bg-verde-corporativo text-white text-[10px] font-bold uppercase tracking-wider"
+              className="inline-flex items-center gap-1 px-3 py-1 rounded-full bg-verde-corporativo text-white text-[11px] font-bold uppercase tracking-wider"
             >
               Más completo
             </span>
@@ -72,7 +74,7 @@ export default function PlanCard({ plan }: PlanCardProps) {
           {/* Nombre del plan: grande, negrita, azul petróleo */}
           <h3
             data-purpose="plan-name"
-            className="font-titulos font-bold text-2xl sm:text-3xl text-azul-petroleo leading-tight"
+            className="font-titulos font-bold text-3xl sm:text-4xl text-azul-petroleo leading-tight"
           >
             {plan.name}
           </h3>
@@ -86,15 +88,15 @@ export default function PlanCard({ plan }: PlanCardProps) {
           </p>
         </div>
 
-        {/* Botón: "Ver beneficios" con flecha, blanco con borde azul */}
-        <div className="mt-auto pt-6 sm:pt-8">
+        {/* Botón: "Ver beneficios" con flecha, texto en una sola línea */}
+        <div className="mt-auto pt-8 sm:pt-10">
           <Button
-            variant="secondary"
+            variant={isPlus ? 'primary' : 'secondary'}
             size="lg"
             data-purpose="cta-ver-beneficios"
-            className="w-full px-10"
+            className="w-full px-12 whitespace-nowrap"
           >
-            Ver beneficios{' '}
+            {'Ver beneficios'}
             <ArrowRight className="ml-2 w-4 h-4 transition-transform group-hover:translate-x-1" />
           </Button>
         </div>
