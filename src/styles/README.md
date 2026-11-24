@@ -17,7 +17,9 @@ lectura.
 | Token                     | Valor       | Uso recomendado                                |
 | ------------------------- | ----------- | ---------------------------------------------- |
 | `--color-azul-petroleo`   | `#054564`   | Títulos, navegación, iconos y textos destacados |
-| `--color-verde-corporativo` | `#659D0D` | Botones principales, indicadores y acentos     |
+| `--color-verde-corporativo` | `#659D0D` | Acentos decorativos, iconos y texto grande   |
+| `--color-verde-interactivo` | `#4F7D0A` | Botones y badges con texto blanco (cumple AA) |
+| `--color-verde-interactivo-hover` | `#3F6408` | Hover de botones y badges verdes      |
 | `--color-verde-claro`     | `#A5C46C`   | Detalles secundarios y elementos decorativos   |
 | `--color-verde-pastel`    | `#E9F2DC`   | Fondos suaves de beneficios y paneles          |
 | `--color-gris-claro`      | `#F4F5F6`   | Tarjetas y superficies alternas                |
@@ -26,6 +28,11 @@ lectura.
 | `--color-azul-oscuro`     | `#003047`   | Footer y zonas de alto contraste               |
 
 Los valores son aproximados y pueden ajustarse al manual de marca oficial si existe uno.
+
+> **Contraste:** el verde de marca `#659D0D` con texto blanco da 3.3:1 y no cumple
+> WCAG AA. Por eso las superficies interactivas con texto blanco (botones, badges)
+> usan `--color-verde-interactivo` (`#4F7D0A`, hover `#3F6408`). El verde de marca
+> se conserva para decoración y texto grande (≥ 24 px o ≥ 18.66 px bold).
 
 ### Proporción visual sugerida
 
@@ -63,15 +70,15 @@ Nunca usar más de dos familias tipográficas.
 
 | Token                    | Valor                              | Uso                      |
 | ------------------------ | ---------------------------------- | ------------------------ |
-| `--sim-radius-card`      | `22px`                             | Bordes redondeados de tarjetas |
-| `--sim-radius-button`    | `999px`                            | Botones forma de píldora   |
-| `--sim-shadow`           | `0 4px 18px rgba(5, 69, 100, .06)` | Sombras suaves de tarjetas |
+| `--radius-tarjeta`       | `20px`                             | Bordes redondeados de tarjetas |
+| `--radius-pildora`       | `9999px`                           | Botones forma de píldora   |
+| `--shadow-suave`         | `0 4px 18px rgba(5, 69, 100, .06)` | Sombras suaves de tarjetas |
 
 ## Reglas visuales de los componentes
 
 ### Botones
 - Forma de píldora, bordes completamente redondeados (`999px`).
-- Botón principal verde con texto blanco.
+- Botón principal con `verde-interactivo` y texto blanco (contraste AA).
 - Botón secundario blanco con borde azul y texto azul.
 - Usar verbos de acción claros: "Conoce", "Habla", "Ver" y "Afiliarme".
 
@@ -86,7 +93,7 @@ Nunca usar más de dos familias tipográficas.
 - Iconos lineales, sencillos y fáciles de reconocer.
 - Verde para beneficios y acciones positivas.
 - Azul para información, contacto y confianza.
-- Huellas de mascotas como decoración secundaria, sin competir con el contenido.
+- Sin decoración de huellas ni ondas: el fondo plano y el espaciado jerarquizan.
 
 ### Espaciado y composición
 - Separación generosa entre secciones.

@@ -1,91 +1,96 @@
-/**
- * src/components/sections/PlansSummary.tsx
- *
- * Sección de planes del inicio: 3 tarjetas con diseño de dos columnas
- * (fotografía a la izquierda, información a la derecha). Los datos vienen
- * de @/data/plans (aprobados por SIM).
- */
-import { useNavigate } from 'react-router-dom'
-import PlanCard from '@/components/ui/PlanCard'
+/** Resumen de los tres planes en la página de inicio. */
+import { ArrowRight, PawPrint } from 'lucide-react'
+import { Link } from 'react-router-dom'
 import Container from '@/components/layout/Container'
-import PawPattern from '@/components/ui/PawPattern'
-import SectionHeading from '@/components/ui/SectionHeading'
-import Button from '@/components/ui/Button'
-import { plans, commonBenefits, plansFootnote, type Plan } from '@/data/plans'
+import { plans } from '@/data/plans'
 
-/** Color de acento por plan (tokens del sistema, sin literales sueltos). */
-const ACCENT: Record<Plan['id'], string> = {
-  elite: 'azul-petroleo',
-  plus: 'verde-corporativo',
-  premium: 'azul-petroleo',
+function HomePlanCard({ plan }: { plan: (typeof plans)[number] }) {
+  const featured = plan.id === 'plus'
+
+  return (
+    <article
+      data-purpose="plan-card"
+      data-plan={plan.id}
+      className={`relative flex h-[190px] min-w-0 overflow-visible rounded-[24px] border bg-gris-plan sm:h-[205px] ${
+        featured ? 'border-[1.5px] border-verde-corporativo' : 'border-transparent'
+      }`}
+    >
+      {featured && (
+        <span className="absolute -right-2.5 -top-3 z-10 rounded-full bg-verde-interactivo px-3 py-1 text-[10px] font-semibold leading-none text-white shadow-sm">
+          Más completo
+        </span>
+      )}
+      <div className="h-full w-[43%] shrink-0 overflow-hidden rounded-l-[23px]">
+        <img
+          src={plan.image}
+          alt={`Mascota del plan ${plan.name}`}
+          className="h-full w-full object-cover object-center"
+          loading="lazy"
+        />
+      </div>
+      <div className="flex min-w-0 flex-1 flex-col items-start px-4 py-4 sm:px-5 sm:py-5">
+        <span className="text-xs leading-none text-azul-petroleo sm:text-[13px]">Plan</span>
+        <h3 className="mt-1.5 font-titulos text-[25px] font-bold leading-none text-azul-petroleo sm:text-[28px]">
+          {plan.name}
+        </h3>
+        <p className="mt-2 line-clamp-3 text-[12px] leading-[1.4] text-texto-principal sm:text-[13px]">
+          {plan.tagline}
+        </p>
+        <Link
+          to="/planes"
+          data-purpose="cta-ver-beneficios"
+          className={`group mt-auto inline-flex min-h-[34px] items-center justify-center gap-2 whitespace-nowrap rounded-full border px-3.5 text-[11px] font-semibold transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-verde-corporativo focus-visible:ring-offset-2 sm:text-xs ${
+            featured
+              ? 'border-verde-interactivo bg-verde-interactivo text-white hover:bg-verde-interactivo-hover'
+              : 'border-azul-petroleo bg-white text-azul-petroleo hover:bg-azul-muy-claro'
+          }`}
+        >
+          Ver beneficios
+          <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-0.5" aria-hidden="true" />
+        </Link>
+      </div>
+    </article>
+  )
 }
 
 export default function PlansSummary() {
-  const navigate = useNavigate()
-
   return (
     <section
       data-section="planes-resumidos"
-      aria-label="Planes de atención"
-      className="py-16 sm:py-20 bg-blanco relative overflow-hidden"
+      aria-labelledby="planes-resumidos-titulo"
+      className="relative overflow-hidden bg-blanco py-14 sm:py-16 lg:py-20"
     >
-      <PawPattern color="#054564" opacity={0.03} />
       <Container className="relative">
-        <SectionHeading
-          title="Planes de atención para tu mascota"
-          subtitle="Elige el plan que mejor se adapte a las necesidades de tu perro o gato."
+        <header className="mb-9 text-center sm:mb-10">
+          <h2
+            id="planes-resumidos-titulo"
+            className="font-titulos text-[28px] font-bold leading-tight tracking-tight text-azul-petroleo sm:text-[32px]"
+          >
+            Nuestros planes
+          </h2>
+          <p className="mt-2 text-[13px] text-texto-principal sm:text-sm">
+            Elige la protección que mejor se adapta a las necesidades de tu mascota.
+          </p>
+        </header>
+
+        <PawPrint
+          className="pointer-events-none absolute -left-1 top-[58%] hidden h-11 w-11 -rotate-12 text-verde-huella/70 lg:block"
+          strokeWidth={1.6}
+          aria-hidden="true"
+        />
+        <PawPrint
+          className="pointer-events-none absolute -right-1 top-[58%] hidden h-11 w-11 rotate-12 text-azul-grisaceo/75 lg:block"
+          strokeWidth={1.6}
+          aria-hidden="true"
         />
 
-        {/* Tres tarjetas en fila en escritorio, una columna en móvil */}
         <div
           data-purpose="plans-grid"
-          className="grid md:grid-cols-3 gap-6 sm:gap-8 lg:gap-10"
+          className="mx-auto grid max-w-[1120px] grid-cols-1 gap-6 sm:grid-cols-2 sm:gap-5 lg:grid-cols-3 lg:gap-6"
         >
-          {plans.map((plan, i) => (
-            <div
-              key={plan.id}
-              data-purpose="plan-card-wrapper"
-              className={[
-                'relative group',
-                'transition-all duration-500 ease-out',
-                'opacity-0 translate-y-16',
-                'sm:opacity-100 sm:translate-y-0',
-              ].join(' ')}
-              style={{ transitionDelay: `${i * 120}ms` }}
-            >
-              <PlanCard
-                plan={{
-                  id: plan.id,
-                  name: plan.name,
-                  tagline: plan.tagline,
-                  image: plan.image,
-                  featured: plan.featured,
-                  accent: ACCENT[plan.id],
-                }}
-              />
-            </div>
+          {plans.map((plan) => (
+            <HomePlanCard key={plan.id} plan={plan} />
           ))}
-        </div>
-
-        {/* Beneficios comunes a los tres planes (declarados una sola vez) */}
-        <div data-purpose="plans-common" className="mt-10 border-t border-borde-suave pt-6">
-          <p className="text-xs font-semibold text-azul-petroleo mb-1">
-            Todos los planes incluyen:
-          </p>
-          <p className="text-xs sm:text-sm text-gris-azulado leading-relaxed">
-            {commonBenefits.join(' · ')}
-          </p>
-          <p className="mt-2 text-xs text-gris-azulado">{plansFootnote}</p>
-        </div>
-
-        <div className="mt-12 text-center">
-          <Button
-            variant="ghost"
-            data-purpose="cta-explorar-planes"
-            onClick={() => navigate('/planes')}
-          >
-            Explorar todos los planes
-          </Button>
         </div>
       </Container>
     </section>

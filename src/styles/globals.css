@@ -72,14 +72,6 @@ ol {
   padding-left: 1.5rem;
 }
 
-/**
- * Sin subrayado por defecto en enlaces: el subrayado solo aparece donde el
- * diseño lo define (nav activo, hover de enlaces) vía clases de Tailwind.
- */
-a {
-  color: var(--color-azul-petroleo);
-}
-
 /* --- Focus visible obligatorio --- */
 :focus-visible {
   outline: 2px solid var(--color-azul-petroleo);

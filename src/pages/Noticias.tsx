@@ -13,7 +13,6 @@ import { useState } from 'react'
 import Header from '@/components/layout/Header'
 import Container from '@/components/layout/Container'
 import PageHero from '@/components/ui/PageHero'
-import PawPattern from '@/components/ui/PawPattern'
 import NewsCard from '@/components/ui/NewsCard'
 import FeaturedNewsCarousel from '@/components/sections/FeaturedNewsCarousel'
 import { news } from '@/data/news'
@@ -33,8 +32,7 @@ export default function Noticias() {
         title="Noticias y novedades"
         subtitle="Cuidar también es estar informado. Conoce nuestras novedades, consejos de bienestar animal y recomendaciones para proteger la salud de tu mascota."
       />
-      <div className="relative overflow-hidden">
-        <PawPattern color="#054564" opacity={0.025} />
+      <div className="relative">
         <Container>
           {/* Carrusel destacado */}
           <section
@@ -54,7 +52,7 @@ export default function Noticias() {
             <div className="overflow-x-auto pb-2 scrollbar-hide sm:overflow-visible sm:pb-0">
               <div
                 className="inline-flex flex-wrap gap-2 sm:gap-3 sm:flex-nowrap"
-                role="tablist"
+                role="group"
                 aria-label="Filtrar noticias por categoría"
               >
                 {CATEGORIES.map((cat) => {
@@ -62,9 +60,9 @@ export default function Noticias() {
                   return (
                     <button
                       key={cat}
+                      type="button"
                       onClick={() => setActiveCategory(cat)}
-                      role="tab"
-                      aria-selected={isActive}
+                      aria-pressed={isActive}
                       className={`px-4 py-1.5 rounded-full text-sm font-medium transition-all duration-200 ${
                         isActive
                           ? 'bg-azul-petroleo text-blanco shadow-suave'
@@ -104,15 +102,16 @@ export default function Noticias() {
             </div>
           </section>
 
-          {/* Botón final */}
-          <div className="relative mt-16 sm:mt-20">
-            <a
-              href="/noticias"
+          {/* Botón final: restablece el filtro a "Todas" */}
+          <div className="relative mt-16 sm:mt-20 text-center">
+            <button
+              type="button"
+              onClick={() => setActiveCategory('Todas')}
               data-purpose="cta-ver-todas-noticias"
-              className="mx-auto inline-flex items-center justify-center px-8 py-3.5 rounded-[12px] bg-verde-corporativo text-blanco font-semibold text-sm sm:text-base transition-colors duration-200 hover:bg-[#528d0a]"
+              className="inline-flex items-center justify-center px-8 py-3.5 rounded-[12px] bg-verde-interactivo text-blanco font-semibold text-sm sm:text-base transition-colors duration-200 hover:bg-verde-interactivo-hover focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-verde-interactivo focus-visible:ring-offset-2"
             >
               Ver todas las noticias
-            </a>
+            </button>
           </div>
         </Container>
       </div>

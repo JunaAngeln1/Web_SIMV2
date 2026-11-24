@@ -142,7 +142,7 @@ export default function PromoModal() {
           <Gift className="h-6 w-6" aria-hidden="true" />
         </div>
 
-        <span className="inline-block rounded-full bg-verde-corporativo px-3 py-1 text-[11px] font-bold uppercase tracking-wider text-blanco">
+        <span className="inline-block rounded-full bg-verde-interactivo px-3 py-1 text-[11px] font-bold uppercase tracking-wider text-blanco">
           {promoActiva.badge}
         </span>
 
@@ -165,7 +165,7 @@ export default function PromoModal() {
           ref={ctaRef}
           href={promoActiva.ctaHref}
           onClick={close}
-          className="mt-6 inline-flex w-full items-center justify-center rounded-full bg-verde-corporativo px-6 py-3 text-sm font-semibold text-blanco transition-colors duration-200 hover:bg-[#528d0a] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-verde-corporativo focus-visible:ring-offset-2"
+          className="mt-6 inline-flex w-full items-center justify-center rounded-full bg-verde-interactivo px-6 py-3 text-sm font-semibold text-blanco transition-colors duration-200 hover:bg-verde-interactivo-hover focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-verde-interactivo focus-visible:ring-offset-2"
         >
           {promoActiva.ctaLabel}
         </a>

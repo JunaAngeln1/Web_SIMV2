@@ -7,7 +7,7 @@ Raiz del codigo de la web de S.I.M. (Servicios Integrales para Mascotas).
 | Carpeta       | Responsabilidad                                        |
 | ------------- | ------------------------------------------------------ |
 | `styles/`     | Tokens de diseño y estilos globales                    |
-| `data/`       | Contenido editable (textos, planes, aliados, noticias) |
+| `data/`       | Contenido editable (planes, noticias, promos)          |
 | `hooks/`      | Logica reutilizable de React                           |
 | `lib/`        | Utilidades puras sin React                             |
 | `components/` | Componentes de interfaz                                |

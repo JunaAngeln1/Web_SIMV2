@@ -23,15 +23,18 @@ parecido y no se reemplaza una foto por un marcador de posicion sin avisar.
 | Icono: atencion veterinaria  | `icons/veterinary-care.svg`          | 0.9 KB       | Derivado (limpio)           | `assets-original/icons/veterinary-care.svg`   |
 | Icono: planes                | `icons/pet-plans.svg`                | 0.7 KB       | Derivado (limpio)           | `assets-original/icons/pet-plans.svg`         |
 | Icono: acompanamiento        | `icons/support.svg`                  | 1.4 KB       | Derivado (limpio)           | `assets-original/icons/support.svg`           |
-| Foto Nosotros (equipo)       | `images/about-team.webp`             | 16.3 KB      | Derivado (frame 0 estatico) | `assets-original/about-veterinary-team.webp`  |
-| Foto Nosotros (mascota)      | `images/about-pet.webp`              | 31.9 KB      | Derivado (frame 0 estatico) | `assets-original/about-veterinary-team2.webp` |
+| Foto Nosotros (equipo)       | `images/about/about-team.webp`       | 16.3 KB      | Derivado (frame 0 estatico) | `assets-original/about-veterinary-team.webp`  |
+| Foto Nosotros (mascota)      | `images/about/about-pet.webp`        | 31.9 KB      | Derivado (frame 0 estatico) | `assets-original/about-veterinary-team2.webp` |
+| Banners del hero             | `images/hero-banners/Banner Animales.webp` y `Banner Familia.webp` | — | Recibidos | Material entregado por SIM        |
+| Imagenes de planes           | `images/plans/plan-elite-perro.webp`, `plan-plus-gato.webp`, `plan-premium-golden.webp` | — | Recibidas | Recortes de material de SIM |
 | Imagen noticia: prevencion   | `images/news/noticia-prevencion.svg` | 5.5 KB       | Placeholder SVG             | Generado por script                           |
 | Imagen noticia: cuidado      | `images/news/noticia-cuidado.svg`    | 5.5 KB       | Placeholder SVG             | Generado por script                           |
 | Imagen noticia: bienestar    | `images/news/noticia-bienestar.svg`  | 5.5 KB       | Placeholder SVG             | Generado por script                           |
 | Fondo decorativo             | `fondo_verde_azul_turquesa.svg`      | —            | Derivado                    | Recurso de referencia de la guia de diseno    |
-| **Total assets desplegados** |                                      | **281.3 KB+**|                             |                                               |
+| **Total assets desplegados** |                                      | **—**        |                             |                                               |
 
-Los originales pesaban **5,091 KB**; el sitio desplegado usa **281.3 KB** (-94.5%).
+Los originales entregados por SIM pesan varios MB; el pipeline genera derivados
+optimizados. El peso final desplegado depende de los banners y fotos vigentes.
 
 ## Datos de marca resueltos de los assets oficiales
 
@@ -45,7 +48,7 @@ Los originales pesaban **5,091 KB**; el sitio desplegado usa **281.3 KB** (-94.5
 | Falta                                       | Por que lo necesita el sitio                        |
 | ------------------------------------------- | --------------------------------------------------- |
 | **Lockup con wordmark** "S.I.M."            | El header necesita el nombre junto al simbolo       |
-| **Tarifas aprobadas**                       | La calculadora de ahorro no es publicable sin ellas |
+| **Tarifas y condiciones definitivas**       | Confirmar precios, coberturas y descuentos antes de publicar |
 | **Telefonos, correos, WhatsApp, redes**     | Footer y seccion Contacto                           |
 | **Textos legales** (T&C, privacidad, datos) | Footer y aviso del formulario                       |
 | **Enlace oficial de afiliacion**            | CTA "Afiliar a mi mascota"                          |

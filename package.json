@@ -14,7 +14,8 @@
     "format": "prettier --write .",
     "format:check": "prettier --check .",
     "assets:optimize": "node scripts/optimize-assets.mjs",
-    "assets:placeholders": "node scripts/generate-news-placeholders.mjs"
+    "assets:placeholders": "node scripts/generate-news-placeholders.mjs",
+    "coverage:geocode": "node scripts/geocode-clinics.mjs"
   },
   "dependencies": {
     "@fontsource-variable/manrope": "^5.3.0",

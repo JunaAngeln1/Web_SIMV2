@@ -1,47 +1,34 @@
 # `src/components/hero/` — Hero principal
 
-Componente de mayor peso visual del sitio. Se construye y se valida **primero**.
+Componente de mayor peso visual del sitio, en la página de Inicio.
 
-## Componentes previstos
+## Componentes implementados
 
-| Archivo             | Proposito                                                                |
-| ------------------- | ------------------------------------------------------------------------ |
-| `Hero.tsx`          | Panel azul con texto a la izquierda, mascota a la derecha, CTAs y orbita |
-| `BenefitsOrbit.tsx` | Orbita circular/eliptica con las etiquetas de beneficios                 |
+| Archivo    | Proposito                                                                |
+| ---------- | ------------------------------------------------------------------------ |
+| `Hero.tsx` | Carrusel de 2 banners a ancho completo, con texto superpuesto y dos CTAs |
 
-## Composicion (segun `sim-diseno` §4)
+## Composicion actual
 
-- Altura visual objetivo: `100svh` o al menos 680–760 px en escritorio, sin
-  ocultar los CTA bajo el pliegue.
-- Columna de texto ~42–48 % · columna de mascota e interaccion ~52–58 %.
-- Fondo exterior azul palido (`#E8F3FC`) con formas abstractas; marco blanco
-  radio 24–32 px; panel interior azul degradado radio 22–28 px.
-- Degradado de referencia: `linear-gradient(115deg, #03497D 0%, #48AFE8 100%)`.
+- Carrusel de 2 slides (`Banner Animales.webp` y `Banner Familia.webp`, en
+  `public/assets/images/hero-banners/`). Cada slide es una imagen de banner con
+  un degradado blanco a la izquierda para legibilidad del texto.
+- Auto-avance cada 5 s, con **botón de pausa/reanudar** (WCAG 2.2.2) y pausa al
+  pasar el cursor. Controles anterior/siguiente y dots con área táctil ≥ 44 px.
+- Texto: título (`h1`) + descripción a la izquierda; dos CTAs fijos:
+  **"Conoce nuestros planes"** → `/planes` y **"Habla con un asesor"** → `/contacto`.
+- La primera imagen carga `eager` con `fetchPriority="high"`; las demás `lazy`.
+- Las imágenes de banner son decorativas (`alt=""`): el texto transmite el mensaje.
+- Los slides inactivos llevan `inert` + `aria-hidden` para que no reciban foco.
+- Solo se animan `transform` y `opacity`; con `prefers-reduced-motion` se desactiva
+  el movimiento.
 
-## Reglas de la ruleta (segun `sim-diseno` §5–6)
+## Reglas
 
-- Beneficios: **Red de aliados, Atencion veterinaria, Planes para tu mascota y
-  Acompanamiento** (configurables en `src/data/benefits.ts`).
-- Los iconos de la ruleta son los **badges oficiales** de
-  `public/assets/icons/` (allies, veterinary-care, pet-plans, support), no
-  iconos lineales.
-- El movimiento es **bidireccional** segun la posicion vertical del puntero.
-- Se suaviza con interpolacion: sin saltos ni sensibilidad excesiva.
-- El beneficio mas cercano a la posicion activa sube a opacidad 1.0 y escala
-  1.00–1.04; los demas bajan a opacidad 0.45–0.75 y escala 0.94–0.98.
-- Solo se animan `transform` y `opacity`.
-- El rostro del gato nunca queda tapado por textos, orbitas gruesas ni botones.
-- En movil se permite swipe o controles accesibles; no depende del hover.
-- Con `prefers-reduced-motion` la orbita ligada al mouse se desactiva.
-
-## Gato protagonista
-
-Archivo: `/assets/sim-hero-cat.webp` (WebP con canal alpha, 190.2 KB).
-El rostro del gato no debe quedar tapado por textos, orbitas ni botones.
-
-## Copy (propuesta, requiere aprobacion de SIM)
-
-- Titulo: "El bienestar de tu mascota, nuestra prioridad."
-- Descripcion: "Planes de atencion veterinaria para perros y gatos, con el
-  respaldo que tu familia necesita."
-- CTA principal: "Conoce nuestros planes" · CTA secundario: "Contactanos"
+- El rostro de las mascotas nunca queda tapado por textos ni botones (el
+  degradado protege el lado del texto).
+- En móvil los controles son accesibles y no dependen del hover.
+- No inventar el copy: los textos actuales son propuesta pendiente de aprobación
+  de SIM.
+- El gato protagonista (`sim-hero-cat.webp`) y la órbita de beneficios de la
+  referencia original ya no se usan; el hero actual es el carrusel de banners.

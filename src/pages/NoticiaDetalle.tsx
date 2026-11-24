@@ -6,10 +6,9 @@
  * Si la noticia no existe, redirige a la lista de noticias.
  */
 
-import { useLoaderData } from 'react-router-dom'
+import { Link, useLoaderData } from 'react-router-dom'
 import Header from '@/components/layout/Header'
 import PageHero from '@/components/ui/PageHero'
-import PawPattern from '@/components/ui/PawPattern'
 import type { NoticiaDetalleData } from '@/pages/noticiaDetalleLoader'
 
 export default function NoticiaDetalle() {
@@ -22,13 +21,13 @@ export default function NoticiaDetalle() {
       <PageHero narrow>
         {/* Breadcrumbs / regreso */}
         <nav className="mb-6 sm:mb-8" aria-label="Navegación de noticia">
-          <a
-            href="/noticias"
+          <Link
+            to="/noticias"
             className="text-sm font-medium text-azul-petroleo hover:underline flex items-center gap-1.5"
           >
             <span className="block w-1 h-1 rounded-full bg-gris-azulado" />
             Volver a noticias
-          </a>
+          </Link>
         </nav>
 
         {/* Categoría */}
@@ -37,7 +36,7 @@ export default function NoticiaDetalle() {
         </span>
 
         {/* Título */}
-        <h1 className="font-titulos text-3xl sm:text-4xl lg:text-[44px] font-bold text-azul-petroleo tracking-tight leading-tight mb-4">
+        <h1 className="mb-4 font-titulos text-[30px] font-bold leading-tight tracking-tight text-azul-petroleo sm:text-[44px]">
           {noticia.title}
         </h1>
 
@@ -52,8 +51,7 @@ export default function NoticiaDetalle() {
         </div>
       </PageHero>
 
-      <div className="relative overflow-hidden">
-        <PawPattern color="#054564" opacity={0.02} />
+      <div className="relative">
         <article className="relative mx-auto max-w-[768px] px-4 sm:px-6 lg:px-8 pt-8 sm:pt-10">
           {/* Imagen destacada */}
           <div className="relative h-64 sm:h-80 lg:h-96 overflow-hidden rounded-[16px] shadow-medio mb-6 sm:mb-8">
@@ -76,12 +74,12 @@ export default function NoticiaDetalle() {
 
           {/* Botón de regreso final */}
           <div className="mt-12 sm:mt-16 pt-8 border-t border-borde-suave">
-            <a
-              href="/noticias"
-              className="inline-flex items-center justify-center gap-2 px-6 py-3 rounded-[12px] bg-verde-corporativo text-blanco font-semibold text-sm sm:text-base transition-colors duration-200 hover:bg-[#528d0a]"
+            <Link
+              to="/noticias"
+              className="inline-flex items-center justify-center gap-2 px-6 py-3 rounded-[12px] bg-verde-interactivo text-blanco font-semibold text-sm sm:text-base transition-colors duration-200 hover:bg-verde-interactivo-hover"
             >
               Volver a noticias
-            </a>
+            </Link>
           </div>
         </article>
       </div>

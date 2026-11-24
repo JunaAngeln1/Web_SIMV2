@@ -1,7 +1,6 @@
 import Container from '@/components/layout/Container'
 import Header from '@/components/layout/Header'
 import PageHero from '@/components/ui/PageHero'
-import PawPattern from '@/components/ui/PawPattern'
 
 export default function Nosotros() {
   return (
@@ -11,8 +10,7 @@ export default function Nosotros() {
         title="Nosotros"
         subtitle="Qué es S.I.M., nuestra misión, propuesta de valor y cifras institucionales."
       />
-      <div className="relative overflow-hidden">
-        <PawPattern color="#054564" opacity={0.025} />
+      <div className="relative">
         <Container>
           <section
             data-section="nosotros-institucional"

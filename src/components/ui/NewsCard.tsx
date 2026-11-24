@@ -6,6 +6,7 @@
  * Imágenes: placeholders SVG (pendiente de fotos de SIM).
  */
 
+import { Link } from 'react-router-dom'
 import Card from '@/components/ui/Card'
 
 interface NewsCardProps {
@@ -47,12 +48,12 @@ export default function NewsCard({
         <p className="mt-2 text-sm text-gris-azulado leading-relaxed line-clamp-2">{description}</p>
         <div className="mt-4 flex items-center justify-between">
           <time className="text-xs font-medium text-gris-azulado">{date}</time>
-          <a
-            href={href}
+          <Link
+            to={href}
             className="text-xs font-medium text-azul-institucional hover:underline transition-colors duration-200"
           >
             Leer más
-          </a>
+          </Link>
         </div>
       </div>
     </Card>

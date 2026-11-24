@@ -1,12 +1,10 @@
 # `src/hooks/` — Logica reutilizable de React
 
-## Hooks previstos
+## Hooks implementados
 
-| Hook                  | Proposito                                                                                                    | Referencia        |
-| --------------------- | ------------------------------------------------------------------------------------------------------------ | ----------------- |
-| `useOrbitInteraction` | Normaliza la posicion del puntero en el hero, la suaviza y la aplica a la orbita con `requestAnimationFrame` | `sim-diseno` §5–6 |
-| `useCountUp`          | Conteo progresivo de las cifras de Indicadores, una sola vez al entrar en pantalla                           | `sim-diseno` §8   |
-| `useReducedMotion`    | Detecta `prefers-reduced-motion` y desactiva el movimiento ligado al mouse                                   | `sim-diseno` §6   |
+| Hook        | Proposito                                                                                                    |
+| ----------- | ------------------------------------------------------------------------------------------------------------ |
+| `useInView` | Detecta si un elemento entro en el viewport (IntersectionObserver) y devuelve `ref` + `visible`. Se dispara una sola vez; con `prefers-reduced-motion` devuelve `visible: true` de inmediato. Se usa para la entrada escalonada de tarjetas. |
 
 ## Que NO va aqui
 
@@ -17,9 +15,8 @@
 ## Convenciones
 
 - Todo hook que anime debe escribir solo en `transform` y `opacity`.
-- Si el hook depende del scroll o del puntero, se limpia en el `cleanup` del
-  `useEffect` y se cancela el `requestAnimationFrame` pendiente.
-- El movimiento ligado al mouse es **bidireccional**: subir y bajar el puntero
-  producen desplazamientos opuestos.
-- Con `prefers-reduced-motion` activo, la orbita se desactiva o se sustituye por
-  una seleccion discreta.
+- Si el hook depende del scroll, del puntero o de un observer, se limpia en el
+  `cleanup` del `useEffect` (se cancela el `requestAnimationFrame` o se
+  desconecta el observer).
+- Con `prefers-reduced-motion` activo, el contenido debe ser visible de inmediato
+  (sin esperar a la animacion de entrada).

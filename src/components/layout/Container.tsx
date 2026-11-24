@@ -14,7 +14,7 @@ export default function Container({ children, className, narrow = false }: Conta
     <div
       className={[
         'mx-auto',
-        narrow ? 'max-w-[768px]' : 'max-w-[1360px] px-4',
+        narrow ? 'max-w-[768px] px-4' : 'max-w-[1360px] px-4',
         'sm:px-6 lg:px-8',
         className,
       ]

@@ -8,52 +8,49 @@ con el detalle de su contenido; esta es la vista general.
 | Ruta             | Contenido                                                        |
 | ---------------- | ---------------------------------------------------------------- |
 | `src/`           | Codigo fuente de la aplicacion                                   |
-| `public/assets/` | Assets oficiales de S.I.M. (logo, gato, iconos, fotos)           |
+| `public/assets/` | Assets oficiales de S.I.M. (logo, banners, iconos, fotos)        |
 | `Agentes/`       | Skills del sistema S.I.M. (especificacion, arquitectura, diseno) |
 
 ## `src/`
 
 | Ruta                       | Que va ahi                                                                              | Skill que la gobierna   |
 | -------------------------- | --------------------------------------------------------------------------------------- | ----------------------- |
-| `src/styles/`              | `tokens.css` (fuente de verdad del color, tipografia, radios y sombras) y `globals.css` | `sim-diseno` §1–3       |
-| `src/data/`                | Contenido editable: `site`, `benefits`, `plans`, `allies`, `news`, `indicators`         | `sim-arquitectura` §3   |
-| `src/hooks/`               | `useOrbitInteraction`, `useCountUp`, `useReducedMotion`                                 | `sim-diseno` §5–6       |
-| `src/lib/`                 | Utilidades puras: formateo, validacion (zod), ayudas de rAF                             | `sim-especificacion` §4 |
-| `src/components/layout/`   | `Header`, `Footer`, `Container`                                                         | `sim-arquitectura` §2   |
-| `src/components/hero/`     | `Hero`, `BenefitsOrbit`                                                                 | `sim-diseno` §4–6       |
-| `src/components/ui/`       | `Button`, `Card`, `SectionHeading`, `IconBadge`                                         | `sim-diseno` §7         |
-| `src/components/sections/` | `PlansSummary`, `About`, `Indicators`, `Allies`, `News`, `FinalCta`                     | `sim-arquitectura` §3   |
-| `src/pages/`               | `Inicio`, `Planes`, `Nosotros`, `Noticias`, `Contacto`                                  | `sim-arquitectura` §1   |
+| `src/styles/`              | `tokens.css` (fuente de verdad del color, tipografia, radios y sombras) y `globals.css` | `sim-diseno`            |
+| `src/data/`                | Contenido editable: `plans`, `news`, `promos`                                           | `sim-arquitectura`      |
+| `src/hooks/`               | `useInView` (entrada escalonada con IntersectionObserver)                               | `sim-diseno`            |
+| `src/lib/`                 | Utilidades puras: formateo, validacion (zod), ayudas diversas                           | `sim-especificacion`    |
+| `src/components/layout/`   | `Header`, `Footer`, `Container`, `SiteLayout` (Footer global compartido en todas las rutas) | `sim-arquitectura` |
+| `src/components/hero/`     | `Hero` (carrusel de banners)                                                            | `sim-diseno`            |
+| `src/components/ui/`       | `Button`, `Card`, `SectionHeading`, `NewsCard`, `PageHero`, `PlanCard`, `PromoModal` | `sim-diseno` |
+| `src/components/sections/` | `Benefits`, `PlansSummary`, `PetManager`, `Allies`, `WhyChooseUs`, `FAQBanner`, `FeaturedNewsCarousel` | `sim-arquitectura` |
+| `src/pages/`               | `Inicio`, `Planes`, `Nosotros`, `Noticias`, `NoticiaDetalle`, `Contacto`, `Cobertura`   | `sim-arquitectura`      |
 
 ## `public/assets/`
 
 | Ruta                         | Que va ahi                                 |
 | ---------------------------- | ------------------------------------------ |
-| `public/assets/`             | Logo oficial, gato protagonista, favicons  |
+| `public/assets/`             | Logo oficial, favicons, fondos decorativos |
 | `public/assets/icons/`       | 4 badges SVG oficiales de los beneficios   |
-| `public/assets/images/`      | Fotografias autorizadas de Nosotros        |
+| `public/assets/images/hero-banners/` | Banners del hero (Animales, Familia) |
+| `public/assets/images/plans/`| Recortes de mascota por plan               |
+| `public/assets/images/about/`| Fotografias de Nosotros                    |
 | `public/assets/images/news/` | Placeholders 16:9 SVG de las noticias      |
+| `public/pdfs/`               | PDF oficiales de cada plan                 |
 | `assets-original/`           | Material entregado por SIM (no desplegado) |
 | `scripts/`                   | Pipeline de optimizacion de assets         |
 
-## Orden de implementacion (Fase 1 en adelante)
+## Composicion de Inicio
 
-1. **Andamiaje** — _(hecho, Fase 0)_ estructura, dependencias, tokens de arquitectura.
-2. **Sistema visual** — `src/styles/tokens.css`, `src/styles/globals.css`, `src/components/ui/`.
-3. **Hero** — `src/components/hero/` y `src/components/layout/`, validado contra la referencia.
-4. **Resto de Inicio** — `src/components/sections/` en orden: Planes → Nosotros →
-   Indicadores → Aliados → Noticias → CTA final.
-5. **Paginas internas** — `src/pages/Planes`, `Nosotros`, `Noticias`, `Contacto`.
-6. **Formulario** — validacion con `zod` y envio a `VITE_FORM_ENDPOINT`.
-7. **Assets** — ejecutar `npm run assets:optimize` y `npm run assets:placeholders` para generar derivados y placeholders.
-8. **SEO basico** — metadatos por ruta, `sitemap.xml`, `robots.txt`, Open Graph.
-9. **QA** — 360 / 390 / 768 / 1024 / 1440 px, teclado, reduced-motion, consola.
+`Header → Hero (carrusel de banners) → Benefits → PlansSummary → PetManager →
+Allies → WhyChooseUs → FAQBanner (FAQ + banner de afiliacion) → Footer`. No hay
+separadores de onda ni fondos de huellas: las secciones se distinguen por su
+fondo y su espaciado.
 
 ## Reglas permanentes
 
 - **No inventar contenido comercial.** Precios, coberturas, contactos, exclusiones
   y cifras requieren aprobacion de SIM. Si falta el dato, se marca como pendiente
-  y se avisa; nunca se sustituye en silencio.
+  (`PENDIENTE_SIM` / `data-pending`) y se avisa; nunca se sustituye en silencio.
 - **No sustituir assets oficiales.** Si falta un archivo, se deja la ruta
   identificada y se solicita a SIM.
 - **Solo `transform` y `opacity`** en animaciones. Respetar `prefers-reduced-motion`.
@@ -61,3 +58,7 @@ con el detalle de su contenido; esta es la vista general.
   alt util; la decorativa, alt vacio.
 - El color, la tipografia y el espaciado salen siempre de los tokens, nunca de
   valores literales sueltos en componentes.
+- **Contraste WCAG AA.** El verde de marca `#659D0D` con texto blanco da 3.3:1 y
+  no cumple AA; para superficies interactivas con texto blanco se usa
+  `--color-verde-interactivo` (`#4F7D0A`, hover `#3F6408`). El verde de marca se
+  conserva para elementos decorativos y texto grande.

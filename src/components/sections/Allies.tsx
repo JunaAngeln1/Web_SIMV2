@@ -1,104 +1,107 @@
 /**
- * src/components/sections/Allies.tsx
- *
- * Red de atención según Guía de Diseño §4.6.
- * Informa que SIM cuenta con IPS veterinarias aliadas en Bogotá, Soacha, Chía,
- * Funza, Mosquera, Madrid y Facatativá.
- * Organización visual: texto a la izquierda, mapa ilustrado con marcadores
- * en el centro y fotografía veterinaria a la derecha.
+ * Banda de red de atención para Home: información, mapa geográfico de
+ * Colombia, características de la red y fotografía veterinaria pendiente.
  */
-import Button from '@/components/ui/Button'
-import Container from '@/components/layout/Container'
-import SectionHeading from '@/components/ui/SectionHeading'
-import PawPattern from '@/components/ui/PawPattern'
+import { ArrowRight, Building2, MapPin, Stethoscope } from 'lucide-react'
 
-const CIUDADES = [
-  'Bogotá',
-  'Soacha',
-  'Chía',
-  'Funza',
-  'Mosquera',
-  'Madrid',
-  'Facatativá',
+const CARACTERISTICAS_RED = [
+  { label: 'IPS veterinarias aliadas', Icon: Building2 },
+  { label: 'Diversas especialidades', Icon: Stethoscope },
+  { label: 'Cobertura regional', Icon: MapPin },
+]
+
+// Puntos representativos y agrupados en el entorno de Bogotá y Cundinamarca.
+const MARCADORES = [
+  { x: 64, y: 45 },
+  { x: 67, y: 47 },
+  { x: 62, y: 49 },
+  { x: 66, y: 51 },
+  { x: 69, y: 53 },
 ]
 
 export default function Allies() {
   return (
     <section
       data-section="red-atencion"
-      aria-label="Red de atención"
-      className="py-16 sm:py-20 bg-blanco relative overflow-hidden"
+      aria-label="Nuestra red de atención"
+      className="bg-blanco px-4 py-8 sm:px-6 lg:px-8"
     >
-      <PawPattern color="#054564" opacity={0.03} className="inset-0" />
-      <Container className="relative">
-        <SectionHeading
-          title="Red de atención veterinaria"
-          subtitle="IPS veterinarias aliadas en tu ciudad y alrededores."
-        />
+      <div
+        data-purpose="red-atencion-content"
+        className="mx-auto grid max-w-[1360px] items-center gap-5 md:min-h-[160px] md:grid-cols-[30%_17%_22%_31%] md:gap-0"
+      >
+        {/* Zona 1: texto y botón pendiente de destino. */}
+        <div data-purpose="red-texto" className="py-2 md:pr-6">
+          <h2 className="font-titulos text-[23px] font-bold leading-tight text-azul-petroleo sm:text-[25px]">
+            Nuestra red de atención
+          </h2>
+          <p className="mt-2 text-[13px] leading-[1.5] text-texto-principal sm:text-sm">
+            Contamos con IPS veterinarias aliadas en Bogotá, Soacha, Chía, Funza, Mosquera, Madrid y
+            Facatativá.
+          </p>
+          <button
+            type="button"
+            aria-disabled="true"
+            data-pending="true"
+            data-purpose="cta-red-atencion-pendiente"
+            className="mt-3 inline-flex min-h-[36px] items-center justify-center gap-2 rounded-full border-[1.5px] border-verde-corporativo bg-blanco px-4 text-xs font-semibold text-azul-petroleo transition-colors hover:bg-verde-pastel focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-verde-corporativo focus-visible:ring-offset-2 sm:text-[13px]"
+          >
+            Encuentra tu centro de atención
+            <ArrowRight className="h-4 w-4 shrink-0 text-verde-corporativo" aria-hidden="true" />
+          </button>
+        </div>
 
-        <div
-          data-purpose="red-atencion-content"
-          className="grid md:grid-cols-3 gap-8 lg:gap-12 items-center"
-        >
-          {/* Texto a la izquierda */}
-          <div data-purpose="red-texto" className="md:col-span-1 lg:col-span-1">
-            <h3 className="font-titulos font-semibold text-azul-petroleo text-lg sm:text-xl mb-4">
-              Cobertura regional
-            </h3>
-            <p className="text-gris-azulado leading-relaxed mb-6">
-              SIM cuenta con una red de IPS veterinarias aliadas que garantizan
-              atención cercana y confiable para tu mascota. Contamos con diversas
-              especialidades y cobertura regional para que siempre encuentres
-              el cuidado que necesitas.
-            </p>
-            <ul className="space-y-2 text-sm text-gris-azulado">
-              {CIUDADES.map((ciudad) => (
-                <li key={ciudad} className="flex items-center gap-2">
-                  <span className="w-2 h-2 rounded-full bg-verde-corporativo" />
-                  {ciudad}
-                </li>
-              ))}
-            </ul>
-          </div>
-
-          {/* Mapa ilustrado con marcadores (centro) */}
-          <div data-purpose="red-mapa" className="flex items-center justify-center">
-            <div
-              className="relative w-64 h-64 md:w-80 md:h-80 rounded-full bg-verde-pastel border-4 border-verde-claro"
-              aria-label="Mapa ilustrado de cobertura"
-            >
-              {CIUDADES.map((_, i) => (
-                <div
-                  key={i}
-                  className="absolute w-3 h-3 rounded-full bg-verde-corporativo border-2 border-white shadow-suave"
-                  style={{
-                    top: `${30 + (i * 13) % 50}%`,
-                    left: `${25 + (i * 17) % 60}%`,
-                  }}
-                  aria-hidden="true"
-                />
-              ))}
-            </div>
-          </div>
-
-          {/* Fotografía veterinaria a la derecha */}
-          <div data-purpose="red-foto" className="md:col-span-1 lg:col-span-1">
+        {/* Zona 2: mapa real con límites departamentales, fuente y licencia documentadas. */}
+        <div data-purpose="red-mapa" className="flex justify-center py-2 md:px-2">
+          <div className="relative h-[180px] w-[145px] sm:h-[200px] sm:w-[160px] md:h-[148px] md:w-full">
             <img
-              src="/assets/images/about/about-pet.webp"
-              alt="Atención veterinaria en IPS aliada"
-              data-purpose="red-foto-veterinaria"
-              className="w-full h-auto rounded-[24px] shadow-suave object-cover"
-              style={{ aspectRatio: '4 / 3' }}
+              src="/assets/images/maps/colombia-departments.svg"
+              alt="Mapa de Colombia con divisiones departamentales"
+              className="h-full w-full object-contain"
+              loading="lazy"
             />
+            {MARCADORES.map((point, index) => (
+              <span
+                key={index}
+                aria-hidden="true"
+                className="absolute -translate-x-1/2 -translate-y-full text-verde-corporativo drop-shadow-sm"
+                style={{ left: `${point.x}%`, top: `${point.y}%` }}
+              >
+                <MapPin className="h-[17px] w-[17px] fill-verde-corporativo stroke-white" strokeWidth={1.5} />
+                <span className="absolute left-1/2 top-[4px] h-[4px] w-[4px] -translate-x-1/2 rounded-full bg-white" />
+              </span>
+            ))}
           </div>
         </div>
 
-        <div className="mt-10 text-center">
-          <Button variant="secondary" data-purpose="cta-conoce-red">
-            Conoce nuestra red de atención
-          </Button>
+        {/* Zona 3: características de la red veterinaria. */}
+        <ul
+          data-purpose="red-caracteristicas"
+          className="flex flex-col justify-center gap-4 border-t border-verde-claro py-4 md:min-h-[130px] md:gap-3 md:border-l md:border-t-0 md:py-0 md:pl-6 lg:pl-8"
+        >
+          {CARACTERISTICAS_RED.map(({ label, Icon }) => (
+            <li key={label} className="flex items-center gap-3 text-[13px] leading-tight text-azul-petroleo">
+              <Icon className="h-5 w-5 shrink-0 text-azul-petroleo" strokeWidth={1.8} aria-hidden="true" />
+              <span>{label}</span>
+            </li>
+          ))}
+        </ul>
+
+        {/* Zona 4: imagen temporal; requiere fotografía autorizada de consulta veterinaria. */}
+        <div
+          data-purpose="red-foto"
+          data-pending="true"
+          className="relative h-[190px] overflow-hidden rounded-[20px] bg-azul-niebla md:h-[150px] md:pl-5 lg:pl-7"
+        >
+          <img
+            src="/assets/images/hero-banners/Asesora-veterinaria-con-huellas-pastel.webp"
+            alt="Asesora de SIM atendiendo una consulta; fotografía de veterinaria con perro pendiente"
+            data-purpose="red-foto-veterinaria"
+            className="h-full w-full object-cover object-left"
+            loading="lazy"
+          />
         </div>
-      </Container>
+      </div>
     </section>
   )
 }

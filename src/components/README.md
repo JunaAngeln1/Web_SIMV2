@@ -5,15 +5,17 @@
 | Carpeta     | Alcance                                       |
 | ----------- | --------------------------------------------- |
 | `layout/`   | Elementos globales: Header, Footer, Container |
-| `hero/`     | Hero principal y su interaccion               |
+| `hero/`     | Hero principal (carrusel de banners)          |
 | `ui/`       | Primitivas visuales reutilizables             |
-| `sections/` | Secciones de la pagina de Inicio (10 secciones segun la guia de diseno) |
+| `sections/` | Secciones de Inicio y de Noticias             |
 
 ## Que NO va aqui
 
 - Los componentes de ruta van en `src/pages/`.
 - El contenido (textos, precios, aliados, noticias) va en `src/data/`.
-- Un componente no lee `localStorage`, `window` ni hace fetch en la v1.
+- Evitar acceso a `localStorage` / `window` salvo que este justificado (p. ej.
+  `PromoModal` limita su frecuencia con `localStorage`, y los carruseles usan
+  temporizadores de `window` que se limpian al desmontar).
 
 ## Convenciones
 
@@ -23,3 +25,5 @@
 - Las imagenes decorativas llevan `alt=""`; las informativas, alt util.
 - Todo componente que renderice texto de negocio recibe los datos por props,
   nunca los importa directamente de `data/`, salvo que sean estaticos.
+- La navegacion interna usa `Link` / `NavLink` de React Router (SPA), no
+  `<a href>` que recarga la pagina.

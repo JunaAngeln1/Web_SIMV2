@@ -1,38 +1,30 @@
-/**
- * src/components/sections/Benefits.tsx
- *
- * Franja de beneficios según Guía de Diseño §4.3.
- * Cuatro beneficios con iconos verdes dentro de círculos y separadores verticales.
- * Resume rápidamente los servicios más importantes.
- */
-import Container from '@/components/layout/Container'
-import SectionHeading from '@/components/ui/SectionHeading'
-import PawPattern from '@/components/ui/PawPattern'
+/** Franja compacta con cuatro beneficios principales de S.I.M. */
+import { PawPrint, ShieldCheck, Stethoscope, UsersRound } from 'lucide-react'
 
 const BENEFICIOS = [
   {
     id: 'atencion-veterinaria',
     title: 'Atención veterinaria',
-    description: 'Consultas y orientación.',
-    icon: '/assets/icons/veterinary-care.svg',
+    description: 'consultas y orientación',
+    Icon: PawPrint,
   },
   {
     id: 'asistencia-urgencias',
     title: 'Asistencia y urgencias',
-    description: 'Cuando más se necesita.',
-    icon: '/assets/icons/allies.svg',
+    description: 'cuando más lo necesitas',
+    Icon: Stethoscope,
   },
   {
     id: 'prevencion-bienestar',
     title: 'Prevención y bienestar',
-    description: 'Vacunas, controles y más.',
-    icon: '/assets/icons/pet-plans.svg',
+    description: 'vacunas, controles y más',
+    Icon: ShieldCheck,
   },
   {
     id: 'acompanamiento',
     title: 'Acompañamiento personalizado',
-    description: 'Con el Personal Pet Manager.',
-    icon: '/assets/icons/support.svg',
+    description: 'con tu Personal Pet Manager',
+    Icon: UsersRound,
   },
 ]
 
@@ -40,46 +32,54 @@ export default function Benefits() {
   return (
     <section
       data-section="beneficios"
-      aria-label="Franja de beneficios"
-      className="py-16 sm:py-20 bg-azul-muy-claro relative overflow-hidden"
+      aria-label="Beneficios de los servicios SIM"
+      className="relative z-20 -mt-10 bg-transparent px-3 pb-6 sm:px-6 lg:px-8"
     >
-      <PawPattern color="#054564" opacity={0.03} className="inset-0" />
-      <Container className="relative">
-        <SectionHeading
-          title="Beneficios de afiliarte a SIM"
-          subtitle="Todo lo que tu mascota necesita para estar protegida y feliz."
-        />
-
-        <div
-          data-purpose="beneficios-grid"
-          className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 items-center"
-        >
-          {BENEFICIOS.map((b) => (
-            <div
-              key={b.id}
-              data-purpose="beneficio"
-              className="flex flex-col items-center text-center gap-4"
-            >
-              <div className="flex items-center justify-center w-16 h-16 rounded-full bg-blanco border border-verde-corporativo/30 shadow-suave">
-                <img
-                  src={b.icon}
-                  alt=""
-                  className="w-8 h-8 drop-shadow-md"
+      <div
+        data-purpose="beneficios-grid"
+        className="mx-auto grid min-h-[80px] w-[96%] max-w-[1360px] grid-cols-2 items-center overflow-hidden rounded-[36px] bg-gris-beneficios shadow-suave sm:px-2 xl:grid-cols-4"
+      >
+        {BENEFICIOS.map(({ id, title, description, Icon }, index) => (
+          <div
+            key={id}
+            data-purpose="beneficio"
+            className="relative flex min-h-[76px] min-w-0 items-center gap-3 px-3 py-2 sm:gap-3.5 sm:px-4 xl:min-h-[80px] xl:px-5"
+          >
+            <span className="relative flex h-[46px] w-[46px] shrink-0 items-center justify-center rounded-full border border-verde-corporativo text-verde-corporativo">
+              <Icon className="h-[23px] w-[23px]" strokeWidth={1.8} aria-hidden="true" />
+              {id === 'acompanamiento' && (
+                <PawPrint
+                  className="absolute -bottom-0.5 -right-1 h-4 w-4 rounded-full bg-gris-beneficios p-[2px] text-verde-corporativo"
+                  strokeWidth={2}
                   aria-hidden="true"
                 />
-              </div>
-              <h4
-                className="font-titulos font-semibold text-azul-petroleo text-sm sm:text-base"
-              >
-                {b.title}
-              </h4>
-              <p className="text-xs sm:text-sm text-gris-azulado leading-relaxed">
-                {b.description}
+              )}
+            </span>
+
+            <div className="min-w-0 text-left">
+              <h2 className="font-titulos text-[12px] font-semibold leading-tight text-azul-petroleo sm:text-[13px] xl:text-[14px]">
+                {title}
+              </h2>
+              <p className="mt-1 text-[10px] leading-tight text-texto-principal sm:text-[11px] xl:text-[12px]">
+                {description}
               </p>
             </div>
-          ))}
-        </div>
-      </Container>
+
+            {(index === 0 || index === 2) && (
+              <span
+                className="pointer-events-none absolute right-0 top-1/2 hidden h-10 w-px -translate-y-1/2 bg-divisor-beneficios sm:block xl:hidden"
+                aria-hidden="true"
+              />
+            )}
+            {index < 3 && (
+              <span
+                className="pointer-events-none absolute right-0 top-1/2 hidden h-10 w-px -translate-y-1/2 bg-divisor-beneficios xl:block"
+                aria-hidden="true"
+              />
+            )}
+          </div>
+        ))}
+      </div>
     </section>
   )
 }

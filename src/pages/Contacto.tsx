@@ -2,7 +2,6 @@ import Card from '@/components/ui/Card'
 import Container from '@/components/layout/Container'
 import Header from '@/components/layout/Header'
 import PageHero from '@/components/ui/PageHero'
-import PawPattern from '@/components/ui/PawPattern'
 
 export default function Contacto() {
   return (
@@ -13,8 +12,7 @@ export default function Contacto() {
         title="Contacto y afiliación"
         subtitle="Canales oficiales, formulario de solicitud de información y enlace al proceso de afiliación."
       />
-      <div className="relative overflow-hidden">
-        <PawPattern color="#054564" opacity={0.025} />
+      <div className="relative">
         <Container narrow>
           <section
             data-section="contacto-formulario"

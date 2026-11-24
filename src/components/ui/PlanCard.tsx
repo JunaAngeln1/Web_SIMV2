@@ -71,7 +71,7 @@ export default function PlanCard({ plan }: PlanCardProps) {
           {isPlus && (
             <span
               data-purpose="plan-badge"
-              className="inline-flex items-center gap-1 px-3 py-1 rounded-full bg-verde-corporativo text-white text-[11px] font-bold uppercase tracking-wider"
+              className="inline-flex items-center gap-1 px-3 py-1 rounded-full bg-verde-interactivo text-white text-[11px] font-bold uppercase tracking-wider"
             >
               Más completo
             </span>
@@ -99,6 +99,7 @@ export default function PlanCard({ plan }: PlanCardProps) {
           <Button
             variant={isPlus ? 'primary' : 'secondary'}
             size="lg"
+            href="/planes"
             data-purpose="cta-ver-beneficios"
             className="w-full px-12 whitespace-nowrap"
           >

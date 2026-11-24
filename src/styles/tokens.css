@@ -13,10 +13,19 @@
 @theme {
   /* --- Colores según Guía de Diseño --- */
   --color-azul-petroleo: #054564;
+  --color-azul-footer: #004563;
   --color-verde-corporativo: #659D0D;
+  /* Verde para superficies interactivas con texto blanco (botones, badges).
+     #659D0D con blanco da 3.3:1 y no cumple WCAG AA; estos tonos oscuros sí. */
+  --color-verde-interactivo: #4F7D0A;
+  --color-verde-interactivo-hover: #3F6408;
   --color-verde-claro: #A5C46C;
   --color-verde-pastel: #E9F2DC;
+  --color-verde-huella: #DDEBD0;
   --color-gris-claro: #F4F5F6;
+  --color-gris-plan: #F0F3F5;
+  --color-gris-beneficios: #EEF1F2;
+  --color-divisor-beneficios: #DDE2E5;
   --color-blanco: #FFFFFF;
   --color-azul-grisaceo: #D3E4E9;
   --color-azul-oscuro: #003047;

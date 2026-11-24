@@ -2,18 +2,16 @@
  * src/components/ui/PageHero.tsx
  *
  * Banda de encabezado común para las páginas internas.
- * Fondo azul muy claro con patrón de huellas, título/subtítulo (o contenido
- * propio) y una onda que funde la banda con el contenido blanco inferior.
+ * Fondo azul muy claro con título/subtítulo (o contenido propio).
  */
 
 import type { ReactNode } from 'react'
 import Container from '@/components/layout/Container'
-import PawPattern from '@/components/ui/PawPattern'
-import SectionHeading from '@/components/ui/SectionHeading'
-import SectionWave from '@/components/ui/SectionWave'
 
 interface PageHeroProps {
   title?: string
+  /** Texto opcional del título que se resalta en verde. */
+  accent?: string
   subtitle?: string
   align?: 'left' | 'center'
   /** Usa el ancho angosto (768 px) para páginas de lectura. */
@@ -24,23 +22,36 @@ interface PageHeroProps {
 
 export default function PageHero({
   title,
+  accent,
   subtitle,
   align = 'left',
   narrow = false,
   children,
 }: PageHeroProps) {
   return (
-    <>
-      <div className="relative overflow-hidden bg-azul-muy-claro">
-        <PawPattern color="#054564" opacity={0.04} />
-        <div className="relative pt-8 sm:pt-10">
-          <Container narrow={narrow} className={narrow ? 'px-4' : undefined}>
-            {children ??
-              (title ? <SectionHeading title={title} subtitle={subtitle} align={align} /> : null)}
-          </Container>
-        </div>
+    <div className="relative overflow-hidden bg-azul-muy-claro">
+      <div className="relative pt-8 sm:pt-10 pb-8 sm:pb-10">
+        <Container narrow={narrow}>
+          {children ?? (title ? (
+            <header className={align === 'center' ? 'mx-auto max-w-3xl text-center' : 'text-left'}>
+              <h1 className="font-titulos text-[30px] font-bold leading-tight tracking-tight text-azul-petroleo sm:text-[44px]">
+                {accent && title.includes(accent) ? (
+                  <>{title.slice(0, title.indexOf(accent))}<span className="text-verde-interactivo">{accent}</span>{title.slice(title.indexOf(accent) + accent.length)}</>
+                ) : title}
+              </h1>
+              <span
+                className={`mt-3 block h-1 w-16 rounded-full bg-verde-corporativo ${align === 'center' ? 'mx-auto' : ''}`}
+                aria-hidden="true"
+              />
+              {subtitle && (
+                <p className="mt-3 mb-0 text-base leading-relaxed text-texto-principal sm:text-lg">
+                  {subtitle}
+                </p>
+              )}
+            </header>
+          ) : null)}
+        </Container>
       </div>
-      <SectionWave from="#f1f7fc" to="#ffffff" />
-    </>
+    </div>
   )
 }

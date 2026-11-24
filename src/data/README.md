@@ -3,17 +3,13 @@
 Todo el contenido que el equipo de SIM puede cambiar **sin tocar componentes**
 vive aqui como datos tipados.
 
-## Archivos previstos
+## Archivos implementados
 
-| Archivo         | Contenido                                                    | Origen                  |
-| --------------- | ------------------------------------------------------------ | ----------------------- |
-| `site.ts`       | Datos de la institucion, navegacion, pie de pagina, contacto | `sim-arquitectura` §1–2 |
-| `benefits.ts`   | Cuatro beneficios: atención veterinaria, asistencia y urgencias, prevención y bienestar, acompañamiento personalizado | `sim-diseno` §4.3       |
-| `plans.ts`      | Tres planes: Élite, Plus y Premium con nombre, descripción y beneficios | `sim-arquitectura` §3.2 |
-| `allies.ts`     | Aliados y red veterinaria: IPS en Bogotá, Soacha, Chía, Funza, Mosquera, Madrid y Facatativá | `sim-arquitectura` §3.5 |
-| `news.ts`       | Noticias y consejos (carusel de noticias destacadas)         | `sim-arquitectura` §3.6 |
-| `promos.ts`     | Promoción del popup de entrada                               | Implementado            |
-| `indicators.ts` | Cifras institucionales                                       | `sim-arquitectura` §3.4 |
+| Archivo     | Contenido                                                    |
+| ----------- | ------------------------------------------------------------ |
+| `plans.ts`  | Tres planes: Élite, Plus y Premium con precio, descripción, beneficios y descuentos aprobados por SIM. Fuente única de verdad que consumen el inicio y `/planes`. |
+| `news.ts`   | Noticias y consejos (carrusel destacado + listado). Contenido de ejemplo claramente identificable hasta que SIM apruebe las publicaciones oficiales. |
+| `promos.ts` | Promoción del popup de entrada (`PromoModal`), marcada `PENDIENTE_SIM`. |
 
 ## Regla critica: no inventar
 
@@ -23,16 +19,16 @@ Mientras no exista dato aprobado:
 
 - El campo se marca como pendiente con un valor explicito (por ejemplo
   `PENDIENTE_SIM` con un motivo).
-- El componente que lo consume muestra un aviso visible en desarrollo.
+- El componente que lo consume muestra un aviso visible en desarrollo
+  (`data-pending`).
 - Nunca se sustituye en silencio por un valor plausible.
 
 ## Convenciones
 
 - Exportar `const` tipados con `as const` o interfaces explicitas.
-- Las cifras de `indicators.ts` son las de la skill (+4.000 / +250 / +3.500);
-  **confirmar vigencia antes de publicar**.
-- Los beneficios de `benefits.ts` llevan los nombres de archivo de icono de
-  `public/assets/icons/`: `allies.svg`, `veterinary-care.svg`, `pet-plans.svg`,
-  `support.svg`.
-- Los datos de `news.ts` y `promos.ts` se muestran en la sección de noticias
-  y en el popup de afiliación, respectivamente.
+- Los beneficios de cada plan en `plans.ts` salen de los PDF oficiales en
+  `public/pdfs/`; no se redactan ni resumen de forma que alteren su alcance.
+- Los iconos de beneficios usan los nombres de archivo de `public/assets/icons/`:
+  `allies.svg`, `veterinary-care.svg`, `pet-plans.svg`, `support.svg`.
+- Los datos de `news.ts` y `promos.ts` se muestran en la sección de noticias y en
+  el popup de entrada, respectivamente.

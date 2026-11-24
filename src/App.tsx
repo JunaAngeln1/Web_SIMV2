@@ -8,15 +8,21 @@ import NoticiaDetalle from '@/pages/NoticiaDetalle'
 import { noticiaDetalleLoader } from '@/pages/noticiaDetalleLoader'
 import Contacto from '@/pages/Contacto'
 import Cobertura from '@/pages/Cobertura'
+import SiteLayout from '@/components/layout/SiteLayout'
 
 const router = createBrowserRouter([
-  { path: '/', element: <Inicio /> },
-  { path: '/planes', element: <Planes /> },
-  { path: '/nosotros', element: <Nosotros /> },
-  { path: '/noticias', element: <Noticias /> },
-  { path: '/noticias/:slug', element: <NoticiaDetalle />, loader: noticiaDetalleLoader },
-  { path: '/contacto', element: <Contacto /> },
-  { path: '/cobertura', element: <Cobertura /> },
+  {
+    element: <SiteLayout />,
+    children: [
+      { index: true, element: <Inicio /> },
+      { path: 'planes', element: <Planes /> },
+      { path: 'nosotros', element: <Nosotros /> },
+      { path: 'noticias', element: <Noticias /> },
+      { path: 'noticias/:slug', element: <NoticiaDetalle />, loader: noticiaDetalleLoader },
+      { path: 'contacto', element: <Contacto /> },
+      { path: 'cobertura', element: <Cobertura /> },
+    ],
+  },
 ])
 
 export default function App() {

@@ -1,40 +1,11 @@
-/**
- * src/components/sections/WhyChooseUs.tsx
- *
- * ¿Por qué elegir SIM? según Guía de Diseño §4.7.
- * Cuatro argumentos para reforzar la confianza y resumir las ventajas de la marca.
- * Organización visual: banda horizontal de fondo claro, título destacado y
- * cuatro bloques con iconos.
- */
-import Container from '@/components/layout/Container'
-import SectionHeading from '@/components/ui/SectionHeading'
-import PawPattern from '@/components/ui/PawPattern'
+/** Banda horizontal de cuatro razones para elegir S.I.M. en Home. */
+import { Heart, PawPrint, ShieldCheck, UsersRound } from 'lucide-react'
 
 const ARGUMENTOS = [
-  {
-    id: 'respaldo',
-    title: 'Respaldo veterinario de calidad',
-    description: 'Atención respaldada por profesionales y una red de IPS aliadas.',
-    icon: '/assets/icons/veterinary-care.svg',
-  },
-  {
-    id: 'planes',
-    title: 'Planes según sus necesidades',
-    description: 'Opciones de Élite, Plus y Premium para cada tipo de mascota y familia.',
-    icon: '/assets/icons/pet-plans.svg',
-  },
-  {
-    id: 'atencion',
-    title: 'Atención cercana y confiable',
-    description: 'Acompañamiento personalizado con tu Personal Pet Manager.',
-    icon: '/assets/icons/support.svg',
-  },
-  {
-    id: 'bienestar',
-    title: 'Experiencia integral de bienestar',
-    description: 'Prevención, vacunas, controles y servicios para una vida saludable.',
-    icon: '/assets/icons/allies.svg',
-  },
+  { id: 'respaldo', title: 'Respaldo veterinario de calidad', Icon: ShieldCheck },
+  { id: 'planes', title: 'Planes según sus necesidades', Icon: UsersRound },
+  { id: 'atencion', title: 'Atención cercana y confiable', Icon: Heart },
+  { id: 'bienestar', title: 'Experiencia integral de bienestar', Icon: PawPrint },
 ]
 
 export default function WhyChooseUs() {
@@ -42,43 +13,43 @@ export default function WhyChooseUs() {
     <section
       data-section="por-que-elegir-sim"
       aria-label="¿Por qué elegir SIM?"
-      className="py-16 sm:py-20 bg-gris-claro relative overflow-hidden"
+      className="bg-blanco px-4 py-5 sm:px-6 lg:px-8"
     >
-      <PawPattern color="#054564" opacity={0.03} className="inset-0" />
-      <Container className="relative">
-        <SectionHeading
-          title="¿Por qué elegir SIM?"
-          subtitle="Cuatro razones para confiar en el cuidado de tu mascota."
-        />
-
-        <div
-          data-purpose="argumentos-grid"
-          className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 items-center"
-        >
-          {ARGUMENTOS.map((a) => (
-            <div
-              key={a.id}
-              data-purpose="argumento"
-              className="flex flex-col items-center text-center gap-4 p-4 rounded-[20px] bg-blanco border border-borde-suave shadow-suave"
-            >
-              <div className="flex items-center justify-center w-12 h-12 rounded-full bg-verde-corporativo">
-                <img
-                  src={a.icon}
-                  alt=""
-                  className="w-6 h-6 drop-shadow-md"
-                  aria-hidden="true"
-                />
-              </div>
-              <h4 className="font-titulos font-semibold text-azul-petroleo text-sm sm:text-base">
-                {a.title}
-              </h4>
-              <p className="text-xs sm:text-sm text-gris-azulado leading-relaxed">
-                {a.description}
-              </p>
-            </div>
-          ))}
+      <div
+        data-purpose="argumentos-grid"
+        className="mx-auto grid max-w-[1360px] grid-cols-2 items-stretch overflow-hidden rounded-[32px] bg-gris-claro md:min-h-[90px] md:grid-cols-[20%_repeat(4,minmax(0,1fr))]"
+      >
+        {/* Encabezado orgánico */}
+        <div className="col-span-2 flex items-center justify-center p-3 md:col-span-1 md:py-2 md:pl-3 md:pr-2">
+          <h2 className="flex min-h-[64px] w-full items-center justify-center rounded-[42%_30%_38%_28%/42%_35%_40%_32%] bg-verde-pastel px-4 text-center font-titulos text-[20px] font-bold leading-tight text-azul-petroleo sm:text-[22px] md:min-h-[74px]">
+            <span>
+              ¿Por qué elegir
+              <br />
+              SIM?
+            </span>
+          </h2>
         </div>
-      </Container>
+
+        {/* Cuatro bloques de beneficios */}
+        {ARGUMENTOS.map(({ id, title, Icon }, index) => (
+          <div
+            key={id}
+            data-purpose="argumento"
+            className={`flex min-h-[105px] flex-col items-center justify-center gap-1.5 px-2 py-3 text-center sm:px-4 md:min-h-0 md:py-2 ${
+              index > 0 ? 'md:border-l md:border-borde-suave' : ''
+            }`}
+          >
+            <Icon
+              className="h-8 w-8 shrink-0 text-azul-petroleo sm:h-9 sm:w-9"
+              strokeWidth={1.7}
+              aria-hidden="true"
+            />
+            <p className="max-w-[150px] text-[12px] font-medium leading-snug text-azul-petroleo sm:text-[13px]">
+              {title}
+            </p>
+          </div>
+        ))}
+      </div>
     </section>
   )
 }

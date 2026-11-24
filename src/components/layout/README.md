@@ -1,21 +1,25 @@
 # `src/components/layout/` — Elementos globales
 
-## Componentes previstos
+## Componentes implementados
 
-| Archivo         | Proposito                                                                                 | Referencia              |
-| --------------- | ----------------------------------------------------------------------------------------- | ----------------------- |
-| `Header.tsx`    | Header sticky con logo, navegacion, acceso a WhatsApp y CTA verde                         | `sim-arquitectura` §2.1 |
-| `Footer.tsx`    | Pie azul profundo `#07345B` con columnas de marca, navegacion, contacto y enlaces legales | `sim-arquitectura` §2.2 |
-| `Container.tsx` | Ancho maximo de contenido (1280–1360 px) y reticula de secciones                          | `sim-diseno` §3         |
+| Archivo         | Proposito                                                                                 |
+| --------------- | ----------------------------------------------------------------------------------------- |
+| `Header.tsx`    | Header fijo (80 px) con logo, navegación SPA (`NavLink`), menú móvil hamburguesa y CTA     |
+| `Footer.tsx`    | Pie global azul petróleo `#004563` con cinco columnas y derechos reservados               |
+| `Container.tsx` | Ancho máximo de contenido (1360 px, o 768 px en modo `narrow`) con padding horizontal     |
+| `SiteLayout.tsx`| Layout de rutas que monta el contenido (`Outlet`) y el Footer compartido                 |
 
 ## Reglas
 
-- El Header es blanco, alto aproximado 76–92 px en escritorio, con bordes
-  redondeados dentro del contenedor principal.
-- Enlaces de navegacion: **Inicio, Planes, Nosotros, Noticias**.
-- CTA principal: **"Afiliar a mi mascota"** (verde `#7AB929`).
-- El enlace activo se marca con subrayado azul o indicador fino, **no solo con color**.
-- El Footer **no inventa** telefonos, correos, direcciones ni redes sociales.
+- El Header es blanco, fijo arriba (`fixed`, `z-40`), alto 80 px.
+- Enlaces de navegación: **Inicio, Nosotros, Planes, Noticias, Cobertura**.
+- CTA principal: **"Afiliar a mi mascota"** → `/contacto`, con `verde-interactivo`.
+- El enlace activo se marca con subrayado azul, **no solo con color**.
+- En móvil el Header muestra un botón hamburguesa que despliega un panel con los
+  enlaces; se cierra con Escape, al navegar o al pulsar un enlace.
+- El Footer es parte de `SiteLayout`, por lo que aparece una sola vez en todas las rutas.
+- El Footer **no inventa** teléfonos, correos, direcciones ni redes sociales; los canales y perfiles sin confirmar quedan `data-pending`.
 - Redes sociales solo si SIM tiene perfiles oficiales vigentes.
-- En movil el menu debe ser compacto y accesible, manteniendo visible el acceso
-  a afiliacion.
+- Los enlaces legales son marcadores `data-pending` hasta que SIM entregue los textos.
+- `Container` aplica `px-4` también en modo `narrow` para que el contenido no toque
+  los bordes en móvil.
