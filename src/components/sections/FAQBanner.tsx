@@ -48,12 +48,12 @@ export default function FAQBanner() {
       data-section="faq-banner"
       id="preguntas-frecuentes"
       aria-label="Preguntas frecuentes y banner promocional"
-      className="py-16 sm:py-20 bg-blanco relative overflow-hidden"
+      className="relative overflow-hidden bg-blanco py-12 sm:py-16 lg:py-20"
     >
       <div className="mx-auto max-w-[1360px] px-4 sm:px-6 lg:px-8">
         <div
           data-purpose="faq-banner-grid"
-          className="flex flex-col lg:flex-row lg:items-start gap-8 lg:gap-24"
+          className="flex flex-col gap-8 lg:flex-row lg:items-start lg:gap-24"
         >
           {/* Columna izquierda: FAQ (43%) */}
           <div data-purpose="faq-column" className="w-full lg:w-[43%] flex flex-col gap-6">
@@ -126,7 +126,7 @@ export default function FAQBanner() {
           >
             <div
               data-purpose="banner-image"
-              className="relative w-full h-[320px] sm:h-[400px] lg:h-[480px] rounded-[20px] overflow-hidden shadow-medio"
+              className="relative h-[290px] w-full overflow-hidden rounded-[20px] shadow-medio sm:h-[400px] lg:h-[480px]"
             >
               {/* Degradado oscuro sobre el lado izquierdo para legibilidad */}
               <div className="absolute inset-0 w-full h-full bg-gradient-to-r from-azul-oscuro/70 via-azul-oscuro/30 to-transparent pointer-events-none" />
@@ -141,17 +141,17 @@ export default function FAQBanner() {
             {/* Contenido del banner sobre la imagen */}
             <div
               data-purpose="banner-content"
-              className="absolute inset-0 z-10 flex flex-col justify-center p-5 sm:p-8 lg:p-12 text-blanco"
+              className="absolute inset-0 z-10 flex flex-col justify-center p-4 text-white sm:p-8 lg:p-12"
             >
               <h3
                 data-purpose="banner-title"
-                className="font-titulos font-bold text-blanco text-lg sm:text-xl lg:text-[28px] leading-tight mb-4 drop-shadow-md"
+                className="mb-3 font-titulos text-lg font-bold leading-tight text-white drop-shadow-md sm:mb-4 sm:text-xl lg:text-[28px]"
               >
                 Tu mascota merece estar protegida.
               </h3>
               <p
                 data-purpose="banner-description"
-                className="text-sm sm:text-base text-blanco/90 leading-relaxed mb-6 max-w-lg drop-shadow-sm"
+                className="mb-5 max-w-lg text-sm leading-relaxed text-white/90 drop-shadow-sm sm:mb-6 sm:text-base"
               >
                 Empieza hoy a cuidar su bienestar con SIM.
               </p>
@@ -161,7 +161,7 @@ export default function FAQBanner() {
                   size="lg"
                   href="/contacto"
                   data-purpose="cta-afiliarme-banner"
-                  className="whitespace-nowrap px-8"
+                  className="min-h-[44px] whitespace-nowrap px-5 sm:px-8"
                 >
                   Quiero afiliarme{' '}
                   <ArrowRight className="ml-2 w-4 h-4 transition-transform group-hover:translate-x-1" aria-hidden="true" />

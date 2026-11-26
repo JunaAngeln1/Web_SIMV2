@@ -154,9 +154,9 @@ export default function Cobertura() {
     <main data-page="cobertura" className="min-h-screen bg-gris-claro pb-12 pt-[80px] sm:pt-[96px]">
       <Header />
       <Container>
-        <header className="py-8 sm:py-10">
+        <header className="py-7 sm:py-10">
           <div className="flex items-start gap-4">
-            <img src="/assets/sim-logo.svg" alt="S.I.M." className="mt-1 h-12 w-12 shrink-0" />
+            <img src="/assets/sim-logo.svg" alt="S.I.M." className="mt-1 h-10 w-10 shrink-0 sm:h-12 sm:w-12" />
             <div>
               <h1 className="font-titulos text-[30px] font-bold leading-tight text-azul-petroleo sm:text-[44px]">
                 Cobertura de <span className="text-verde-interactivo">S.I.M.</span>
@@ -175,9 +175,9 @@ export default function Cobertura() {
           </div>
         </header>
 
-        <div className="grid items-start gap-5 lg:grid-cols-[320px_minmax(0,1fr)] lg:gap-6">
+          <div className="grid items-start gap-4 sm:gap-5 lg:grid-cols-[320px_minmax(0,1fr)] lg:gap-6">
           {filtersOpen && <button type="button" aria-label="Cerrar filtros" onClick={() => setFiltersOpen(false)} className="fixed inset-0 z-40 bg-azul-oscuro/40 lg:hidden" />}
-          <aside className={`rounded-[24px] bg-white p-5 shadow-suave sm:p-6 ${filtersOpen ? 'fixed inset-x-0 bottom-0 z-50 max-h-[86dvh] overflow-y-auto rounded-b-none shadow-2xl lg:sticky lg:top-24 lg:max-h-none lg:overflow-visible lg:rounded-[24px]' : ''}`}>
+          <aside className={`rounded-[24px] bg-white p-4 shadow-suave sm:p-6 ${filtersOpen ? 'fixed inset-x-0 bottom-0 z-50 max-h-[86dvh] overflow-y-auto rounded-b-none shadow-2xl lg:sticky lg:top-24 lg:max-h-none lg:overflow-visible lg:rounded-[24px]' : ''}`}>
             <button
               type="button"
               aria-expanded={filtersOpen}
@@ -264,9 +264,9 @@ export default function Cobertura() {
           </aside>
 
           <div className="min-w-0 space-y-5">
-            <section aria-label="Mapa de clínicas" className="overflow-hidden rounded-[24px] bg-white p-4 shadow-suave sm:p-5">
+            <section aria-label="Mapa de clínicas" className="overflow-hidden rounded-[24px] bg-white p-3 shadow-suave sm:p-5">
               <div className="mb-3 flex items-center justify-between gap-3">
-                <h2 className="font-titulos text-lg font-semibold text-azul-petroleo">Clínicas aliadas cerca de ti</h2>
+                <h2 className="min-w-0 font-titulos text-base font-semibold leading-tight text-azul-petroleo sm:text-lg">Clínicas aliadas cerca de ti</h2>
                 <div className="inline-flex shrink-0 rounded-full bg-gris-claro p-1" aria-label="Cambiar vista">
                   <button type="button" onClick={() => setView('map')} aria-pressed={view === 'map'} className={`rounded-full px-3 py-1.5 text-xs font-semibold ${view === 'map' ? 'bg-azul-petroleo text-white' : 'text-azul-petroleo'}`}>Mapa</button>
                   <button type="button" onClick={() => setView('list')} aria-pressed={view === 'list'} className={`rounded-full px-3 py-1.5 text-xs font-semibold ${view === 'list' ? 'bg-azul-petroleo text-white' : 'text-azul-petroleo'}`}>Lista</button>
@@ -300,7 +300,7 @@ export default function Cobertura() {
                 </label>
               </div>
               {results.length ? (
-                <ul className="flex snap-x snap-mandatory gap-4 overflow-x-auto pb-3">
+                <ul className="-mx-3 flex snap-x snap-mandatory gap-3 overflow-x-auto px-3 pb-3">
                   {results.map((clinic) => (
                     <li key={clinic.id} data-selected={selectedId === clinic.id || undefined} className={`flex w-[min(84vw,300px)] shrink-0 snap-start flex-col rounded-[20px] border bg-white p-4 shadow-suave transition-all duration-200 hover:-translate-y-[3px] hover:shadow-medio ${selectedId === clinic.id ? 'border-azul-petroleo ring-2 ring-azul-petroleo/20' : 'border-borde-suave'}`}>
                       <div className="relative -mx-4 -mt-4 mb-3 flex h-28 items-center justify-center rounded-t-[19px] bg-azul-niebla">
@@ -349,7 +349,7 @@ export default function Cobertura() {
 
       {detailsOpen && selectedClinic && (
         <div className="fixed inset-0 z-[70] flex items-end justify-center bg-azul-oscuro/55 p-0 backdrop-blur-sm sm:items-center sm:p-5" onMouseDown={(event) => { if (event.target === event.currentTarget) setDetailsOpen(false) }}>
-          <section role="dialog" aria-modal="true" aria-labelledby="clinic-detail-title" className="max-h-[90vh] w-full max-w-xl overflow-y-auto rounded-t-[24px] bg-white p-5 shadow-xl sm:rounded-[24px] sm:p-7">
+          <section role="dialog" aria-modal="true" aria-labelledby="clinic-detail-title" className="max-h-[90dvh] w-full max-w-xl overflow-y-auto rounded-t-[24px] bg-white p-4 shadow-xl sm:rounded-[24px] sm:p-7">
             <div className="flex items-start justify-between gap-4">
               <div>
                 <span className="inline-flex items-center gap-1 rounded-full bg-azul-niebla px-3 py-1 text-xs font-semibold text-azul-petroleo"><PawPrint className="h-3.5 w-3.5" aria-hidden="true" />Aliado SIM</span>

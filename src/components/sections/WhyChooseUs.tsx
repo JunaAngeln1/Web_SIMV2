@@ -17,11 +17,11 @@ export default function WhyChooseUs() {
     >
       <div
         data-purpose="argumentos-grid"
-        className="mx-auto grid max-w-[1360px] grid-cols-2 items-stretch overflow-hidden rounded-[32px] bg-gris-claro md:min-h-[90px] md:grid-cols-[20%_repeat(4,minmax(0,1fr))]"
+        className="mx-auto grid max-w-[1360px] grid-cols-2 items-stretch overflow-hidden rounded-[24px] bg-gris-claro sm:rounded-[32px] md:min-h-[90px] md:grid-cols-[20%_repeat(4,minmax(0,1fr))]"
       >
         {/* Encabezado orgánico */}
         <div className="col-span-2 flex items-center justify-center p-3 md:col-span-1 md:py-2 md:pl-3 md:pr-2">
-          <h2 className="flex min-h-[64px] w-full items-center justify-center rounded-[42%_30%_38%_28%/42%_35%_40%_32%] bg-verde-pastel px-4 text-center font-titulos text-[20px] font-bold leading-tight text-azul-petroleo sm:text-[22px] md:min-h-[74px]">
+          <h2 className="flex min-h-[58px] w-full items-center justify-center rounded-[42%_30%_38%_28%/42%_35%_40%_32%] bg-verde-pastel px-4 text-center font-titulos text-[19px] font-bold leading-tight text-azul-petroleo sm:min-h-[64px] sm:text-[22px] md:min-h-[74px]">
             <span>
               ¿Por qué elegir
               <br />
@@ -35,7 +35,7 @@ export default function WhyChooseUs() {
           <div
             key={id}
             data-purpose="argumento"
-            className={`flex min-h-[105px] flex-col items-center justify-center gap-1.5 px-2 py-3 text-center sm:px-4 md:min-h-0 md:py-2 ${
+            className={`flex min-h-[92px] flex-col items-center justify-center gap-1.5 px-2 py-3 text-center sm:min-h-[105px] sm:px-4 md:min-h-0 md:py-2 ${
               index > 0 ? 'md:border-l md:border-borde-suave' : ''
             }`}
           >
@@ -44,7 +44,7 @@ export default function WhyChooseUs() {
               strokeWidth={1.7}
               aria-hidden="true"
             />
-            <p className="max-w-[150px] text-[12px] font-medium leading-snug text-azul-petroleo sm:text-[13px]">
+            <p className="max-w-[150px] text-[11px] font-medium leading-snug text-azul-petroleo sm:text-[13px]">
               {title}
             </p>
           </div>

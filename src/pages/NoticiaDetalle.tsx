@@ -15,7 +15,7 @@ export default function NoticiaDetalle() {
   const { noticia } = useLoaderData() as NoticiaDetalleData
 
   return (
-    <main data-page="noticia-detalle" className="pt-[80px] sm:pt-[96px] pb-16 sm:pb-20 bg-blanco">
+    <main data-page="noticia-detalle" className="bg-blanco pb-16 pt-[80px] sm:pb-20 sm:pt-[96px]">
       <Header />
 
       <PageHero narrow>
@@ -54,7 +54,7 @@ export default function NoticiaDetalle() {
       <div className="relative">
         <article className="relative mx-auto max-w-[768px] px-4 sm:px-6 lg:px-8 pt-8 sm:pt-10">
           {/* Imagen destacada */}
-          <div className="relative h-64 sm:h-80 lg:h-96 overflow-hidden rounded-[16px] shadow-medio mb-6 sm:mb-8">
+          <div className="relative mb-6 h-56 overflow-hidden rounded-[16px] shadow-medio sm:mb-8 sm:h-80 lg:h-96">
             <img
               src={noticia.image}
               alt={`Imagen referencial: ${noticia.title}`}

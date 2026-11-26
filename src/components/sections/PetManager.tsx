@@ -26,7 +26,7 @@ export default function PetManager() {
         {/* Fotografía oficial: el recorte amplio mantiene a la asesora protagonista. */}
         <div
           data-purpose="pm-foto"
-          className="relative aspect-[8/3] overflow-hidden bg-blanco md:aspect-auto md:h-[190px]"
+          className="relative aspect-[8/3] max-h-[180px] min-h-[118px] overflow-hidden bg-blanco md:aspect-auto md:h-[190px]"
         >
           <img
             src="/assets/images/hero-banners/Asesora-veterinaria-con-huellas-pastel.webp"
@@ -48,13 +48,13 @@ export default function PetManager() {
         {/* Información del servicio */}
         <div
           data-purpose="pm-texto"
-          className="flex flex-col justify-center px-5 py-6 sm:px-8 md:px-5 md:py-4 lg:px-8"
+          className="flex flex-col justify-center px-4 py-6 sm:px-6 sm:py-7 md:px-5 md:py-4 lg:px-8"
         >
-          <h2 className="font-titulos text-[22px] font-bold leading-tight tracking-tight sm:text-[26px] md:whitespace-nowrap">
+          <h2 className="font-titulos text-[22px] font-bold leading-tight tracking-tight sm:text-[26px]">
             <span className="text-azul-petroleo">Tu Personal </span>
             <span className="text-verde-interactivo">Pet Manager</span>
           </h2>
-          <p className="mt-2 max-w-[510px] text-[13px] leading-[1.55] text-texto-principal">
+          <p className="mt-2 max-w-[510px] text-[13px] leading-[1.55] text-texto-principal sm:text-sm">
             No estás solo en el cuidado de tu mascota. Cuentas con un acompañamiento cercano y
             personalizado para orientarte, coordinar servicios y resolver tus inquietudes.
           </p>
@@ -73,14 +73,14 @@ export default function PetManager() {
         {/* Beneficios: panel integrado, no una tarjeta independiente. */}
         <div
           data-purpose="pm-panel"
-          className="relative flex flex-col justify-center overflow-hidden bg-verde-pastel px-6 py-6 md:rounded-l-[48%_18px] md:px-5 md:py-4 lg:px-7"
+          className="relative flex flex-col justify-center overflow-hidden bg-verde-pastel px-4 py-6 sm:px-6 md:rounded-l-[48%_18px] md:px-5 md:py-4 lg:px-7"
         >
           <CalendarDays
             className="mb-2 h-9 w-9 text-verde-corporativo sm:h-10 sm:w-10"
             strokeWidth={1.7}
             aria-hidden="true"
           />
-          <ul className="space-y-1.5 text-[12px] leading-snug text-azul-petroleo sm:text-[13px]">
+          <ul className="space-y-2 text-[13px] leading-[1.35] text-azul-petroleo sm:text-[13px]">
             {BENEFICIOS_PM.map((beneficio) => (
               <li key={beneficio} className="flex items-start gap-2">
                 <Check

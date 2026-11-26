@@ -72,7 +72,7 @@ export default function FeaturedNewsCarousel({ items = news }: Props) {
         >
           <div className="grid grid-cols-1 md:grid-cols-2 gap-0">
             {/* Imagen */}
-            <div className="relative h-64 md:h-80 lg:h-96 bg-azul-niebla">
+            <div className="relative h-56 bg-azul-niebla sm:h-64 md:h-80 lg:h-96">
               <img
                 src={current.image}
                 alt={`Imagen referencial: ${current.title}`}
@@ -82,14 +82,14 @@ export default function FeaturedNewsCarousel({ items = news }: Props) {
             </div>
 
             {/* Contenido */}
-            <div className="p-6 sm:p-8 lg:p-12 flex flex-col justify-center">
+            <div className="flex flex-col justify-center px-4 py-6 sm:p-8 lg:p-12">
               <span className="inline-block mb-3 px-3 py-1 rounded-full text-[11px] font-semibold uppercase tracking-wider bg-verde-interactivo text-blanco self-start">
                 {current.category}
               </span>
-              <h2 className="font-titulos text-3xl sm:text-4xl lg:text-[44px] font-semibold text-azul-institucional tracking-tight leading-tight mb-4 line-clamp-2">
+              <h2 className="mb-4 font-titulos text-2xl font-semibold leading-tight tracking-tight text-azul-petroleo sm:text-3xl md:text-4xl lg:text-[44px]">
                 {current.title}
               </h2>
-              <p className="text-lg text-texto-principal leading-relaxed mb-6 line-clamp-3">
+              <p className="mb-6 line-clamp-3 text-base leading-relaxed text-texto-principal sm:text-lg">
                 {current.description}
               </p>
               <div className="mt-auto flex flex-wrap items-center gap-4 text-sm text-gris-azulado">
@@ -101,7 +101,7 @@ export default function FeaturedNewsCarousel({ items = news }: Props) {
               </div>
               <Link
                 to={`/noticias/${current.slug}`}
-                className="mt-4 inline-flex items-center justify-center px-6 py-3 rounded-[12px] bg-azul-petroleo text-blanco font-semibold text-sm transition-colors duration-200 hover:bg-azul-oscuro self-start"
+                className="mt-4 inline-flex min-h-[44px] items-center justify-center self-start rounded-[12px] bg-azul-petroleo px-6 py-3 font-semibold text-sm text-blanco transition-colors duration-200 hover:bg-azul-oscuro"
               >
                 Leer noticia
               </Link>
@@ -135,7 +135,7 @@ export default function FeaturedNewsCarousel({ items = news }: Props) {
             type="button"
             onClick={prev}
             aria-label="Noticia anterior"
-            className="absolute left-4 top-1/2 -translate-y-1/2 inline-flex h-11 w-11 items-center justify-center rounded-full bg-blanco/90 backdrop-blur-sm shadow-suave text-azul-petroleo hover:bg-azul-petroleo hover:text-blanco transition-colors z-10"
+            className="absolute left-2 top-1/2 z-10 hidden h-11 w-11 -translate-y-1/2 items-center justify-center rounded-full bg-blanco/95 text-azul-petroleo shadow-suave transition-colors hover:bg-azul-petroleo hover:text-blanco sm:left-4 sm:flex"
           >
             <ChevronLeft className="w-5 h-5" aria-hidden="true" />
           </button>
@@ -143,7 +143,7 @@ export default function FeaturedNewsCarousel({ items = news }: Props) {
             type="button"
             onClick={next}
             aria-label="Siguiente noticia"
-            className="absolute right-4 top-1/2 -translate-y-1/2 inline-flex h-11 w-11 items-center justify-center rounded-full bg-blanco/90 backdrop-blur-sm shadow-suave text-azul-petroleo hover:bg-azul-petroleo hover:text-blanco transition-colors z-10"
+            className="absolute right-2 top-1/2 z-10 hidden h-11 w-11 -translate-y-1/2 items-center justify-center rounded-full bg-blanco/95 text-azul-petroleo shadow-suave transition-colors hover:bg-azul-petroleo hover:text-blanco sm:right-4 sm:flex"
           >
             <ChevronRight className="w-5 h-5" aria-hidden="true" />
           </button>
@@ -154,7 +154,7 @@ export default function FeaturedNewsCarousel({ items = news }: Props) {
             onClick={() => setManualPaused((p) => !p)}
             aria-label={manualPaused ? 'Reanudar carrusel' : 'Pausar carrusel'}
             aria-pressed={manualPaused}
-            className="absolute right-4 bottom-4 inline-flex h-11 w-11 items-center justify-center rounded-full bg-blanco/90 backdrop-blur-sm shadow-suave text-azul-petroleo hover:bg-azul-petroleo hover:text-blanco transition-colors z-10"
+            className="absolute bottom-2 right-2 z-10 inline-flex h-11 w-11 items-center justify-center rounded-full bg-blanco/95 text-azul-petroleo shadow-suave transition-colors hover:bg-azul-petroleo hover:text-blanco sm:bottom-4 sm:right-4"
           >
             {manualPaused ? (
               <Play className="w-5 h-5" aria-hidden="true" />

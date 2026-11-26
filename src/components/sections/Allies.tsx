@@ -28,7 +28,7 @@ export default function Allies() {
     >
       <div
         data-purpose="red-atencion-content"
-        className="mx-auto grid max-w-[1360px] items-center gap-5 md:min-h-[160px] md:grid-cols-[30%_17%_22%_31%] md:gap-0"
+        className="mx-auto grid max-w-[1360px] items-center gap-4 sm:gap-5 md:min-h-[160px] md:grid-cols-[30%_17%_22%_31%] md:gap-0"
       >
         {/* Zona 1: texto y botón pendiente de destino. */}
         <div data-purpose="red-texto" className="py-2 md:pr-6">
@@ -53,7 +53,7 @@ export default function Allies() {
 
         {/* Zona 2: mapa real con límites departamentales, fuente y licencia documentadas. */}
         <div data-purpose="red-mapa" className="flex justify-center py-2 md:px-2">
-          <div className="relative h-[180px] w-[145px] sm:h-[200px] sm:w-[160px] md:h-[148px] md:w-full">
+          <div className="relative h-[150px] w-[124px] sm:h-[180px] sm:w-[145px] md:h-[148px] md:w-full">
             <img
               src="/assets/images/maps/colombia-departments.svg"
               alt="Mapa de Colombia con divisiones departamentales"
@@ -77,7 +77,7 @@ export default function Allies() {
         {/* Zona 3: características de la red veterinaria. */}
         <ul
           data-purpose="red-caracteristicas"
-          className="flex flex-col justify-center gap-4 border-t border-verde-claro py-4 md:min-h-[130px] md:gap-3 md:border-l md:border-t-0 md:py-0 md:pl-6 lg:pl-8"
+          className="grid gap-3 border-t border-verde-claro py-4 sm:grid-cols-2 md:min-h-[130px] md:grid-cols-1 md:gap-3 md:border-l md:border-t-0 md:py-0 md:pl-6 lg:pl-8"
         >
           {CARACTERISTICAS_RED.map(({ label, Icon }) => (
             <li key={label} className="flex items-center gap-3 text-[13px] leading-tight text-azul-petroleo">
@@ -91,7 +91,7 @@ export default function Allies() {
         <div
           data-purpose="red-foto"
           data-pending="true"
-          className="relative h-[190px] overflow-hidden rounded-[20px] bg-azul-niebla md:h-[150px] md:pl-5 lg:pl-7"
+          className="relative h-[160px] overflow-hidden rounded-[20px] bg-azul-niebla sm:h-[190px] md:h-[150px] md:pl-5 lg:pl-7"
         >
           <img
             src="/assets/images/hero-banners/Asesora-veterinaria-con-huellas-pastel.webp"

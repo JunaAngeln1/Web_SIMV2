@@ -195,7 +195,7 @@ export default function GoogleCoverageMap({ clinics, selectedId, onSelect, userP
   }
 
   return (
-    <div className={`relative min-h-[300px] overflow-hidden rounded-[24px] bg-azul-niebla lg:min-h-[420px] ${className}`}>
+    <div className={`relative min-h-[280px] overflow-hidden rounded-[24px] bg-azul-niebla sm:min-h-[300px] lg:min-h-[420px] ${className}`}>
       {loadState === 'loading' && <div className="absolute inset-0 z-10 grid animate-pulse place-items-center bg-azul-niebla text-sm text-gris-azulado">Cargando mapa…</div>}
       <div ref={elementRef} className="absolute inset-0" aria-label="Mapa de Google Maps con clínicas aliadas" />
       <div className="absolute left-3 top-3 z-20 flex flex-col overflow-hidden rounded-xl bg-white shadow-suave">
@@ -205,10 +205,10 @@ export default function GoogleCoverageMap({ clinics, selectedId, onSelect, userP
         <span className="h-px bg-borde-suave" />
         <button type="button" aria-label="Centrar en mi ubicación" onClick={recenter} disabled={!userPosition} className="grid h-10 w-10 place-items-center text-azul-petroleo hover:bg-azul-niebla disabled:cursor-not-allowed disabled:opacity-40"><LocateFixed className="h-5 w-5" /></button>
       </div>
-      <div className="absolute bottom-3 right-3 z-20 rounded-xl bg-white/95 px-3 py-2 text-[10px] text-gris-azulado shadow-suave">
+      <div className="absolute bottom-2 right-2 z-20 max-w-[145px] rounded-xl bg-white/95 px-2 py-2 text-[10px] leading-snug text-gris-azulado shadow-suave sm:bottom-3 sm:right-3 sm:px-3">
         <p className="mb-1 font-semibold text-azul-petroleo">Red de cobertura</p>
-        <p className="mb-0 flex items-center gap-1.5"><span className="h-2.5 w-2.5 rounded-full bg-azul-petroleo" />Tu ubicación</p>
-        <p className="mb-0 mt-1 flex items-center gap-1.5"><span className="h-2.5 w-2.5 rounded-full bg-verde-corporativo" />Aliado SIM</p>
+        <p className="mb-0 flex items-center gap-1.5"><span className="h-2.5 w-2.5 shrink-0 rounded-full bg-azul-petroleo" />Tu ubicación</p>
+        <p className="mb-0 mt-1 flex items-center gap-1.5"><span className="h-2.5 w-2.5 shrink-0 rounded-full bg-verde-corporativo" />Aliado SIM</p>
       </div>
     </div>
   )

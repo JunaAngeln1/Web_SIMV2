@@ -11,7 +11,7 @@ function HomePlanCard({ plan }: { plan: (typeof plans)[number] }) {
     <article
       data-purpose="plan-card"
       data-plan={plan.id}
-      className={`relative flex h-[190px] min-w-0 overflow-visible rounded-[24px] border bg-gris-plan sm:h-[205px] ${
+      className={`relative flex min-h-[190px] min-w-0 overflow-visible rounded-[24px] border bg-gris-plan sm:min-h-[205px] ${
         featured ? 'border-[1.5px] border-verde-corporativo' : 'border-transparent'
       }`}
     >
@@ -30,16 +30,16 @@ function HomePlanCard({ plan }: { plan: (typeof plans)[number] }) {
       </div>
       <div className="flex min-w-0 flex-1 flex-col items-start px-4 py-4 sm:px-5 sm:py-5">
         <span className="text-xs leading-none text-azul-petroleo sm:text-[13px]">Plan</span>
-        <h3 className="mt-1.5 font-titulos text-[25px] font-bold leading-none text-azul-petroleo sm:text-[28px]">
+        <h3 className="mt-1.5 font-titulos text-[24px] font-bold leading-tight text-azul-petroleo sm:text-[28px]">
           {plan.name}
         </h3>
-        <p className="mt-2 line-clamp-3 text-[12px] leading-[1.4] text-texto-principal sm:text-[13px]">
+        <p className="mt-2 line-clamp-3 text-[13px] leading-[1.45] text-texto-principal sm:text-[13px]">
           {plan.tagline}
         </p>
         <Link
           to="/planes"
           data-purpose="cta-ver-beneficios"
-          className={`group mt-auto inline-flex min-h-[34px] items-center justify-center gap-2 whitespace-nowrap rounded-full border px-3.5 text-[11px] font-semibold transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-verde-corporativo focus-visible:ring-offset-2 sm:text-xs ${
+          className={`group mt-auto inline-flex min-h-[38px] w-fit items-center justify-center gap-2 rounded-full border px-4 text-xs font-semibold transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-verde-corporativo focus-visible:ring-offset-2 sm:text-xs ${
             featured
               ? 'border-verde-interactivo bg-verde-interactivo text-white hover:bg-verde-interactivo-hover'
               : 'border-azul-petroleo bg-white text-azul-petroleo hover:bg-azul-muy-claro'

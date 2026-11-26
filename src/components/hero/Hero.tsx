@@ -74,12 +74,12 @@ export default function Hero() {
       role="region"
       aria-roledescription="carrusel"
       aria-label="Banners principales"
-      className="relative w-full min-h-[600px] overflow-hidden bg-blanco"
+      className="relative w-full overflow-hidden bg-blanco"
     >
       {/* Contenedor del carrusel de banners (ancho completo de pantalla) */}
       <div
         data-purpose="hero-carousel"
-        className="relative w-full h-[560px] lg:h-[640px] overflow-hidden"
+        className="relative h-[560px] w-full max-w-full overflow-hidden sm:h-[580px] lg:h-[640px]"
         onMouseEnter={() => (hoverPausedRef.current = true)}
         onMouseLeave={() => (hoverPausedRef.current = false)}
       >
@@ -122,17 +122,17 @@ export default function Hero() {
 
             {/* Contenido: texto y botones (sobre el lado claro del overlay) */}
             <div className="w-full px-4 sm:px-6 lg:px-8 relative z-20">
-              <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center py-16 sm:py-20 h-full max-w-[1360px] mx-auto">
+              <div className="mx-auto grid h-full max-w-[1360px] items-center gap-10 py-16 sm:gap-12 sm:py-20 lg:grid-cols-2 lg:gap-16">
                 <div data-purpose="hero-text" className="relative">
                   <h1
                     data-purpose="hero-title"
-                    className="font-titulos font-semibold text-3xl sm:text-4xl lg:text-[44px] tracking-tight leading-[1.05] text-azul-petroleo mb-6"
+                    className="mb-5 font-titulos text-2xl font-semibold leading-tight tracking-tight text-azul-petroleo sm:mb-6 sm:text-3xl md:text-4xl lg:text-[44px]"
                   >
                     {s.title}
                   </h1>
                   <p
                     data-purpose="hero-description"
-                    className="text-lg sm:text-xl text-gris-azulado leading-relaxed mb-10 max-w-lg"
+                    className="mb-7 max-w-lg text-base leading-relaxed text-gris-azulado sm:mb-10 sm:text-lg md:text-xl"
                   >
                     {s.description}
                   </p>
@@ -142,7 +142,7 @@ export default function Hero() {
                       size="lg"
                       href="/planes"
                       data-purpose="cta-principal"
-                      className="px-10"
+                      className="w-full justify-center px-4 sm:w-auto sm:px-8"
                     >
                       Conoce nuestros planes{' '}
                       <ArrowRight className="ml-2 w-4 h-4 transition-transform group-hover:translate-x-1" />
@@ -152,7 +152,7 @@ export default function Hero() {
                       size="lg"
                       href="/contacto"
                       data-purpose="cta-secundario"
-                      className="px-10"
+                      className="w-full justify-center px-4 sm:w-auto sm:px-8"
                     >
                       <MessageCircle className="w-4 h-4 mr-2 text-verde-corporativo" aria-hidden="true" />
                       Habla con un asesor
@@ -170,7 +170,7 @@ export default function Hero() {
           onClick={prev}
           aria-label="Banner anterior"
           data-purpose="hero-prev"
-          className="absolute left-4 top-1/2 -translate-y-1/2 p-3 rounded-full bg-blanco/90 backdrop-blur-sm shadow-suave text-azul-petroleo hover:bg-azul-petroleo hover:text-blanco transition-colors z-20"
+          className="absolute left-2 top-1/2 z-20 hidden h-11 w-11 -translate-y-1/2 items-center justify-center rounded-full bg-blanco/95 text-azul-petroleo shadow-suave transition-colors hover:bg-azul-petroleo hover:text-blanco sm:left-4 sm:flex"
         >
           <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
@@ -181,7 +181,7 @@ export default function Hero() {
           onClick={next}
           aria-label="Siguiente banner"
           data-purpose="hero-next"
-          className="absolute right-4 top-1/2 -translate-y-1/2 p-3 rounded-full bg-blanco/90 backdrop-blur-sm shadow-suave text-azul-petroleo hover:bg-azul-petroleo hover:text-blanco transition-colors z-20"
+          className="absolute right-2 top-1/2 z-20 hidden h-11 w-11 -translate-y-1/2 items-center justify-center rounded-full bg-blanco/95 text-azul-petroleo shadow-suave transition-colors hover:bg-azul-petroleo hover:text-blanco sm:right-4 sm:flex"
         >
           <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
@@ -195,7 +195,7 @@ export default function Hero() {
           aria-label={manualPaused ? 'Reanudar carrusel' : 'Pausar carrusel'}
           aria-pressed={manualPaused}
           data-purpose="hero-pause"
-          className="absolute right-4 bottom-6 inline-flex h-11 w-11 items-center justify-center rounded-full bg-blanco/90 backdrop-blur-sm shadow-suave text-azul-petroleo hover:bg-azul-petroleo hover:text-blanco transition-colors z-20"
+          className="absolute bottom-4 right-2 z-20 inline-flex h-11 w-11 items-center justify-center rounded-full bg-blanco/95 text-azul-petroleo shadow-suave transition-colors hover:bg-azul-petroleo hover:text-blanco sm:bottom-6 sm:right-4"
         >
           {manualPaused ? (
             <Play className="w-5 h-5" aria-hidden="true" />
@@ -207,7 +207,7 @@ export default function Hero() {
         {/* Dots de navegación (área táctil de 44 px) */}
         <div
           data-purpose="hero-dots"
-          className="absolute bottom-6 left-1/2 -translate-x-1/2 flex gap-1 z-20"
+          className="absolute bottom-5 left-1/2 z-20 flex -translate-x-1/2 gap-0 sm:bottom-6"
         >
           {HERO_SLIDES.map((_, index) => (
             <button

@@ -102,7 +102,7 @@ function PlanCard({ plan, delay }: { plan: (typeof plans)[number]; delay: number
         ].join(' ')}
       >
         {/* Cabecera tipo Home: fotografía y resumen horizontal */}
-        <div className="flex min-h-[205px]">
+        <div className="flex min-h-[190px] sm:min-h-[205px]">
           <div className="w-[40%] shrink-0 overflow-hidden sm:w-[42%]">
             <img
               src={plan.image}
@@ -116,7 +116,7 @@ function PlanCard({ plan, delay }: { plan: (typeof plans)[number]; delay: number
             <h2 data-purpose="plan-name" className={`mt-1.5 font-titulos text-[24px] font-bold leading-tight sm:text-[28px] ${colors.nombre}`}>
               {plan.name}
             </h2>
-            <p className="mt-2 line-clamp-3 text-xs leading-relaxed text-texto-principal sm:text-[13px]">
+            <p className="mt-2 line-clamp-3 text-[13px] leading-relaxed text-texto-principal">
               {plan.tagline}
             </p>
             <div className="mt-auto pt-3">

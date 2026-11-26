@@ -47,7 +47,7 @@ export default function Noticias() {
           <section
             data-section="noticias-filtros"
             aria-label="Categorías de noticias"
-            className="relative mt-16 sm:mt-20"
+            className="relative mt-12 sm:mt-16 lg:mt-20"
           >
             <div className="overflow-x-auto pb-2 scrollbar-hide sm:overflow-visible sm:pb-0">
               <div
@@ -85,7 +85,7 @@ export default function Noticias() {
           >
             <div
               data-purpose="noticias-grid"
-              className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8"
+              className="grid grid-cols-1 gap-6 sm:grid-cols-2 sm:gap-7 lg:grid-cols-3 lg:gap-8"
             >
               {filteredNews.map((n) => (
                 <NewsCard

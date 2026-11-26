@@ -9,7 +9,7 @@ import FAQBanner from '@/components/sections/FAQBanner'
 
 export default function Inicio() {
   return (
-    <main className="pt-[80px]">
+    <main className="pt-[80px] sm:pt-[96px]">
       {/* 1. Header */}
       <Header />
 
